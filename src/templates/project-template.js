@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import { FaGithubSquare, FaShareSquare } from 'react-icons/fa';
 
 const ComponentName = ({ data }) => {
-  const { content, title, description } = data.blog;
+  const { content, title, description, github, url } = data.project;
 
   return (
     <Layout>
@@ -27,6 +27,10 @@ const ComponentName = ({ data }) => {
               <FaShareSquare className='project-icon' />
             </a>
           </div>
+
+          <Link to='/project' className='btn center-btn'>
+            back to projects
+          </Link>
         </div>
       </section>
     </Layout>
@@ -34,25 +38,20 @@ const ComponentName = ({ data }) => {
 };
 
 export const query = graphql`
-  {
-    allStrapiProjects {
-      nodes {
-        github
+  query GetSingleProject($slug: String) {
+    project: strapiProjects(slug: { eq: $slug }) {
+      title
+      description
+      content
+      github
+      url
+      roles {
         id
-        description
-        title
-        url
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        stack {
-          id
-          language
-        }
+        role
+      }
+      stack {
+        id
+        language
       }
     }
   }

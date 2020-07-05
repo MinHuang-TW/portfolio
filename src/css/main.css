@@ -79,6 +79,7 @@ ul {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 h1,
@@ -644,6 +645,11 @@ Projects
 .project {
   display: grid;
   margin-bottom: 4rem;
+  transition: var(--transition);
+}
+.project:hover {
+  box-shadow: var(--dark-shadow);
+  transform: scale(1.02);
 }
 .project-img {
   border-top-left-radius: var(--radius);
@@ -728,6 +734,10 @@ Projects
   .project {
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
+  }
+  .project:hover {
+    box-shadow: none;
+    transform: scale(1);
   }
   .project-img {
     grid-column: 1 / span 8;

@@ -19,10 +19,12 @@ export const query = graphql`
   {
     allStrapiProjects {
       nodes {
-        github
         id
+        slug
         description
+        content
         title
+        github
         url
         image {
           childImageSharp {
@@ -30,6 +32,10 @@ export const query = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        roles {
+          id
+          role
         }
         stack {
           id
