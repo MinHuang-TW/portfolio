@@ -1,9 +1,11 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { graphql } from 'gatsby';
 import Title from '../components/Title';
+import Services from '../components/Services';
+import Jobs from '../components/Jobs';
 import Image from 'gatsby-image';
 import SEO from '../components/SEO';
+import { graphql } from 'gatsby';
 
 const About = ({ data: { about: { nodes }} }) => {
   const { title, info, stack, image } = nodes[0];
@@ -20,14 +22,16 @@ const About = ({ data: { about: { nodes }} }) => {
           <article className='about-text'>
             <Title title={title} />
             <p>{info}</p>
-            <div className='about-stack'>
+            {/* <div className='about-stack'>
               {stack.map(({ id, language }) => (
                 <span key={id}>{language}</span>
               ))}
-            </div>
+            </div> */}
           </article>
         </div>
       </section>
+      <Jobs />
+      <Services />
     </Layout>
   )
 };

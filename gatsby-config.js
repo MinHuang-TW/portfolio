@@ -39,12 +39,16 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Roboto`,
-            variants: [`400`, `700`],
+            family: `Source Sans Pro`,
+            variants: [`300`],
           },
           {
-            family: `Open Sans`,
+            family: `DM Mono`,
+            variants: [`300`, `500`],
           },
+          // {
+          //   family: `Open Sans`,
+          // },
         ],
       },
     },

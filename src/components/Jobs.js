@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Title from './Title';
 import { FaAngleDoubleRight } from 'react-icons/fa';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 
 const Jobs = () => {
   const data = useStaticQuery(query);
@@ -27,9 +27,9 @@ const Jobs = () => {
         </div>
         <article className='job-info'>
           <h3>{position}</h3>
-          <h4>{company}</h4>
-          <p>{country}</p>
+          {/* <h4>{company}</h4> */}
           <p className='job-date'>{date}</p>
+          <p>{country}</p>
           {descriptions.map(({ id, list }) => (
             <div key={id} className='job-desc'>
               <FaAngleDoubleRight className='job-icon' />
@@ -38,9 +38,9 @@ const Jobs = () => {
           ))}
         </article>
       </div>
-      <Link to='/about' className='btn center-btn'>
+      {/* <Link to='/about' className='btn center-btn'>
         more info
-      </Link>
+      </Link> */}
     </section>
   )
 };
