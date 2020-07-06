@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 import { graphql } from 'gatsby';
 
 const About = ({ data: { about: { nodes }} }) => {
-  const { title, info, stack, image } = nodes[0];
+  const { title, info, image } = nodes[0];
 
   return (
     <Layout>

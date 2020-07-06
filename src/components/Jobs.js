@@ -8,7 +8,7 @@ const Jobs = () => {
   const data = useStaticQuery(query);
   const { allStrapiJobs: { nodes: jobs }} = data;
   const [selected, setSelected] = useState(0);
-  const { company, country, date, position, descriptions } = jobs[selected];
+  const { country, date, position, descriptions } = jobs[selected];
   
   return (
     <section className='section jobs'>

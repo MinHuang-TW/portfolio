@@ -1,13 +1,13 @@
 import React from 'react';
-// import SocialLinks from '../constants/socialLinks';
+import SocialLinks from '../constants/socialLinks';
 
 const Footer = () => (
   <footer className='footer'>
-    {/* <div>
-      <SocialLinks styleClass='footer-links' /> */}
+    {/* <div> */}
       <h4>
-        copyright &copy; {new Date().getFullYear()} Min Huang. All rights reserved.
+        copyright {new Date().getFullYear()} &copy; Min Huang. All rights reserved.
       </h4>
+      <SocialLinks styleClass='footer-links' />
     {/* </div> */}
   </footer>
 )

@@ -4,10 +4,10 @@ import Layout from '../components/Layout';
 import Title from '../components/Title';
 import SEO from '../components/SEO';
 import ReactMarkdown from 'react-markdown';
-import { FaGithubSquare, FaShareSquare } from 'react-icons/fa';
+// import { FaGithubSquare, FaShareSquare } from 'react-icons/fa';
 
 const ComponentName = ({ data }) => {
-  const { content, title, description, github, url } = data.project;
+  const { content, title, description, github } = data.project;
 
   return (
     <Layout>
@@ -19,18 +19,28 @@ const ComponentName = ({ data }) => {
             <ReactMarkdown source={content} />
           </article>
           
-          <div className='project-link'>
+          {/* <div className='project-link'>
             <a href={github} target='_blank' rel='noopener noreferrer'>
               <FaGithubSquare className='project-icon' />
             </a>
             <a href={url} target='_blank' rel='noopener noreferrer'>
               <FaShareSquare className='project-icon' />
             </a>
-          </div>
-
+          </div> */}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Link to='/project' className='btn center-btn'>
-            back to projects
+            back
           </Link>
+          <a 
+            className='btn center-btn' 
+            href={github} 
+            target='_blank' 
+            rel='noopener noreferrer'
+            style={{ marginLeft: 8 }}
+          >
+            view code
+          </a>
         </div>
       </section>
     </Layout>

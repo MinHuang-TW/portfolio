@@ -6,13 +6,14 @@ import SEO from '../components/SEO';
 import ReactMarkdown from 'react-markdown';
 
 const ComponentName = ({ data }) => {
-  const { content, title, description } = data.blog;
+  const { content, title, date, description } = data.blog;
 
   return (
     <Layout>
       <SEO title={title} description={description} />
       <section className='blog-template'>
         <Title title={title} />
+        <p style={{ textAlign: 'center' }}>{date}</p>
         <div className='section-center'>
           <article className='blog-content'>
             <ReactMarkdown source={content} />
@@ -30,6 +31,7 @@ export const query = graphql`
   query GetSingleBlog($slug: String) {
     blog: strapiBlogs(slug: { eq: $slug }) {
       title
+      date
       description
       content
     }

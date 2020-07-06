@@ -13,7 +13,7 @@ export default ({ data }) => {
     <Layout>
       <SEO title='Home' description='Homepage' />
       <Hero />
-      <Projects projects={projects} title='featured projects' showLink />
+      <Projects projects={projects} showLink />
     </Layout>
   )
 };

@@ -1,52 +1,48 @@
 import React from 'react';
 import {
-  FaFacebookSquare,
-  FaLinkedin,
-  FaDribbbleSquare,
-  FaBehanceSquare,
-  FaTwitterSquare,
-} from 'react-icons/fa';
+  FiGithub,
+  FiLinkedin,
+  FiInstagram,
+  // FiMail,
+  FiTwitter,
+} from 'react-icons/fi';
 
 const data = [
   {
     id: 1,
-    icon: <FaFacebookSquare className='social-icon' />,
-    url: 'https://www.twitter.com',
+    icon: <FiGithub className='social-icon' />,
+    url: 'https://github.com/MinHuang-TW',
   },
   {
     id: 2,
-    icon: <FaLinkedin className='social-icon' />,
+    icon: <FiLinkedin className='social-icon' />,
     url: 'https://www.twitter.com',
   },
   {
     id: 3,
-    icon: <FaDribbbleSquare className='social-icon' />,
-    url: 'https://www.twitter.com',
+    icon: <FiInstagram className='social-icon' />,
+    url: 'https://www.instagram.com/tuetme/',
   },
   {
     id: 4,
-    icon: <FaBehanceSquare className='social-icon' />,
-    url: 'https://www.twitter.com',
-  },
-  {
-    id: 5,
-    icon: <FaTwitterSquare className='social-icon' />,
-    url: 'https://www.twitter.com',
+    icon: <FiTwitter className='social-icon' />,
+    url: 'https://twitter.com/MinHuang_TW',
   },
 ];
 
-const links = data.map(link => {
-  return (
-    <li key={link.id}>
-      <a href={link.url} className='social-link'>
-        {link.icon}
-      </a>
-    </li>
-  )
-});
-
-export default ({ styleClass }) => {
-  return (
-    <ul className={`social-links ${styleClass ? styleClass : ''}`}>{links}</ul>
-  )
-};
+export default ({ styleClass }) => (
+  <ul className={`social-links ${styleClass ? styleClass : ''}`}>
+    {data.map(({ id, icon, url }) => (
+      <li key={id}>
+        <a 
+          href={url} 
+          className='social-link' 
+          target='_blank' 
+          rel='noopener noreferrer'
+        >
+          {icon}
+        </a>
+      </li>
+    ))}
+  </ul>
+);
