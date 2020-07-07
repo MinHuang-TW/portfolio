@@ -30,8 +30,8 @@ const About = ({ data: { about: { nodes }} }) => {
           </article>
         </div>
       </section>
-      <Jobs />
       <Services />
+      <Jobs />
     </Layout>
   )
 };

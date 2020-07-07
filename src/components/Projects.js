@@ -1,11 +1,11 @@
 import React from 'react';
-import Title from './Title';
+// import Title from './Title';
 import Project from './Project';
 import { Link } from 'gatsby';
 
 const Projects = ({ projects, title, showLink }) => (
   <section className='section projects'>
-    {title && (<Title title={title} />)}
+    {/* {title && (<Title title={title} />)} */}
     <div className='section-center projects-center'>
       {projects.map((project) => (
         <Project key={project.id} {...project} />
@@ -13,7 +13,7 @@ const Projects = ({ projects, title, showLink }) => (
     </div>
     {showLink && (
       <Link 
-        to='/project' 
+        to='/project/' 
         className='btn center-btn' 
         style={{ width: '16rem' }}
       >

@@ -11,7 +11,7 @@ const Jobs = () => {
   const { country, date, position, descriptions } = jobs[selected];
   
   return (
-    <section className='section jobs'>
+    <section className='section-small jobs'>
       <Title title='experience' />
       <div className='jobs-center'>
         <div className='btn-container'>

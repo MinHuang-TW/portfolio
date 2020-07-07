@@ -12,7 +12,7 @@ const Hero = () => {
       <div className='section-center hero-center' style={{ width: '90vw' }}>
         <article className='hero-info'>
           <div>
-            <h1>Hello!</h1>
+            <h1 style={{ marginBottom: 24 }}>Hello!</h1>
             {/* <div className='underline' /> */}
             <p>My name is Min Huang. I have a passionate interest in programming. My capability of concept realization is strengthened by the education of user experience design and the years’ professional experience of user research and design.</p>
             {/* <Link to='/contact' className='btn'>contact me</Link>

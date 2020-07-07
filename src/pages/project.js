@@ -4,7 +4,7 @@ import Projects from '../components/Projects';
 import SEO from '../components/SEO';
 import { graphql } from 'gatsby';
 
-const ProjectsPage = ({ data: { allStrapiProjects: { nodes: projects }} }) => (
+const ProjectsPage = ({ data: { allStrapiProjects: { nodes: projects }}}) => (
   <Layout>
     <SEO title='Projects' description='all projects' />
     <section className='projects-page'>
@@ -12,8 +12,6 @@ const ProjectsPage = ({ data: { allStrapiProjects: { nodes: projects }} }) => (
     </section>
   </Layout>
 );
-
-export default ProjectsPage;
 
 export const query = graphql`
   {
@@ -45,3 +43,5 @@ export const query = graphql`
     }
   }
 `
+
+export default ProjectsPage;
