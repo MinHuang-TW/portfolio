@@ -6,9 +6,9 @@ import Projects from '../components/Projects';
 import SEO from '../components/SEO';
 
 export default ({ data }) => {
-  const { 
-    allStrapiProjects: { nodes: projects },
-  } = data;
+  const { allStrapiProjects: { nodes: projects }} = data;
+  const filters = ['all', 'research', 'design', 'development'];
+
   return (
     <Layout>
       <SEO title='Home' description='Homepage' />
@@ -38,6 +38,10 @@ export const query = graphql`
         stack {
           id
           language
+        }
+        categories {
+          id
+          category
         }
       }
     }

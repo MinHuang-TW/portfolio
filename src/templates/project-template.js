@@ -12,9 +12,9 @@ const ComponentName = ({ data }) => {
     <Layout>
       <SEO title={title} description={description} />
       <header className='project-head'>
-        {categories
-          .filter(({ category }) => category !== 'all')
-          .map(({ id, category }) => (<p key={id}>{category}</p>))}
+        {categories.map(({ id, category }) => (
+          <p key={id} className='project-category'>[{category}]</p>
+        ))}
         <Title title={title} />
       </header>
 

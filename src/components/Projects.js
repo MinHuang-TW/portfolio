@@ -12,11 +12,7 @@ const Projects = ({ projects, title, showLink }) => (
       ))}
     </div>
     {showLink && (
-      <Link 
-        to='/project/' 
-        className='btn center-btn' 
-        style={{ width: '16rem' }}
-      >
+      <Link to='/project/' className='btn center-btn' style={{ width: '16rem' }}>
         view all projects
       </Link>
     )}

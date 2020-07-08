@@ -39,6 +39,10 @@ export const query = graphql`
           id
           language
         }
+        categories {
+          id
+          category
+        }
       }
     }
   }

@@ -13,7 +13,7 @@ const ComponentName = ({ data }) => {
       <SEO title={title} description={description} />
       <header className='project-head'>
         <Title title={title} />
-        <p style={{ textAlign: 'center' }}>{date}</p>
+        <p className='blog-subtitle'>{date}</p>
       </header>
       
       <section className='blog-template'>
