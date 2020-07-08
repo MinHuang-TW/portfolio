@@ -6,13 +6,19 @@ import SEO from '../components/SEO';
 import ReactMarkdown from 'react-markdown';
 
 const ComponentName = ({ data }) => {
-  const { content, title, description, github, url, stack, roles } = data.project;
+  const { content, title, description, github, url, stack, roles, categories } = data.project;
 
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <section className='project-template'>
+      <header className='project-head'>
+        {categories
+          .filter(({ category }) => category !== 'all')
+          .map(({ id, category }) => (<p key={id}>{category}</p>))}
         <Title title={title} />
+      </header>
+
+      <section className='project-template'>
         <div className='section-center'>
           <div className='project-overview'>
             <div>
@@ -75,6 +81,10 @@ export const query = graphql`
       stack {
         id
         language
+      }
+      categories {
+        id
+        category
       }
     }
   }

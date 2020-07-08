@@ -11,9 +11,12 @@ const ComponentName = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <section className='blog-template'>
+      <header className='project-head'>
         <Title title={title} />
         <p style={{ textAlign: 'center' }}>{date}</p>
+      </header>
+      
+      <section className='blog-template'>
         <div className='section-center'>
           <article className='blog-content'>
             <ReactMarkdown source={content} />

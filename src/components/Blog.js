@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import Image from 'gatsby-image';
+import Image from 'gatsby-image';
 import { Link } from 'gatsby';
 
 const Blog = ({ id, title, description, image, date, category, slug }) => (
   <Link key={id} className='blog' to={`/blog/${slug}`}>
-    {/* {image && (
+    {image && (
       <Image fluid={image.childImageSharp.fluid} className='blog-img' />
-    )} */}
+    )}
     <div className='blog-card'>
-      <h4 style={{ fontSize: 24 }}>{title}</h4>
+      <h4>{title}</h4>
       <p>{description}</p>
       <div className='blog-footer'>
-        <p>{category}</p>
-        <p>{date}</p>
+        <p className='blog-date'>{date}</p>
+        <p className='blog-category'>{category}</p>
       </div>
     </div>
   </Link>

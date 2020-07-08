@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Title from './Title';
-import { FaAngleDoubleRight } from 'react-icons/fa';
+import { AiOutlineRight } from 'react-icons/ai';
 import { graphql, useStaticQuery } from 'gatsby';
-// import { Link } from 'gatsby';
 
 const Jobs = () => {
   const data = useStaticQuery(query);
@@ -32,20 +31,15 @@ const Jobs = () => {
           <p>{country}</p>
           {descriptions.map(({ id, list }) => (
             <div key={id} className='job-desc'>
-              <FaAngleDoubleRight className='job-icon' />
+              <AiOutlineRight className='job-icon' />
               <p>{list}</p>
             </div>
           ))}
         </article>
       </div>
-      {/* <Link to='/about' className='btn center-btn'>
-        more info
-      </Link> */}
     </section>
   )
 };
-
-export default Jobs;
 
 const query = graphql`
   {
@@ -64,3 +58,5 @@ const query = graphql`
     }
   }
 `
+
+export default Jobs;
