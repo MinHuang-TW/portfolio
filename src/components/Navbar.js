@@ -9,9 +9,12 @@ const Navbar = ({ toggleSidebar }) => {
     <nav className='navbar'>
       <div className='nav-center'>
         <div className='nav-header'>
-          <Link to='/'>
-            <img src={logo} alt='logo' />
-          </Link>
+          <div className='nav-logo'>
+            <Link to='/'>
+              <img src={logo} alt='logo' />
+            </Link>
+            <h3>MIN HUANG</h3>
+          </div>
 
           <button type='button' className='toggle-btn' onClick={toggleSidebar}>
             <MdMenu />

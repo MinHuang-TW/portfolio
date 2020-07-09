@@ -27,7 +27,6 @@ const Hero = () => {
 
 export default Hero;
 
-
 // const query = graphql`
 //   {
 //     file(relativePath: { eq: "hero-img.png" }) {

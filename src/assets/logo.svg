@@ -9,7 +9,7 @@
 	.st3{display:inline;}
 	.st4{display:inline;fill:#FFFFFF;}
 	.st5{display:inline;opacity:0.5;fill:#FFFFFF;enable-background:new    ;}
-	.st6{opacity:0.3;fill:#121212;enable-background:new    ;}
+	.st6{opacity:0.5;fill:#121212;enable-background:new    ;}
 	.st7{fill:#121212;}
 </style>
 <g id="Layer_1_1_">
@@ -29,10 +29,8 @@
 	<rect x="322.9" y="221.1" class="st5" width="60" height="457.4"/>
 	<path class="st4" d="M62.4,678.8l320.4-457.6h-73.2L32.2,617.4C40.7,638.7,50.8,659.2,62.4,678.8z"/>
 </g>
-<g id="Layer_2_copy_2">
-	<rect x="634.9" y="222.5" class="st6" width="80" height="455"/>
-	<polygon class="st7" points="396.6,677 714.9,222.5 617.2,222.5 299,677 	"/>
-	<rect x="298.9" y="222" class="st6" width="80" height="455"/>
-	<path class="st7" d="M61,676.4l317.8-453.9h-97.7L22.7,591.6C32.6,621.4,45.5,649.8,61,676.4z"/>
-</g>
+<rect x="634.9" y="222.5" class="st6" width="80" height="455"/>
+<polygon class="st7" points="396.6,677 714.9,222.5 617.2,222.5 299,677 "/>
+<rect x="298.9" y="222" class="st6" width="80" height="455"/>
+<path class="st7" d="M61,676.4l317.8-453.9h-97.7L22.7,591.6C32.6,621.4,45.5,649.8,61,676.4z"/>
 </svg>

@@ -15,7 +15,7 @@ const Project = ({ description, title, slug, stack, image, categories }) => (
               [{category}]
             </p>
           ))}
-          <h3 style={{ fontSize: 40 }}>{title}</h3>
+          <h3>{title}</h3>
           <p className='project-desc'>{description}</p>
         </div>
         <div className='project-stack'>
