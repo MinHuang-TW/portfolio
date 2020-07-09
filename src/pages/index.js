@@ -7,7 +7,6 @@ import SEO from '../components/SEO';
 
 export default ({ data }) => {
   const { allStrapiProjects: { nodes: projects }} = data;
-  const filters = ['all', 'research', 'design', 'development'];
 
   return (
     <Layout>

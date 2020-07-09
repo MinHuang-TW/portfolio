@@ -1,15 +1,54 @@
 import React from 'react';
 import SocialLinks from '../constants/socialLinks';
+import { Link } from 'gatsby';
+
+const data = [
+  { id: 1, text: 'home', url: '/' },
+  { id: 2, text: 'project', url: '/project/' },
+  { id: 3, text: 'blog', url: '/blog/' },
+  { id: 4, text: 'about', url: '/about/' },
+];
 
 const Footer = () => (
   <footer className='footer'>
-    {/* <div> */}
-      <h4>
-        copyright {new Date().getFullYear()} &copy; Min Huang. All rights reserved.
-      </h4>
-      <SocialLinks styleClass='footer-links' />
-    {/* </div> */}
+    <div className='footer-container'>
+      <div className='footer-link-block'>
+        <h3 className='footer-subtitle'>Go to</h3>
+        <ul className={`page-links footer-links`}>
+          {data.map(({ id, text, url }) => (
+            <li key={id}>
+              <Link to={url} activeClassName='footer-link-selected'>
+                {text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className='footer-media-block'>
+        <h3 className='footer-subtitle'>Find out More</h3>
+        <SocialLinks />
+        <p style={{ marginBottom: 0 }}>Connect and Get in touch</p>
+      </div>
+
+      <div className='footer-form-block'>
+        <h3 className='footer-subtitle'>Leave Me a Message</h3>
+        <form action='https://formspree.io/mzbjjrrd' method='POST'>
+          <div className='footer-form'>
+            <textarea name='message' placeholder='message' rows='5' />
+            <div>
+              <input type='email' name='email' placeholder='your email' />
+              <button type='submit' className='btn footer-btn'>submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <h4>
+      &copy; {new Date().getFullYear()} MIN HUANG. All rights reserved
+    </h4>
   </footer>
-)
+);
 
 export default Footer;
