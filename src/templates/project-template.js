@@ -35,7 +35,7 @@ const ComponentName = ({ data }) => {
             </div>
             <div>
               <h3>Demo</h3>
-              <a href={url} target='_blank' rel='noopener noreferrer' aria-label='demo'>
+              <a href={url} target='_blank' rel='noopener noreferrer'>
                 Launch site
               </a>
             </div>
@@ -54,7 +54,6 @@ const ComponentName = ({ data }) => {
               href={github} 
               target='_blank' 
               rel='noopener noreferrer'
-              aria-label='view code'
             >
               view code
             </a>
