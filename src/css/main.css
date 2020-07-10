@@ -88,7 +88,7 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
-  font-weight: 500;
+  font-weight: 300;
 }
 h1 {
   font-size: 3rem;
@@ -133,7 +133,7 @@ p {
 .btn {
   font-family: var(--ff-primary);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.875rem;
   letter-spacing: var(--spacing);
   display: inline-block;
@@ -277,7 +277,7 @@ Navbar
   font-family: var(--ff-primary);
   letter-spacing: var(--spacing);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 18px;
 }
 .nav-links {
@@ -297,7 +297,7 @@ Navbar
   .nav-links a {
     text-transform: capitalize;
     color: var(--clr-grey-1);
-    font-weight: 600;
+    font-weight: 300;
     letter-spacing: var(--spacing);
     -webkit-transition: color 0.3s linear;
     transition: color 0.3s linear;
@@ -359,7 +359,7 @@ Sidebar
   -webkit-transition: var(--transition);
   transition: var(--transition);
   border-radius: var(--radius);
-  font-weight: 500;
+  font-weight: 300;
 }
 .sidebar-links li:last-of-type a {
   margin-bottom: 0px;
@@ -446,6 +446,46 @@ Sidebar Animation
   }
 }
 
+/*
+=============== 
+Filter
+===============
+*/
+.filter-container {
+  text-align: center; 
+  display: flex; 
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filter {
+  padding: 0.6rem 2rem;
+  border: none;
+  background: transparent;
+  color: var(--clr-grey-3); 
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  font-family: var(--ff-secondary);
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.active,
+.filter:hover {
+  color: var(--clr-primary-5);
+}
+.active::before,
+.filter:hover::before {
+  content: '[';
+  position: absolute;
+  transform: translateX(-100%);
+}
+.active::after,
+.filter:hover::after {
+  content: ']';
+  position: absolute;
+}
 /*
 =============== 
 Hero
@@ -586,7 +626,7 @@ Jobs
   border-color: transparent;
   text-transform: uppercase;
   text-align: left;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 1.25rem;
   color: var(--clr-grey-3);
   font-family: var(--ff-primary);
@@ -599,10 +639,7 @@ Jobs
   padding: 0.25rem 0;
   padding-left: 16px;
 }
-.job-btn:hover {
-  color: var(--clr-primary-5);
-  box-shadow: 0 2px var(--clr-primary-5);
-}
+.job-btn:hover,
 .active-btn {
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
@@ -746,6 +783,14 @@ Projects
 .about-stack span {
   margin-top: 0.5rem;
 }
+.projects-btn {
+  width: 16rem;
+}
+@media screen and (max-width: 600px) {
+  .projects-btn {
+    width: 90vw;
+  }
+}
 @media screen and (min-width: 576px) {
   .project-img {
     height: 19rem;
@@ -856,11 +901,9 @@ Footer
 .footer {
   background: var(--clr-black);
   text-align: center;
-  padding: 5rem 5vw 2.5rem;
+  padding: 5rem 0 2.5rem;
 }
 .footer-container {
-  position: relative;
-  width: 100%;
   margin-bottom: 5rem;
   display: flex;
   justify-content: space-between;
@@ -871,6 +914,7 @@ Footer
 .footer-links {
   text-align: left;
   height: 85%;
+  max-height: 185px;
   text-transform: uppercase; 
   color: var(--clr-grey-3);
   display: flex;
@@ -878,7 +922,7 @@ Footer
   justify-content: space-between;
 }
 .footer-links li a {
-  font-weight: 500;
+  font-weight: 300;
   padding: 0 16px;
   -webkit-transition: var(--transition);
   transition: var(--transition);
@@ -901,11 +945,17 @@ Footer
   width: 100%;
   display: block;
   padding: 0.75rem 1rem;
-  border: none;
+  border: 1px solid var(--clr-grey-7);
+  color: var(--clr-grey-1);
+  background: transparent;
   text-transform: uppercase;
   letter-spacing: var(--spacing);
-  color: var(--clr-grey-1);
-  background: var(--clr-bg);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.footer-form textarea:focus,
+.footer-form input:focus {
+  border-color: var(--clr-grey-1);
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
@@ -1202,6 +1252,23 @@ Blog Template
 }
 #disqus_thread {
   color: var(--clr-primary-5) !important;
+  opacity: 0.87;
+}
+/*
+===============
+Project
+===============
+*/
+.project-title {
+  margin: 10rem auto 2.5rem; 
+}
+.project-title > h2 {
+  margin: 0px;
+}
+@media (max-width: 600px) {
+  .project-title {
+    margin-top: 7.5rem; 
+  }
 }
 /*
 ===============

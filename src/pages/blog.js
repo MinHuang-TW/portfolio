@@ -1,7 +1,5 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import Blogs from '../components/Blogs';
-import SEO from '../components/SEO';
+import { SEO, Layout, Blogs } from '../components';
 import { graphql } from 'gatsby';
 
 const Blog = ({ data: { allStrapiBlogs: { nodes: blogs }}}) => (

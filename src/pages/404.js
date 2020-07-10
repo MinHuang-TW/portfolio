@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import { SEO, Layout} from '../components';
 
 const Error = () => (
   <Layout>

@@ -1,10 +1,6 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import Title from '../components/Title';
-import Services from '../components/Services';
-import Jobs from '../components/Jobs';
+import { SEO, Layout, Title, Services, Jobs } from '../components';
 import Image from 'gatsby-image';
-import SEO from '../components/SEO';
 import { graphql } from 'gatsby';
 
 const About = ({ data: { about: { nodes }} }) => {

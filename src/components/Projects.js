@@ -1,18 +1,22 @@
 import React from 'react';
-// import Title from './Title';
 import Project from './Project';
 import { Link } from 'gatsby';
 
-const Projects = ({ projects, title, showLink }) => (
-  <section className='section projects'>
-    {/* {title && (<Title title={title} />)} */}
-    <div className='section-center projects-center'>
+const Projects = ({ projects, showLink, gutterTop }) => (
+  <section 
+    className='section projects' 
+    style={{ paddingTop: gutterTop ? '' : '2.5rem' }}
+  >
+    <div className='section-center'>
       {projects.map((project) => (
         <Project key={project.id} {...project} />
       ))}
     </div>
     {showLink && (
-      <Link to='/project/' className='btn center-btn' style={{ width: '16rem' }}>
+      <Link 
+        to='/project/' 
+        className='btn center-btn projects-btn' 
+      >
         view all projects
       </Link>
     )}

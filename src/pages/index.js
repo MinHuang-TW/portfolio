@@ -1,9 +1,6 @@
 import React from 'react';
+import { SEO, Layout, Hero, Projects } from '../components';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Hero from '../components/Hero';
-import Projects from '../components/Projects';
-import SEO from '../components/SEO';
 
 export default ({ data }) => {
   const { allStrapiProjects: { nodes: projects }} = data;
@@ -12,7 +9,7 @@ export default ({ data }) => {
     <Layout>
       <SEO title='Home' description='Homepage' />
       <Hero />
-      <Projects projects={projects} showLink />
+      <Projects projects={projects} showLink gutterTop />
     </Layout>
   )
 };

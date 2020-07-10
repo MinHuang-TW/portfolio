@@ -40,7 +40,7 @@ module.exports = {
         fonts: [
           {
             family: `Source Sans Pro`,
-            variants: [`300`, `500`],
+            variants: [`300`, `400`],
           },
           {
             family: `DM Mono`,
