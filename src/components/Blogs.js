@@ -1,6 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Blog } from '../components';
 import { graphql, useStaticQuery, Link } from 'gatsby';
+import { RiSearchLine } from 'react-icons/ri';
 
 export const Blogs = ({ blogs, total }) => {
   const { 
@@ -17,26 +18,43 @@ export const Blogs = ({ blogs, total }) => {
     { category: 'life', count: life }
   ];
 
-  const [selected, setSelected] = useState(categories[0].category);
-  const handleSelected = useCallback((category) => (event) => {
-    setSelected(category);
-  }, [setSelected]);
+  const [state, setState] = useState({
+    filteredPosts: blogs,
+    query: '',
+  });
+
+  const handleSelected = (selected) => (event) => {
+    const filteredPosts = blogs.filter(({ category }) => (
+      selected === 'all' ? category : category === selected
+    ));
+    setState({ query: '', filteredPosts })
+  };
+
+  const handleInputChange = (event) => {
+    const query = event.target.value;
+    const filteredPosts = blogs.filter(({ title, description, content }) => (
+      title.toLowerCase().includes(query.toLowerCase()) ||
+      description.toLowerCase().includes(query.toLowerCase()) ||
+      content.toLowerCase().includes(query.toLowerCase())
+    ));
+    setState({ query, filteredPosts });
+  };
 
   return (
     <section className='section'>
-      {/* <Title title={title} /> */}
       <div className='section-center blogs-center'>
         <div className='blogs-menu'>
           <div>
-            <h4>Search Articles</h4>
-            <div style={{ display: 'flex' }}>
+            <h4>Search Posts</h4>
+            <div className='search-input'>
               <input 
                 type='text' 
                 name='query' 
-                placeholder='enter text...' 
-                onChange={handleSelected}
+                aria-label='Search'
+                placeholder='Search...' 
+                onChange={handleInputChange}
               />
-              <button className='btn footer-btn'>Search</button>
+              <RiSearchLine size='1.25rem' />
             </div>
           </div>
 
@@ -45,7 +63,10 @@ export const Blogs = ({ blogs, total }) => {
             <div className='category-list'>
               {categories.map(({ category, count }) => (
                 <div key={category} style={{ display: 'flex', alignItems: 'center' }}>
-                  <div className='category-name'onClick={handleSelected(category)}>
+                  <div 
+                    className='category-name'
+                    onClick={handleSelected(category)}
+                  >
                     {category}
                   </div>
                   <span className='category-count'>{`(${count})`}</span>
@@ -54,13 +75,13 @@ export const Blogs = ({ blogs, total }) => {
             </div>
           </div>
 
-          <div>
+          <div className='recent-block'>
             <h4>Recent Posts</h4>
-            <div className='category-list'>
+            <div className='recent-list'>
               {recent.map(({ id, slug, title, category }) => (
                 <Link key={id} to={`/blog/${slug}`}>
                   <div className='recent-post'>
-                    <span className='blog-category' style={{ marginBottom: 0, marginRight: 16 }}>{category}</span>
+                    <span className='blog-category'>{category}</span>
                     <h5>{title}</h5>
                   </div>
                 </Link>
@@ -69,11 +90,13 @@ export const Blogs = ({ blogs, total }) => {
           </div>
         </div>
 
-        {blogs
-          .filter(({ category }) => (
-            selected === 'all' ? category : category === selected
-          ))
-          .map((blog) => (<Blog key={blog.id} {...blog} />))}
+        {state.filteredPosts.length > 0
+          ? state.filteredPosts.map((post) => (<Blog key={post.id} {...post} />)
+        ) : (
+          <div className='notFound'>
+            <h1>No matching posts</h1>
+          </div>
+        )}
       </div>
     </section>
   )
