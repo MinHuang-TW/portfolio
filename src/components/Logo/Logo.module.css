@@ -1,0 +1,33 @@
+/* .st0 {
+  fill: #ffffff;
+} */
+.st1 {
+  display: none;
+}
+.st2 {
+  display: inline;
+  opacity: 0.4;
+  /* fill: #ffffff; */
+  enable-background: new;
+}
+.st3 {
+  display: inline;
+}
+.st4 {
+  display: inline;
+  /* fill: #ffffff; */
+}
+.st5 {
+  display: inline;
+  opacity: 0.5;
+  /* fill: #ffffff; */
+  enable-background: new;
+}
+.st6 {
+  opacity: 0.35;
+  fill: #121212;
+  enable-background: new;
+}
+.st7 {
+  fill: #121212;
+}

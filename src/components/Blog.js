@@ -14,7 +14,7 @@ const Blog = ({ id, title, description, image, date, category, slug }) => (
         <p className='blog-category'>{category}</p>
       </div>
       <h4>{title}</h4>
-      {/* <p style={{ marginBottom: 0 }}>{description}</p> */}
+      <p style={{ marginBottom: 0 }}>{description}</p>
     </div>
   </Link>
 );

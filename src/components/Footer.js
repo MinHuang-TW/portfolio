@@ -1,6 +1,7 @@
 import React from 'react';
 import SocialLinks from '../constants/socialLinks';
 import { Link } from 'gatsby';
+import { FiMail } from 'react-icons/fi';
 
 const data = [
   { id: 1, text: 'home', url: '/' },
@@ -29,7 +30,10 @@ const Footer = () => (
         <div className='footer-media-block'>
           <h3 className='footer-subtitle'>Find out More</h3>
           <SocialLinks />
-          <p style={{ marginBottom: 0 }}>Connect and Get in touch</p>
+          <div className='mail-block'>
+            <FiMail className='service-icon' />
+            <h3>h.min719@gmail.com</h3>
+          </div>
         </div>
   
         <div className='footer-form-block'>

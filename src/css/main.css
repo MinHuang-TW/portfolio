@@ -284,15 +284,13 @@ Navbar
   font-size: 18px;
   margin-left: 16px;
 }
-.nav-header img {
-  height: 36px;
-}
 .nav-header a {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 .nav-header a:hover {
   transform: rotateY(180deg);
+  transform-style: preserve-3d;
   opacity: 0.38;
 }
 .toggle-btn {
@@ -604,8 +602,10 @@ Services
   box-shadow: var(--light-shadow);
 }
 .service-icon {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  stroke-width: 1.2;
   margin-bottom: 1.5rem;
+  color: var(--clr-grey-3);
 }
 .service .underline {
   width: 3rem;
@@ -618,9 +618,6 @@ Services
 }
 .service p {
   font-size: 16px;
-}
-.service svg {
-  stroke-width: 1.2;
 }
 @media screen and (min-width: 676px) {
   .services-center {
@@ -1050,6 +1047,10 @@ Footer
   display: flex;
   justify-content: space-between;
 }
+.footer h4 {
+  color: var(--clr-grey-7);
+  font-size: 12px;
+}
 .footer-form-block {
   width: 50%;
 }
@@ -1074,10 +1075,20 @@ Footer
   color: var(--clr-primary-5) !important;
   box-shadow: -2px 0px var(--clr-primary-5);
 }
-.footer-media-block p {
-  font-size: 14px;
-  margin-top: 8px;
-  color: var(--clr-grey-7);
+.mail-block {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+.mail-block h3,
+.mail-block svg {
+  margin: 0px;
+}
+.mail-block h3 {
+  color: var(--clr-grey-3);
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-left: 8px;
 }
 .footer-form-block {
   max-width: 600px;
@@ -1098,10 +1109,6 @@ Footer
   color: var(--clr-grey-1);
   text-transform: none;
   margin-bottom: 16px;
-}
-.footer h4 {
-  color: var(--clr-grey-7);
-  font-size: 12px;
 }
 .footer .social-link {
   color: var(--clr-white);
