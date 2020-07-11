@@ -2,18 +2,24 @@ import React from 'react';
 import { SEO, Layout, Blogs } from '../components';
 import { graphql } from 'gatsby';
 
-const Blog = ({ data: { allStrapiBlogs: { nodes: blogs }}}) => (
+const Blog = ({ 
+  data: { 
+    allStrapiBlogs: { nodes: blogs },
+    allStrapiBlogs: { totalCount },
+  }
+}) => (
   <Layout>
     <SEO title='Blog' description='my thoughts' />
     <section className='blog-page'>
-      <Blogs blogs={blogs} title='blog' />
+      <Blogs blogs={blogs} total={totalCount} title='blog' />
     </section>
   </Layout>
 );
 
 export const query = graphql`
   {
-    allStrapiBlogs {
+    allStrapiBlogs (sort: {fields: date, order: DESC}) {
+      totalCount,
       nodes {
         id
         slug

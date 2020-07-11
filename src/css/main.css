@@ -38,6 +38,7 @@ Variables
   --ff-primary: 'Source Sans Pro', sans-serif;
   --ff-secondary: 'DM Mono', monospace;
   --transition: all 0.3s linear;
+  --transition-color: color 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -82,7 +83,8 @@ a {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
@@ -153,6 +155,38 @@ p {
   text-align: center;
   margin: 0 auto;
   margin-top: 3rem;
+}
+textarea,
+input {
+  width: 100%;
+  display: block;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--clr-grey-7);
+  color: var(--clr-grey-1);
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+textarea:focus,
+input:focus {
+  border-color: var(--clr-grey-1);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0px 1000px var(--clr-bg) inset;
+  box-shadow: 0 0 0px 1000px var(--clr-bg) inset;
+  -webkit-text-fill-color: var(--clr-grey-1) !important;
+}
+textarea::placeholder,
+input::placeholder {
+  font-family: var(--ff-primary);
+  color: var(--clr-grey-7);
+  letter-spacing: var(--spacing);
+  text-transform: uppercase;
 }
 /* section */
 .section {
@@ -299,8 +333,8 @@ Navbar
     color: var(--clr-grey-1);
     font-weight: 300;
     letter-spacing: var(--spacing);
-    -webkit-transition: color 0.3s linear;
-    transition: color 0.3s linear;
+    -webkit-transition: var(--transition-color);
+    transition: var(--transition-color);
     padding: 0.5rem 0;
   }
   .nav-selected,
@@ -779,6 +813,7 @@ Projects
   text-transform: uppercase;
   letter-spacing: 1.2px;
   font-size: 12px;
+  font-family: var(--ff-secondary);
 }
 .about-stack span {
   margin-top: 0.5rem;
@@ -845,6 +880,61 @@ Blog
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
+.category-name {
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 0px 1rem;
+  margin: 8px 0px;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-3);
+  -webkit-transition: var(--transition-color);
+  transition: var(--transition-color);
+}
+.category-name:hover {
+  color: var(--clr-primary-5) !important;
+  box-shadow: -2px 0px var(--clr-primary-5);
+}
+.category-name:hover {
+  color: var(--clr-primary-5);
+}
+.category-count {
+  color: var(--clr-grey-7);
+  font-size: 14px;
+}
+.category-list h5 {
+  padding: 0.5rem 0;
+  margin: 0px;
+  font-size: 18px;
+  color: var(--clr-grey-3);
+  -webkit-transition: var(--transition-color);
+  transition: var(--transition-color);
+}
+.recent-post {
+  display: flex;
+  align-items: center;
+}
+.recent-post span,
+.recent-post h5 {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.recent-post:hover span {
+  color: var(--clr-primary-5);
+  border-color: var(--clr-primary-5);
+  background: hsla(184, 91%, 17%, 0.6);
+}
+.recent-post:hover h5 {
+  color: var(--clr-primary-5);
+}
+.blogs-menu > div {
+  margin-bottom: 2.5rem;
+  background: var(--clr-grey-9);
+  padding: 1.5rem;
+}
+.blogs-menu h4 {
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+}
 .blog article {
   height: 100%;
   display: grid;
@@ -863,25 +953,51 @@ Blog
 }
 .blog-card h4 {
   color: var(--clr-grey-1);
-  font-size: 24px;
+  font-size: 20px;
+  margin-top: 12px;
 }
-.blog-footer {
+.blog-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.blog-footer p {
+.blog-head p {
   margin-bottom: 0;
+  margin-right: 0px;
 }
 .blog-date {
   color: var(--clr-grey-7);
   font-size: 14px;
+}
+@media screen and (max-width: 850px) {
+  .category-list {
+    display: flex;
+    justify-content: space-around;
+  }
+  .category-name {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+  }
+  .category-name:hover {
+    color: var(--clr-primary-5) !important;
+    box-shadow: 0px 2px var(--clr-primary-5);
+  }
+  .blogs-menu > div {
+    margin-bottom: 1.5rem;
+  }
 }
 @media screen and (min-width: 576px) {
   .blogs-center {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
     column-gap: 2rem;
+    /* grid-column: 1 / 3; */
+  }
+  .blogs-menu {
+    grid-row: 1 / span 100;
+    /* grid-column: 3 / 4;
+    grid-row: 1 / span 100; */
   }
   .blog-img {
     height: 17.5rem;
@@ -924,8 +1040,8 @@ Footer
 .footer-links li a {
   font-weight: 300;
   padding: 0 16px;
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
+  -webkit-transition: var(--transition-color);
+  transition: var(--transition-color);
 }
 .footer-link-selected,
 .footer-links a:hover {
@@ -939,38 +1055,6 @@ Footer
 }
 .footer-form-block {
   max-width: 600px;
-}
-.footer-form textarea,
-.footer-form input {
-  width: 100%;
-  display: block;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--clr-grey-7);
-  color: var(--clr-grey-1);
-  background: transparent;
-  text-transform: uppercase;
-  letter-spacing: var(--spacing);
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
-}
-.footer-form textarea:focus,
-.footer-form input:focus {
-  border-color: var(--clr-grey-1);
-}
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-  -webkit-box-shadow: 0 0 0px 1000px var(--clr-bg) inset;
-  box-shadow: 0 0 0px 1000px var(--clr-bg) inset;
-  -webkit-text-fill-color: var(--clr-grey-1) !important;
-}
-.footer-form textarea::placeholder,
-.footer-form input::placeholder {
-  font-family: var(--ff-primary);
-  color: var(--clr-grey-7);
-  letter-spacing: var(--spacing);
-  text-transform: uppercase;
 }
 .footer-form div {
   display: flex;
