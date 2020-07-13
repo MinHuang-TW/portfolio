@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+require('dotenv').config({ path: `.env` });
 
 module.exports = {
   siteMetadata: {
@@ -14,6 +15,7 @@ module.exports = {
     siteUrl: "https://minhuang.netlify.app",
   },
   plugins: [
+    `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,

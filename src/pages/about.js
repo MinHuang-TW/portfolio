@@ -1,5 +1,5 @@
 import React from 'react';
-import { SEO, Layout, Title, Services, Jobs } from '../components';
+import { SEO, Layout, Title, Services, Jobs, Map } from '../components';
 import Image from 'gatsby-image';
 import { graphql } from 'gatsby';
 
@@ -28,6 +28,7 @@ const About = ({ data: { about: { nodes }} }) => {
       </section>
       <Services />
       <Jobs />
+      <Map />
     </Layout>
   )
 };

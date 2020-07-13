@@ -1,0 +1,467 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    142.8634737,
+                    43.2203266
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Hokkaido",
+                "name": "Hokkaido"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    135.5022535,
+                    34.6937249
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Osaka",
+                "name": "Osaka"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    135.7681489,
+                    35.011564
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Kyoto",
+                "name": "Kyoto"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    135.1956311,
+                    34.6900806
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Kobe",
+                "name": "Kobe"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    138.3190276,
+                    35.0929397
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Shizuoka",
+                "name": "Shizuoka"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    116.4073963,
+                    39.90419989999999
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Beijing",
+                "name": "Beijing"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    114.1693611,
+                    22.3193039
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Hong Kong",
+                "name": "Hong Kong"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    121.4901443,
+                    22.6620886
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Green Island",
+                "name": "Green Island"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    115.0919509,
+                    -8.3405389
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Bali",
+                "name": "Bali"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    104.0529207,
+                    1.1300779
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Batam",
+                "name": "Batam"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    103.819836,
+                    1.352083
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Singapore",
+                "name": "Singapore"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    103.7413591,
+                    1.492659
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Johor Bahru",
+                "name": "Johor Bahru"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    105.8341598,
+                    21.0277644
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Hanoi",
+                "name": "Hanoi"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    100.5017651,
+                    13.7563309
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Bangkok",
+                "name": "Bangkok"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    98.9853008,
+                    18.7883439
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Chiang Mai",
+                "name": "Chiang Mai"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    14.4378005,
+                    50.07553809999999
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Prague",
+                "name": "Prague"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    14.3174657,
+                    48.8127354
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Český Krumlov",
+                "name": "Český Krumlov"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -0.1277583,
+                    51.5073509
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "LondonUK",
+                "name": "LondonUK"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -81.2452768,
+                    42.9849233
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "London",
+                "name": "London"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -79.3831843,
+                    43.653226
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Toronto",
+                "name": "Toronto"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    4.8945398,
+                    52.3666969
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Amsterdam",
+                "name": "Amsterdam"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    4.4777326,
+                    51.92442010000001
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Rotterdam",
+                "name": "Rotterdam"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    9.1829321,
+                    48.77584589999999
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Stuttgart",
+                "name": "Stuttgart"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    8.6821267,
+                    50.1109221
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Frankfurt",
+                "name": "Frankfurt"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    8.6724335,
+                    49.3987524
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Heidelberg",
+                "name": "Heidelberg"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    11.5819805,
+                    48.1351253
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Munich",
+                "name": "Munich"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    7.358511999999999,
+                    48.0793589
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Colmar",
+                "name": "Colmar"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    2.1734035,
+                    41.3850639
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Barcelona",
+                "name": "Barcelona"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    7.4474468,
+                    46.9479739
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Bern",
+                "name": "Bern"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    9.555373,
+                    47.166
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Liechtenstein",
+                "name": "Liechtenstein"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    121.5654177,
+                    25.0329694
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Taipei",
+                "name": "Taipei"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    120.2270277,
+                    22.9997281
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Tainan",
+                "name": "Tainan"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    151.2092955,
+                    -33.8688197
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Sydney",
+                "name": "Sydney"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

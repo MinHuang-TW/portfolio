@@ -63,12 +63,12 @@ export const Blogs = ({ blogs, total }) => {
             <div className='category-list'>
               {categories.map(({ category, count }) => (
                 <div key={category} style={{ display: 'flex', alignItems: 'center' }}>
-                  <div 
+                  <button 
                     className='category-name'
                     onClick={handleSelected(category)}
                   >
                     {category}
-                  </div>
+                  </button>
                   <span className='category-count'>{`(${count})`}</span>
                 </div>
               ))}
