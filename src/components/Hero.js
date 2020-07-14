@@ -11,10 +11,9 @@ const Hero = () => {
     <header className='hero'>
       <div className='section-center hero-center' style={{ width: '90vw' }}>
         <article className='hero-info'>
-          {/* <h1>Hello!</h1>
-          <div className='underline' /> */}
-          <h3 style={{ fontSize: '21px', lineHeight: '40px' }}>
-            I’m XXX, currently full-time in ATX. My background is in computer science, UI/UX design, and creative problem solving.
+          {/* <h1>Hello!</h1> */}
+          <h3>
+            I design and develop interfaces with a focus on user experience.
           </h3>
           {/* <Link to='/contact' className='btn'>contact me</Link>
           <SocialLinks /> */}

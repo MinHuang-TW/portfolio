@@ -7,7 +7,7 @@ const Map = () => {
   const [viewport, setViewport] = useState({
     width: '100%',
     height: '50vh',
-    latitude: 10,
+    latitude: 25,
     longitude: 30,
     zoom: 1.5,
   })
@@ -24,7 +24,7 @@ const Map = () => {
       {cities.map(({ geometry: { coordinates }}, index) => (
         <Marker key={index} longitude={coordinates[0]} latitude={coordinates[1]}>
           <img
-            width='20'
+            width='32'
             src={marker}
             alt='marker'
             style={{ transform: 'translate(-50%, -50%)' }}
