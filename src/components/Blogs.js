@@ -76,7 +76,7 @@ export const Blogs = ({ blogs, total }) => {
           </div>
 
           <div className='recent-block'>
-            <h4>Recent Posts</h4>
+            <h4>Featured Posts</h4>
             <div className='recent-list'>
               {recent.map(({ id, slug, title, category }) => (
                 <Link key={id} to={`/blog/${slug}`}>
@@ -102,14 +102,19 @@ export const Blogs = ({ blogs, total }) => {
   )
 };
 
-export const query = graphql`
+const query = graphql`
   {
-    allStrapiBlogs(sort: {fields: date, order: DESC}, limit: 3) {
+    allStrapiBlogs(
+      sort: {fields: date, order: DESC}, 
+      filter: {featured: {eq: true}},
+      limit: 8
+    ) {
       nodes {
         id
         slug
         title
         category
+        featured
       }
     },
     code: allStrapiBlogs(filter: {category: {eq: "code"}}) {

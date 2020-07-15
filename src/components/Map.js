@@ -15,7 +15,7 @@ const Map = () => {
   return (
     <ReactMap
       {...viewport}
-      mapboxApiAccessToken={process.env.GATSBY_MAPBOX_TOKEN}
+      mapboxApiAccessToken={process.env.MAPBOX_TOKEN}
       mapStyle='mapbox://styles/min-huang/ckckc7jxu0ign1jp3x1lgdoh5'
       onViewportChange={viewport => setViewport(viewport)}
       maxZoom={3}

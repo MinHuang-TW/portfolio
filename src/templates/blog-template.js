@@ -1,13 +1,21 @@
 import React from 'react';
+import { Layout, SEO, Title } from '../components';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
-import Title from '../components/Title';
-import SEO from '../components/SEO';
-import ReactMarkdown from 'react-markdown';
 import { DiscussionEmbed } from 'disqus-react';
+import ReactMarkdown from 'react-markdown';
 
-const ComponentName = ({ data }) => {
-  const { id, slug, content, title, date, description } = data.blog;
+const BlogTemplate = ({ 
+  data: { 
+    blog: {
+      id, 
+      slug, 
+      title, 
+      date, 
+      description,
+      content, 
+    },
+  }, 
+}) => {
   const disqusConfig = {
     shortname: 'minhuang',
     config: {
@@ -56,4 +64,4 @@ export const query = graphql`
   }
 `
 
-export default ComponentName;
+export default BlogTemplate;
