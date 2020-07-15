@@ -41,7 +41,6 @@ export const query = graphql`
         id
         slug
         description
-        content
         title
         github
         url

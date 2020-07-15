@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, SEO, Title } from '../components';
 import { graphql, Link } from 'gatsby';
+import Image from 'gatsby-image';
 import ReactMarkdown from 'react-markdown';
 
 const ProjectTemplate = ({ 
@@ -8,7 +9,7 @@ const ProjectTemplate = ({
     project: {
       title, 
       description, 
-      content, 
+      contents,
       time,
       github, 
       url, 
@@ -28,7 +29,7 @@ const ProjectTemplate = ({
     </header>
 
     <section className='project-template'>
-      <div className='section-center'>
+      <div className='section-center content-container'>
         <div className='project-overview'>
           <div>
             <h3>Role</h3>
@@ -50,9 +51,13 @@ const ProjectTemplate = ({
           </div>
         </div>
 
-        <article>
-          <ReactMarkdown source={content} />
-        </article>
+        {contents.map(({ id, title, content, image }) => (
+          <article key={id}>
+            <h3>{title}</h3>
+            <ReactMarkdown source={content} />
+            {image && <Image fluid={image.childImageSharp.fluid} />}
+          </article>
+        ))}
         
         <div className='project-btns'>
           <Link to='/project/' className='btn center-btn'>
@@ -68,7 +73,6 @@ const ProjectTemplate = ({
           </a>
         </div>
       </div>
-
     </section>
   </Layout>
 );
@@ -79,7 +83,18 @@ export const query = graphql`
       title
       time
       description
-      content
+      contents {
+        id
+        title
+        content
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
       github
       url
       roles {

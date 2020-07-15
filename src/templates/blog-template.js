@@ -34,7 +34,7 @@ const BlogTemplate = ({
       </header>
       
       <section className='blog-template'>
-        <div className='section-center'>
+        <div className='section-center content-container'>
           <article className='blog-content'>
             <ReactMarkdown source={content} />
           </article>

@@ -32,7 +32,7 @@ const Footer = () => (
           <SocialLinks />
           <div className='mail-block'>
             <FiMail className='service-icon' />
-            <h3>h.min719@gmail.com</h3>
+            <h4>h.min719@gmail.com</h4>
           </div>
         </div>
   
@@ -55,9 +55,9 @@ const Footer = () => (
         </div>
       </div>
   
-      <h4>
+      <h5>
         &copy; {new Date().getFullYear()} MIN HUANG. All rights reserved
-      </h4>
+      </h5>
     </div>
   </footer>
 );
