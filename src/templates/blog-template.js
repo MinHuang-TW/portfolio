@@ -17,7 +17,7 @@ const BlogTemplate = ({
   }, 
 }) => {
   const disqusConfig = {
-    shortname: 'minhuang',
+    shortname: process.env.GATSBY_DISQUS_NAME,
     config: {
       url: `https://minhuang.netlify.app/blog/${slug}`,
       identifier: id,
