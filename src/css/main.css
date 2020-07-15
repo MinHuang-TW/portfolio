@@ -47,7 +47,6 @@ Variables
 Global Styles
 ===============
 */
-
 *,
 ::after,
 ::before {
@@ -103,6 +102,17 @@ h4 {
 p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-3);
+}
+::-webkit-scrollbar {
+  width: 6px;
+} 
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px var(--clr-grey-7); 
+  box-shadow: inset 0 0 6px var(--clr-grey-7);
+} 
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px var(--clr-grey-7); 
+  box-shadow: inset 0 0 6px var(--clr-grey-7);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -200,7 +210,7 @@ input::placeholder {
 .section-center {
   width: 90vw;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: var(--max-width);
 }
 @media screen and (min-width: 992px) {
   .section-center {
@@ -261,7 +271,7 @@ Navbar
 }
 .nav-center {
   width: 90vw;
-  max-width: 1170px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 .nav-header {
@@ -870,20 +880,15 @@ Blog
   background: var(--clr-grey-10);
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: var(--transition);
+  transition: var(--transition)
 }
 .blog:hover {
   box-shadow: var(--dark-shadow);
   transform: scale(1.02);
-}
-.blog:hover .blog-card {
-  background: var(--clr-grey-8);
-}
-.blog,
-.blog-card {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
+  background: var(--clr-grey-8) !important;
 }
 .blog-img::after {
   content: "";
@@ -949,7 +954,7 @@ Blog
 .recent-list h5 {
   padding: 0.5rem 0;
   margin: 0px;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--clr-grey-3);
   -webkit-transition: var(--transition-color);
   transition: var(--transition-color);
@@ -1001,8 +1006,9 @@ Blog
 }
 .blog-card h4 {
   color: var(--clr-grey-1);
-  font-size: 20px;
-  margin-top: 12px;
+  font-size: 18px;
+  line-height: 26px;
+  margin: 8px 0px 16px;
 }
 .blog-head {
   display: flex;
@@ -1052,7 +1058,7 @@ Blog
 @media screen and (min-width: 576px) {
   .blogs-center {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     column-gap: 2rem;
   }
   .blogs-menu {
@@ -1215,7 +1221,6 @@ Pages
 .error-page,
 /* .about-page, */
 .contact-page {
-  /* background: var(--clr-grey-10); */
   min-height: calc(100vh - 5rem - 9rem);
 }
 .error-page {
@@ -1243,12 +1248,13 @@ About Page
 ===============
 */
 .about-page {
-  padding-top: 7rem;
-  /* padding: 7rem 0; */
+  padding: 5rem 0 2.5rem;
 }
 .about-img {
   margin-bottom: 2rem;
-  height: 25rem;
+  width: 40%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .about-text .section-title {
   margin-bottom: 2rem;
@@ -1289,6 +1295,7 @@ About Page
   .about-img {
     grid-column: 1 / span 5;
     margin-bottom: 0;
+    width: 48%;
   }
   .about-text {
     grid-column: 6 / -1;
@@ -1361,7 +1368,7 @@ Blog Template
   text-align: center;
   margin: 40px auto;
 }
-.blog-template ul {
+/* .blog-template ul {
   margin-top: 2rem;
   display: inline-block;
 }
@@ -1371,6 +1378,11 @@ Blog Template
   padding: 0.5rem 1rem;
   margin: 1rem 0;
   text-transform: uppercase;
+} */
+.blog-template ul {
+  transform: translateX(20px);
+  list-style: square;
+  color: var(--clr-grey-3);
 }
 
 .blog-template blockquote {
@@ -1405,6 +1417,46 @@ Blog Template
 #disqus_thread {
   color: var(--clr-primary-5) !important;
   opacity: 0.87;
+}
+table {
+  width: 80%;
+  margin: 1.5rem auto;
+  table-layout: fixed;
+  border-spacing: 0px;
+  border: 1px solid var(--clr-grey-7);
+}
+thead {
+  background: var(--clr-grey-8);
+}
+tbody tr:hover {
+  background: var(--clr-grey-9);
+}
+tbody {
+  height: 300px;
+  overflow-x: auto;
+  margin-top: 0px;
+}
+th,
+td {
+  letter-spacing: var(--spacing);
+  padding: 0.8rem 0;
+  font-size: 14px;
+}
+th {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: var(--ff-primary);
+}
+thead tr th,
+td {
+  border-bottom: solid 1px var(--clr-grey-7);
+}
+td {
+  font-weight: 300;
+  color: var(--clr-grey-3);
+}
+tbody tr:last-of-type td {
+  border-bottom: 0px;
 }
 /*
 ===============
@@ -1491,6 +1543,10 @@ Project Template
 }
 .project-overview {
   display: flex;
+}
+.project-template h3,
+.project-overview h3 {
+  font-size: 24px;
 }
 .project-overview h3 {
   margin-top: 0px;

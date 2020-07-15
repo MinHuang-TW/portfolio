@@ -11,7 +11,7 @@ const Map = () => {
     longitude: 30,
     zoom: 1.5,
   })
-
+  
   return (
     <ReactMap
       {...viewport}

@@ -17,7 +17,6 @@ const ComponentName = ({ data }) => {
       // language: 'zh_TW',
     }
   };
-
   return (
     <Layout>
       <SEO title={title} description={description} />

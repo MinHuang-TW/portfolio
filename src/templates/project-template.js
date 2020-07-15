@@ -6,7 +6,8 @@ import SEO from '../components/SEO';
 import ReactMarkdown from 'react-markdown';
 
 const ComponentName = ({ data }) => {
-  const { content, title, description, github, url, stack, roles, categories } = data.project;
+  const { content, title, description, github, url, stack, roles, categories, time } 
+    = data.project;
 
   return (
     <Layout>
@@ -31,7 +32,7 @@ const ComponentName = ({ data }) => {
             </div>
             <div>
               <h3>Date</h3>
-              <p>Jun - Jul, 2020</p>
+              <p>{time || `Jun - Jul, 2020`}</p>
             </div>
             <div>
               <h3>Demo</h3>
@@ -69,6 +70,7 @@ export const query = graphql`
   query GetSingleProject($slug: String) {
     project: strapiProjects(slug: { eq: $slug }) {
       title
+      time
       description
       content
       github
