@@ -3,35 +3,46 @@ import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
 import { Link } from 'gatsby';
 
-const Project = ({ description, title, slug, stack, image, categories }) => (
+const Project = ({ 
+  slug, 
+  frontmatter: {
+    title,
+    projectBrief,
+    categories,
+    projectStack,
+    image,
+  } 
+}) => (
     <Link className='project' to={`/project/${slug}`}>
       {image && (
         <Image fluid={image.childImageSharp.fluid} className='project-img' />
       )}
       <div className='project-info'>
         <div>
-          {categories.map(({ id, category }) => (
-            <p key={id} className='project-category'>
+          {categories.map(category => (
+            <p key={category} className='project-category'>
               [{category}]
             </p>
           ))}
           <h3>{title}</h3>
-          <p className='project-desc'>{description}</p>
+          <p className='project-desc'>{projectBrief}</p>
         </div>
         <div className='project-stack'>
-          {stack.map(({ id, language }) => (<span key={id}>{language}</span>))}
+          {projectStack.map(stack => <span key={stack}>{stack}</span>)}
         </div>
       </div>
     </Link>
 );
 
 Project.propTypes = {
-  title: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
-  stack: PropTypes.arrayOf(PropTypes.object).isRequired,
-  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+    projectBrief: PropTypes.string.isRequired,
+    projectStack: PropTypes.arrayOf(PropTypes.string).isRequired,
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }),
 }
 
 export default Project;

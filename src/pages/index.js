@@ -3,7 +3,9 @@ import { SEO, Layout, Hero, Projects } from '../components';
 import { graphql } from 'gatsby';
 
 export default ({ data }) => {
-  const { allStrapiProjects: { nodes: projects }} = data;
+  const {
+    allMdx: { nodes: projects },
+  } = data;
 
   return (
     <Layout>
@@ -12,32 +14,31 @@ export default ({ data }) => {
       <Projects projects={projects} showLink gutterTop />
     </Layout>
   )
-};
+}
 
 export const query = graphql`
   {
-    allStrapiProjects(filter: {featured: {eq: true}}) {
+    allMdx(
+      filter: { frontmatter: { featured: { eq: true } } },
+      sort: {fields: frontmatter___sortDate, order: DESC}
+    ) {
       nodes {
         id
         slug
-        description
-        title
-        github
-        url
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        frontmatter {
+          title
+          projectBrief
+          categories
+          github
+          url
+          projectStack
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
-        }
-        stack {
-          id
-          language
-        }
-        categories {
-          id
-          category
         }
       }
     }

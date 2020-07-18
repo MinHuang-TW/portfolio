@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, SEO, Title } from '../components';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown/with-html';
 
 const ProjectTemplate = ({ 
   data: { 
@@ -27,7 +27,6 @@ const ProjectTemplate = ({
       ))}
       <Title title={title} />
     </header>
-
     <section className='project-template'>
       <div className='section-center content-container'>
         <div className='project-overview'>
@@ -41,7 +40,7 @@ const ProjectTemplate = ({
           </div>
           <div>
             <h3>Date</h3>
-            <p>{time || 'NA'}</p>
+            <p>{time}</p>
           </div>
           <div>
             <h3>Demo</h3>
@@ -51,11 +50,17 @@ const ProjectTemplate = ({
           </div>
         </div>
 
-        {contents.map(({ id, title, content, image }) => (
+        {contents.map(({ id, title, subtitle, content, figures }) => (
           <article key={id}>
-            <h3>{title}</h3>
-            <ReactMarkdown source={content} />
-            {image && <Image fluid={image.childImageSharp.fluid} />}
+            {title && <h3 className='paragraph'>{title}</h3>}
+            {subtitle && <blockquote><p>{subtitle}</p></blockquote>}
+            <ReactMarkdown source={content} escapeHtml={false} />
+            {figures && figures.map(({ id, figure, caption }) => (
+              <figure key={id}>
+                <Image fluid={figure.childImageSharp.fluid} />
+                <figcaption>{caption}</figcaption>
+              </figure>
+            ))}
           </article>
         ))}
         
@@ -86,11 +91,16 @@ export const query = graphql`
       contents {
         id
         title
+        subtitle
         content
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        figures {
+          id
+          caption
+          figure {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }

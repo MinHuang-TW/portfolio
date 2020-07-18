@@ -19,14 +19,39 @@ module.exports = {
   plugins: [
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-mdx`,
+    `gatsby-remark-images`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              backgroundColor: 'transparent',
+              linkImagesToOriginal: false,
+            },
+          },
+          `gatsby-remark-responsive-iframe`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
         path: `${__dirname}/src/assets/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/projects/`,
       },
     },
     {

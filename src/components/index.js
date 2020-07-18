@@ -6,6 +6,7 @@ export { default as Sidebar } from './Sidebar';
 export { default as Filter } from './Filter';
 export { default as Title } from './Title';
 export { default as Hero } from './Hero';
+export { default as Figure } from './Figure';
 export { default as Projects } from './Projects';
 export { default as Project } from './Project';
 export { default as Blogs } from './Blogs';

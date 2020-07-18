@@ -1,15 +1,15 @@
-import React, { useState, useCallback } from 'react'
-import { Layout, SEO, Title, Filter, Projects } from '../components'
-import { graphql } from 'gatsby'
+import React, { useState, useCallback } from 'react';
+import { Layout, SEO, Title, Filter, Projects } from '../components';
+import { graphql } from 'gatsby';
 
 const ProjectsPage = ({
   data: {
-    allStrapiProjects: { nodes: projects },
+    allMdx: { nodes: projects },
   },
 }) => {
-  const filterLists = ['all', 'development', 'design', 'research'];
+  const filterLists = ['all', 'Development', 'Design', 'Research'];
   const [selected, setSelected] = useState(filterLists[0]);
-  const handleSelected = useCallback((list) => (event) => {
+  const handleSelected = useCallback(list => event => {
     setSelected(list);
   }, [setSelected]);
 
@@ -18,50 +18,49 @@ const ProjectsPage = ({
       <SEO title='Projects' description='all projects' />
       <section className='projects-page'>
         <Title title='All Projects' styleClass='project-title' />
-        <Filter lists={filterLists} selected={selected} onSelected={handleSelected} />
-        
+        <Filter
+          lists={filterLists}
+          selected={selected}
+          onSelected={handleSelected}
+        />
+
         <Projects
           title='all projects'
-          projects={selected === 'all' ? projects
-            : projects.filter(({ categories }) => {
-                const category = categories.map(({ category }) => category)
-                return category.includes(selected)
-              })
+          projects={
+            selected === 'all'
+              ? projects
+              : projects.filter(({ frontmatter: { categories } }) =>
+                  categories.includes(selected)
+                )
           }
         />
       </section>
     </Layout>
   )
-}
+};
 
 export const query = graphql`
   {
-    allStrapiProjects {
+    allMdx (
+      sort: {fields: frontmatter___sortDate, order: DESC}
+    ) {
       nodes {
         id
         slug
-        description
-        title
-        github
-        url
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        frontmatter {
+          title
+          projectBrief
+          categories
+          github
+          url
+          projectStack
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
-        }
-        roles {
-          id
-          role
-        }
-        stack {
-          id
-          language
-        }
-        categories {
-          id
-          category
         }
       }
     }
