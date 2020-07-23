@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql, Link } from 'gatsby';
 // import Image from 'gatsby-image';
 
-// const shortcodes = { Figure };
+// const shortcodes = { FigureSection };
 
 const ProjectPage = ({ data: { mdx } }) => {
   const {
@@ -41,18 +41,16 @@ const ProjectPage = ({ data: { mdx } }) => {
             </div>
             <div>
               <h3>Stack</h3>
-              {projectStack.map(stack => (
-                <p key={stack}>{stack}</p>
-              ))}
+              {projectStack.map(stack => (<p key={stack}>{stack}</p>))}
             </div>
             <div>
-              <h3>Date</h3>
+              <h3>Timeline</h3>
               <p>{projectDate}</p>
             </div>
             <div>
-              <h3>Demo</h3>
+              <h3>{title === 'SpInsight' ? 'Download' : 'Demo'}</h3>
               <a href={url} target='_blank' rel='noopener noreferrer'>
-                Launch site
+                {title === 'SpInsight' ? 'MASTER THESIS' : 'LAUNCH SITE'}
               </a>
             </div>
           </div>
