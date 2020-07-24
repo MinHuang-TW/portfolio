@@ -4,18 +4,23 @@ const { createFilePath } = require('gatsby-source-filesystem');
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === 'Mdx') {
-    const value = createFilePath({ 
-      node, 
-      getNode,
-    });
+  const nodeFieldPerType = (filePath, getNodePath) => {
+    if (
+      node.internal.type === 'Mdx' &&
+      node.fileAbsolutePath.includes(filePath)
+    ) {
+      const value = createFilePath({ node, getNode });
 
-    createNodeField({
-      name: 'slug',
-      node,
-      value: `/project${value}`,
-    })
-  }
+      createNodeField({
+        node,
+        name: 'slug',
+        value: getNodePath(value),
+      })
+    }
+  };
+
+  nodeFieldPerType(`/projects/`, value => `/project${value}`);
+  nodeFieldPerType(`/posts/`, value => `/blog${value}`);
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -23,16 +28,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     {
-      blogs: allStrapiBlogs {
+      projects: allFile(
+        filter: {
+          internal: { mediaType: { eq: "text/mdx" }}, 
+          sourceInstanceName: { eq: "projects" }},
+        ) {
         nodes {
-          slug
+          childMdx {
+            id
+            fields {
+              slug
+            }
+          }
         }
       },
-      projects: allMdx {
+      posts: allFile (
+        filter: { internal: { mediaType: { eq: "text/mdx" }},
+        sourceInstanceName: {eq: "posts"}},
+      ) {
         nodes {
-          id
-          fields {
-            slug
+          childMdx {
+            id
+            fields {
+              slug
+            }
           }
         }
       }
@@ -43,24 +62,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨 ERROR: Loading "createPages" query')
   }
 
-  const { blogs, projects } = result.data;
+  const { posts, projects } = result.data;
 
-  projects.nodes.forEach(({ id, fields: { slug }}) => {
+  projects.nodes.forEach(({ childMdx: { id, fields: { slug }}}) => {
     createPage({
       path: slug,
-      component: path.resolve(`src/templates/project-page.js`),
+      component: path.resolve(`src/templates/project-template.js`),
       context: {
         id,
       },
     })
   })
 
-  blogs.nodes.forEach(blog => {
+  posts.nodes.forEach(({ childMdx: { id, fields: { slug }}}) => {
     createPage({
-      path: `/blog/${blog.slug}`,
+      path: slug,
       component: path.resolve(`src/templates/blog-template.js`),
       context: {
-        slug: blog.slug,
+        id
       },
     })
   })

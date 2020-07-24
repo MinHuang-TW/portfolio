@@ -1,77 +1,76 @@
 import React from 'react';
 import { Layout, SEO, Title } from '../components';
+import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql, Link } from 'gatsby';
-import Image from 'gatsby-image';
-import ReactMarkdown from 'react-markdown/with-html';
+// import Image from 'gatsby-image';
+
+// const shortcodes = { FigureSection };
 
 const ProjectTemplate = ({ 
   data: { 
     project: {
-      title, 
-      description, 
-      contents,
-      time,
-      github, 
-      url, 
-      stack, 
-      roles, 
-      categories, 
-    },
-  }, 
+      body,
+      frontmatter: {
+        title,
+        projectBrief,
+        categories,
+        github,
+        url,
+        projectDate,
+        projectStack,
+        projectRole,
+      }
+    }
+  } 
 }) => (
   <Layout>
-    <SEO title={title} description={description} />
+    <SEO title={title} description={projectBrief} />
+
     <header className='project-head'>
-      {categories.map(({ id, category }) => (
-        <p key={id} className='project-category'>[{category}]</p>
+      {categories.map(category => (
+        <p key={category} className='project-category'>
+          [{category}]
+        </p>
       ))}
       <Title title={title} />
     </header>
+
     <section className='project-template'>
       <div className='section-center content-container'>
         <div className='project-overview'>
           <div>
             <h3>Role</h3>
-            {roles.map(({ id, role }) => (<p key={id}>{role}</p>))}
+            <p>{projectRole}</p>
           </div>
           <div>
             <h3>Stack</h3>
-            {stack.map(({ id, language }) => (<p key={id}>{language}</p>))}
+            {projectStack.map(stack => (<p key={stack}>{stack}</p>))}
           </div>
           <div>
-            <h3>Date</h3>
-            <p>{time}</p>
+            <h3>Timeline</h3>
+            <p>{projectDate}</p>
           </div>
           <div>
-            <h3>Demo</h3>
+            <h3>{title === 'SpInsight' ? 'Download' : 'Demo'}</h3>
             <a href={url} target='_blank' rel='noopener noreferrer'>
-              Launch site
+              {title === 'SpInsight' ? 'MASTER THESIS' : 'LAUNCH SITE'}
             </a>
           </div>
         </div>
 
-        {contents.map(({ id, title, subtitle, content, figures }) => (
-          <article key={id}>
-            {title && <h3 className='paragraph'>{title}</h3>}
-            {subtitle && <blockquote><p>{subtitle}</p></blockquote>}
-            <ReactMarkdown source={content} escapeHtml={false} />
-            {figures && figures.map(({ id, figure, caption }) => (
-              <figure key={id}>
-                <Image fluid={figure.childImageSharp.fluid} />
-                <figcaption>{caption}</figcaption>
-              </figure>
-            ))}
-          </article>
-        ))}
-        
+        <MDXProvider>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+
         <div className='project-btns'>
           <Link to='/project/' className='btn center-btn'>
             back to project
           </Link>
-          <a 
-            className='btn center-btn' 
-            href={github} 
-            target='_blank' 
+          <a
+            className='btn center-btn'
+            href={github}
+            target='_blank'
             rel='noopener noreferrer'
           >
             view code
@@ -83,41 +82,19 @@ const ProjectTemplate = ({
 );
 
 export const query = graphql`
-  query GetSingleProject($slug: String) {
-    project: strapiProjects(slug: { eq: $slug }) {
-      title
-      time
-      description
-      contents {
-        id
+  query GetSingleProject($id: String) {
+    project: mdx(id: { eq: $id }) {
+      id
+      body
+      frontmatter {
         title
-        subtitle
-        content
-        figures {
-          id
-          caption
-          figure {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-      github
-      url
-      roles {
-        id
-        role
-      }
-      stack {
-        id
-        language
-      }
-      categories {
-        id
-        category
+        projectBrief
+        categories
+        projectDate
+        projectStack
+        projectRole
+        github
+        url
       }
     }
   }

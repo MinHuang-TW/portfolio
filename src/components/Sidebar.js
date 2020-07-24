@@ -1,6 +1,5 @@
 import React from 'react';
 import Links from '../constants/links';
-// import SocialLinks from '../constants/socialLinks';
 import { MdClear } from 'react-icons/md';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => (
@@ -10,7 +9,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => (
     </button>
     <div className='side-container'>
       <Links styleClass={isOpen && 'sidebar-links'} />
-      {/* <SocialLinks styleClass={isOpen && 'sidebar-icons'} /> */}
     </div>
   </aside>
 );

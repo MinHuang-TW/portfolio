@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
 import { Link } from 'gatsby';
 
-const Blog = ({ id, title, description, image, date, category, slug }) => (
+const Blog = ({
+  id,
+  slug,
+  frontmatter: { title, description, image, date, categories },
+}) => (
   <Link key={id} className='blog' to={`/blog/${slug}`}>
     {image && (
       <Image className='blog-img' fluid={image.childImageSharp.fluid} />
@@ -11,22 +15,26 @@ const Blog = ({ id, title, description, image, date, category, slug }) => (
     <div className='blog-card'>
       <div className='blog-head'>
         <p className='blog-date'>{date}</p>
-        <p className='blog-category'>{category}</p>
+        {categories.map((category, index) => (
+          <p className='blog-category' key={index}>{category}</p>
+        ))}
       </div>
       <h4>{title}</h4>
       <p style={{ marginBottom: 0 }}>{description}</p>
     </div>
   </Link>
-);
+)
 
 Blog.propTypes = {
   id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired, 
   slug: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired, 
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }),
 }
 
 export default Blog;

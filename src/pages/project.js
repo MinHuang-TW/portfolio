@@ -42,7 +42,8 @@ const ProjectsPage = ({
 export const query = graphql`
   {
     allMdx (
-      sort: {fields: frontmatter___sortDate, order: DESC}
+      filter: { fileAbsolutePath: { regex: "/projects/" }}, 
+      sort: { fields: frontmatter___sortDate, order: DESC }
     ) {
       nodes {
         id

@@ -2,17 +2,20 @@ import React from 'react';
 import { Layout, SEO, Title } from '../components';
 import { graphql, Link } from 'gatsby';
 import { DiscussionEmbed } from 'disqus-react';
-import ReactMarkdown from 'react-markdown';
+import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const BlogTemplate = ({ 
   data: { 
-    blog: {
+    post: {
       id, 
-      slug, 
-      title, 
-      date, 
-      description,
-      content, 
+      slug,
+      body, 
+      frontmatter: {
+        title, 
+        date, 
+        description,
+      }
     },
   }, 
 }) => {
@@ -22,7 +25,6 @@ const BlogTemplate = ({
       url: `https://minhuang.netlify.app/blog/${slug}`,
       identifier: id,
       title,
-      // language: 'zh_TW',
     }
   };
   return (
@@ -36,7 +38,9 @@ const BlogTemplate = ({
       <section className='blog-template'>
         <div className='section-center content-container'>
           <article className='blog-content'>
-            <ReactMarkdown source={content} />
+            <MDXProvider>
+              <MDXRenderer>{body}</MDXRenderer>
+            </MDXProvider>
           </article>
 
           <div style={{ margin: '5rem auto' }}>
@@ -53,13 +57,16 @@ const BlogTemplate = ({
 };
 
 export const query = graphql`
-  query GetSingleBlog($slug: String) {
-    blog: strapiBlogs(slug: { eq: $slug }) {
+  query GetSingleBlog($id: String) {
+    post: mdx(id: { eq: $id }) {
       id
-      title
-      date(formatString: "MMMM D, YYYY")
-      description
-      content
+      slug
+      body
+      frontmatter {
+        title
+        date(formatString: "MMMM D, YYYY")
+        description
+      }
     }
   }
 `

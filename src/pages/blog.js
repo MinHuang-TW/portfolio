@@ -4,34 +4,41 @@ import { graphql } from 'gatsby';
 
 const Blog = ({ 
   data: { 
-    allStrapiBlogs: { nodes: blogs },
-    allStrapiBlogs: { totalCount },
+    allMdx: { 
+      nodes: blogs, 
+      totalCount 
+    },
   }
 }) => (
   <Layout>
     <SEO title='Blog' description='my thoughts' />
     <section className='blog-page'>
-      <Blogs blogs={blogs} total={totalCount} title='blog' />
+      <Blogs blogs={blogs} totalCount={totalCount} title='blog' />
     </section>
   </Layout>
 );
 
 export const query = graphql`
   {
-    allStrapiBlogs (sort: {fields: date, order: DESC}) {
+    allMdx (
+      filter: { fileAbsolutePath: { regex: "/posts/" }}, 
+      sort: { fields: frontmatter___date, order: DESC },
+    ) {
       totalCount,
       nodes {
         id
         slug
-        description
-        content
-        date(formatString: "MMMM D, YYYY")
-        title
-        category
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        body
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+          categories
+          description
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }

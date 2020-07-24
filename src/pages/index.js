@@ -18,9 +18,12 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allMdx(
-      filter: { frontmatter: { featured: { eq: true } } },
-      sort: {fields: frontmatter___sortDate, order: DESC}
+    allMdx (
+      filter: { 
+        fileAbsolutePath: { regex: "/projects/" }, 
+        frontmatter: { featured: { eq: true }}
+      }, 
+      sort: { fields: frontmatter___sortDate, order: DESC }
     ) {
       nodes {
         id

@@ -114,6 +114,12 @@ p {
 img {
   pointer-events: none;
 }
+iframe:focus {
+  outline: none;
+}
+iframe[seamless] {
+  display: block;
+}
 ::-webkit-scrollbar {
   width: 6px;
 } 
@@ -1384,17 +1390,7 @@ Blog Template
   text-align: center;
   margin: 40px auto;
 }
-/* .blog-template ul {
-  margin-top: 2rem;
-  display: inline-block;
-}
-.blog-template ul li {
-  background: var(--clr-grey-9);
-  color: var(--clr-white);
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
-  text-transform: uppercase;
-} */
+
 .blog-template ul {
   transform: translateX(20px);
   list-style: square;
@@ -1420,12 +1416,7 @@ Blog Template
   overflow: auto;
 }
 .blog-template img {
-  width: 60%;
-  /* height: 15rem; */
-  margin: 3rem auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  border-radius: var(--radius);
 }
 .blog-subtitle {
   margin: 1.25rem auto 0px;
@@ -1670,17 +1661,11 @@ Project Template
   margin-bottom: 20px !important;
 }
 
-iframe {
+.project-template iframe {
   border-radius: var(--radius);
   border: none;
   width: 375px;
   height: 667px;
-}
-iframe:focus {
-  outline: none;
-}
-iframe[seamless] {
-  display: block;
 }
 .calculator-container {
   display: grid;

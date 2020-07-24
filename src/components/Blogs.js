@@ -3,19 +3,19 @@ import { Blog } from '../components';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import { RiSearchLine } from 'react-icons/ri';
 
-export const Blogs = ({ blogs, total }) => {
+export const Blogs = ({ blogs, totalCount }) => {
   const { 
-    allStrapiBlogs: { nodes: recent }, 
-    code: { totalCount: code }, 
-    design: { totalCount: design }, 
-    life: { totalCount: life },
+    allMdx: { nodes: recent }, 
+    codeCount: { totalCount: codeCount }, 
+    designCount: { totalCount: designCount }, 
+    lifeCount: { totalCount: lifeCount },
   } = useStaticQuery(query);
 
   const categories = [
-    { category: 'all', count: total }, 
-    { category: 'code', count: code }, 
-    { category: 'design', count: design }, 
-    { category: 'life', count: life }
+    { category: 'all', count: totalCount }, 
+    { category: 'code', count: codeCount }, 
+    { category: 'design', count: designCount }, 
+    { category: 'life', count: lifeCount }
   ];
 
   const [state, setState] = useState({
@@ -24,18 +24,18 @@ export const Blogs = ({ blogs, total }) => {
   });
 
   const handleSelected = (selected) => (event) => {
-    const filteredPosts = blogs.filter(({ category }) => (
-      selected === 'all' ? category : category === selected
+    const filteredPosts = blogs.filter(({ frontmatter: { categories }}) => (
+      selected === 'all' ? categories : categories.includes(selected)
     ));
     setState({ query: '', filteredPosts })
   };
 
   const handleInputChange = (event) => {
     const query = event.target.value;
-    const filteredPosts = blogs.filter(({ title, description, content }) => (
+    const filteredPosts = blogs.filter(({ frontmatter: { title, description }, body }) => (
       title.toLowerCase().includes(query.toLowerCase()) ||
       description.toLowerCase().includes(query.toLowerCase()) ||
-      content.toLowerCase().includes(query.toLowerCase())
+      body.toLowerCase().includes(query.toLowerCase())
     ));
     setState({ query, filteredPosts });
   };
@@ -78,10 +78,14 @@ export const Blogs = ({ blogs, total }) => {
           <div className='recent-block'>
             <h4>Featured Posts</h4>
             <div className='recent-list'>
-              {recent.map(({ id, slug, title, category }) => (
+              {recent.map(({ id, slug, frontmatter: { title, categories }}) => (
                 <Link key={id} to={`/blog/${slug}`}>
                   <div className='recent-post'>
-                    <span className='blog-category'>{category}</span>
+                    {categories.map((category, index) => (
+                      <span className='blog-category' key={index}>
+                        {category}
+                      </span>
+                    ))}
                     <h5>{title}</h5>
                   </div>
                 </Link>
@@ -104,26 +108,46 @@ export const Blogs = ({ blogs, total }) => {
 
 const query = graphql`
   {
-    allStrapiBlogs(
-      sort: {fields: date, order: DESC}, 
-      filter: {featured: {eq: true}},
+    allMdx(
+      filter: { 
+        fileAbsolutePath: { regex: "/posts/" },
+        frontmatter: { featured: { eq: true }}
+      }, 
+      sort: { fields: frontmatter___date, order: DESC },
       limit: 8
     ) {
       nodes {
         id
         slug
-        title
-        category
-        featured
+        frontmatter {
+          title
+          categories
+          featured
+        }
       }
     },
-    code: allStrapiBlogs(filter: {category: {eq: "code"}}) {
+    codeCount: allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/posts/" }, 
+        frontmatter: { categories: { in: "code" }}
+      }
+    ) {
       totalCount
     },
-    design: allStrapiBlogs(filter: {category: {eq: "design"}}) {
+    designCount: allMdx(
+      filter: { 
+        fileAbsolutePath: { regex: "/posts/" }, 
+        frontmatter: { categories: { in: "design" }}
+      }
+    ) {
       totalCount
     },
-    life: allStrapiBlogs(filter: {category: {eq: "life"}}) {
+    lifeCount: allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/posts/" }, 
+        frontmatter: { categories: { in: "life" }}
+      }
+    ) {
       totalCount
     },
   }
