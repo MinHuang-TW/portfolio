@@ -5,19 +5,15 @@ import { DiscussionEmbed } from 'disqus-react';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-const BlogTemplate = ({ 
-  data: { 
+const BlogTemplate = ({
+  data: {
     post: {
-      id, 
+      id,
       slug,
-      body, 
-      frontmatter: {
-        title, 
-        date, 
-        description,
-      }
+      body,
+      frontmatter: { title, date, description },
     },
-  }, 
+  },
 }) => {
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
@@ -25,8 +21,9 @@ const BlogTemplate = ({
       url: `https://minhuang.netlify.app/blog/${slug}`,
       identifier: id,
       title,
-    }
+    },
   };
+  
   return (
     <Layout>
       <SEO title={title} description={description} />
@@ -34,7 +31,7 @@ const BlogTemplate = ({
         <Title title={title} />
         <p className='blog-subtitle'>{date}</p>
       </header>
-      
+
       <section className='blog-template'>
         <div className='section-center content-container'>
           <article className='blog-content'>
@@ -54,7 +51,7 @@ const BlogTemplate = ({
       </section>
     </Layout>
   )
-};
+}
 
 export const query = graphql`
   query GetSingleBlog($id: String) {

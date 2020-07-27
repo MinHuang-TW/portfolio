@@ -3,9 +3,10 @@ import { Layout, SEO, Title } from '../components';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql, Link } from 'gatsby';
+import { BsArrowRight } from 'react-icons/bs';
 // import Image from 'gatsby-image';
 
-// const shortcodes = { FigureSection };
+const shortcodes = { BsArrowRight };
 
 const ProjectTemplate = ({ 
   data: { 
@@ -59,7 +60,7 @@ const ProjectTemplate = ({
           </div>
         </div>
 
-        <MDXProvider>
+        <MDXProvider components={shortcodes}>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
 

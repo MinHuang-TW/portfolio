@@ -1,11 +1,7 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
 require('dotenv').config({ 
   path: `.env.${process.env.NODE_ENV}` 
 });
+const unwrapImages = require('remark-unwrap-images');
 
 module.exports = {
   siteMetadata: {
@@ -17,26 +13,38 @@ module.exports = {
     siteUrl: "https://minhuang.netlify.app",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-mdx`,
     `gatsby-remark-images`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [`.mdx`, `.md`],
+        plugins: [
+          `gatsby-remark-images`,
+          `gatsby-remark-images-medium-zoom`,
+        ],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1035,
-              backgroundColor: 'transparent',
               linkImagesToOriginal: false,
+              showCaptions: true,
             },
           },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {},
+          },
           `gatsby-remark-responsive-iframe`,
+        ],
+        remarkPlugins: [
+          unwrapImages
         ],
       },
     },

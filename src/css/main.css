@@ -111,9 +111,6 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-3);
 }
-img {
-  pointer-events: none;
-}
 iframe:focus {
   outline: none;
 }
@@ -1417,6 +1414,7 @@ Blog Template
 }
 .blog-template img {
   border-radius: var(--radius);
+  box-shadow: none;
 }
 .blog-subtitle {
   margin: 1.25rem auto 0px;
@@ -1528,7 +1526,7 @@ Project Template
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
-.project-template ul {
+.project-template ul li {
   transform: translateX(20px);
   list-style: square;
   color: var(--clr-grey-3);
@@ -1616,21 +1614,35 @@ Project Template
 .uneven {
   grid-template-columns: auto 554px;
 }
-.figure-container figure img {
-  border-radius: var(--radius) !important;
-  box-shadow: none !important;
+.figure-container img {
+  border-radius: var(--radius);
+  box-shadow: none;
 }
-.figure-container figure figcaption {
+.figure-container figcaption {
   color: var(--clr-grey-7);
   text-align: center;
   margin-top: 0.5rem;
   font-size: 16px;
 }
+
+.medium-zoom-overlay {
+  background-color: #000000 !important;
+}
+.medium-zoom-image {
+  box-shadow: none !important;
+}
+.medium-zoom--opened {
+  overflow: hidden;
+}
+
 .iframe-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   align-content: start;
   margin: 5rem 0px 2rem;
+}
+.iframe-container blockquote {
+  margin-top: 0px;
 }
 .iframe-container iframe {
   justify-self: end;
@@ -1652,13 +1664,6 @@ Project Template
   transform: translateX(28px);
   color: var(--clr-grey-7);
   line-height: 25px;
-}
-
-.list {
-  list-style: square;
-  color: var(--clr-grey-3) !important;
-  transform: translateX(0px) !important;
-  margin-bottom: 20px !important;
 }
 
 .project-template iframe {
