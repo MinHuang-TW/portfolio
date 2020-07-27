@@ -8,7 +8,7 @@ const Blog = ({
   slug,
   frontmatter: { title, description, image, date, categories },
 }) => (
-  <Link key={id} className='blog' to={`/blog/${slug}`}>
+  <Link key={id} className='blog fadeIn' to={`/blog/${slug}`}>
     {image && (
       <Image className='blog-img' fluid={image.childImageSharp.fluid} />
     )}
@@ -20,7 +20,7 @@ const Blog = ({
         ))}
       </div>
       <h4>{title}</h4>
-      <p style={{ marginBottom: 0 }}>{description}</p>
+      <p>{description}</p>
     </div>
   </Link>
 )

@@ -17,7 +17,7 @@ Variables
   --clr-primary-7: hsl(184, 65%, 59%);
   --clr-primary-8: hsl(184, 80%, 74%);
   --clr-primary-9: hsl(185, 94%, 87%);
-  --clr-primary-10: hsl(186, 100%, 94%);
+  --clr-primary-10:hsl(186, 100%, 94%);
   /* darkest grey - used for headings */
   --clr-grey-1: rgba(255, 255, 255, 0.87);
   --clr-grey-3: rgba(255, 255, 255, 0.6);
@@ -26,7 +26,7 @@ Variables
   --clr-grey-7: rgba(255, 255, 255, 0.38);
   --clr-grey-8: rgba(255, 255, 255, 0.12);
   --clr-grey-9: rgba(255, 255, 255, 0.05);
-  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-grey-10:rgba(255, 255, 255, 0.02);
   --clr-white: rgba(255, 255, 255, 1);
   --clr-black: #000000;
   --clr-bg: #121212;
@@ -117,6 +117,28 @@ iframe:focus {
 iframe[seamless] {
   display: block;
 }
+
+/* Animation */
+
+@keyframes fade-in {
+  0% {
+		transform: translateY(-16px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+.fadeIn {
+  animation: fade-in 0.6s ease-in;
+}
+.fadeIn:nth-of-type(2) { animation-delay: 0.1s; }
+.fadeIn:nth-of-type(3) { animation-delay: 0.2s; }
+.fadeIn:nth-of-type(4) { animation-delay: 0.3s; }
+.fadeIn:nth-of-type(5) { animation-delay: 0.4s; }
+.fadeIn:nth-of-type(6) { animation-delay: 0.5s; }
+
 ::-webkit-scrollbar {
   width: 6px;
 } 
@@ -232,7 +254,6 @@ input::placeholder {
     width: 95vw;
   }
 }
-/* added during recording */
 .underline {
   width: 5rem;
   height: 0.25rem;
@@ -244,9 +265,6 @@ input::placeholder {
 .section-title {
   margin-bottom: 4rem;
   text-align: center;
-}
-.bg-grey {
-  background: var(--clr-grey-10);
 }
 /* page links */
 
@@ -756,9 +774,6 @@ Jobs
 Projects
 ===============
 */
-/* .projects {
-  background: var(--clr-grey-10);
-} */
 .project {
   display: grid;
   margin-bottom: 4rem;
@@ -892,7 +907,6 @@ Blog
 .blog {
   display: block;
   margin-bottom: 2rem;
-  background: var(--clr-grey-10);
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
   -webkit-backface-visibility: hidden;
@@ -996,7 +1010,7 @@ Blog
 }
 .blogs-menu > div {
   margin-bottom: 2.5rem;
-  background: var(--clr-grey-9);
+  background: var(--clr-grey-10);
   padding: 1.5rem;
 }
 .blogs-menu h4 {
@@ -1021,18 +1035,19 @@ Blog
 }
 .blog-card h4 {
   color: var(--clr-grey-1);
-  font-size: 18px;
+  font-size: 21px;
   line-height: 26px;
   margin: 8px 0px 16px;
 }
+.blog-card p {
+  margin-bottom: 0px;
+  margin-right: 0px;
+}
+
 .blog-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.blog-head p {
-  margin-bottom: 0;
-  margin-right: 0px;
 }
 .blog-date {
   color: var(--clr-grey-7);
@@ -1656,6 +1671,13 @@ Project Template
   color: var(--clr-primary-5);
   font-weight: bold;
 }
+@keyframes pointing {
+  from { transform: translateX(0px); }
+    to { transform: translateX(4px); }
+}
+.iframe-container:hover svg {
+  animation: pointing 0.3s linear 0s infinite alternate;
+}
 .iframe-container h4 svg {
   margin-left: 8px;
   stroke-width: 0.5;
@@ -1699,6 +1721,10 @@ Project Template
 @media (max-width: 834px) {
   .iframe-container h4 svg {
     transform: rotate(90deg);
+  }
+  @keyframes pointing {
+    from { transform: translateY(0px) rotate(90deg); }
+      to { transform: translateY(4px) rotate(90deg); }
   }
   .iframe-container ol {
     display: none;

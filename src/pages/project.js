@@ -26,6 +26,7 @@ const ProjectsPage = ({
 
         <Projects
           title='all projects'
+          selected={selected}
           projects={
             selected === 'all'
               ? projects
@@ -57,7 +58,7 @@ export const query = graphql`
           projectStack
           image {
             childImageSharp {
-              fluid {
+              fluid (maxWidth: 900) {
                 ...GatsbyImageSharpFluid
               }
             }

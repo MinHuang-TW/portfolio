@@ -114,7 +114,7 @@ const query = graphql`
         frontmatter: { featured: { eq: true }}
       }, 
       sort: { fields: frontmatter___date, order: DESC },
-      limit: 8
+      limit: 6
     ) {
       nodes {
         id

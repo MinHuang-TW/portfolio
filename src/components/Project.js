@@ -4,6 +4,7 @@ import Image from 'gatsby-image';
 import { Link } from 'gatsby';
 
 const Project = ({ 
+  index,
   slug, 
   frontmatter: {
     title,
@@ -13,7 +14,7 @@ const Project = ({
     image,
   } 
 }) => (
-    <Link className='project' to={`/project/${slug}`}>
+    <Link className='project fadeIn' to={`/project/${slug}`}>
       {image && (
         <Image fluid={image.childImageSharp.fluid} className='project-img' />
       )}
