@@ -65,6 +65,9 @@ Global Styles
 *:focus {
   outline: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: var(--ff-secondary);
   /* background: var(--clr-white); */
@@ -116,6 +119,9 @@ iframe:focus {
 }
 iframe[seamless] {
   display: block;
+}
+.align-top {
+  margin-top: 0px !important;
 }
 
 /* Animation */
@@ -769,6 +775,35 @@ Jobs
   }
 }
 
+/*
+=============== 
+Title
+===============
+*/
+.anchored-title {
+  display: inline-flex;
+  align-items: center;
+  margin: 5rem 0 1.5rem -1.5rem;
+}
+.anchored-icon {
+  opacity: 0;
+  margin-right: 0.5rem;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.anchored-text {
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0px !important;
+}
+.anchored-title:hover .anchored-icon {
+  opacity: 1;
+  fill: var(--clr-grey-1);
+}
+.anchored-text:hover {
+  text-decoration: underline;
+}
 /*
 =============== 
 Projects
@@ -1558,15 +1593,11 @@ Project Template
   color: var(--clr-grey-3);
 }
 .project-overview a {
-  text-decoration: underline;
-}
-.project-overview a:hover {
   text-decoration: none;
 }
-.project-template h3 {
-  margin-top: 5.5rem;
+.project-overview a:hover {
+  text-decoration: underline;
 }
-.project-template h3,
 .project-overview h3 {
   font-size: 24px;
 }
@@ -1574,8 +1605,7 @@ Project Template
   margin-top: 0px;
   color: var(--clr-grey-1);
 }
-.project-template p:last-of-type,
-.project-template h3 {
+.project-template p:last-of-type {
   margin-bottom: 20px;
 }
 .project-template p {
@@ -1584,13 +1614,11 @@ Project Template
 .project-template blockquote {
   border-left: 5px solid var(--clr-grey-7);
   padding: 0px 24px;
-  margin: 2rem 0;
+  margin: 0.5rem 0 2rem;
 }
 .project-template strong {
   font-weight: 300;
   color: var(--clr-grey-1);
-  /* color: var(--clr-primary-8); */
-  /* text-decoration: underline; */
 }
 .project-template blockquote p {
   margin: 0px !important;
@@ -1675,7 +1703,7 @@ Project Template
   from { transform: translateX(0px); }
     to { transform: translateX(4px); }
 }
-.iframe-container:hover svg {
+.iframe-container:hover h4 svg {
   animation: pointing 0.3s linear 0s infinite alternate;
 }
 .iframe-container h4 svg {

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Layout, SEO, Title } from '../components';
+import { Layout, SEO, Title, TitleAnchored } from '../components';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql, Link } from 'gatsby';
 import { BsArrowRight } from 'react-icons/bs';
 // import Image from 'gatsby-image';
 
-const shortcodes = { BsArrowRight };
+const shortcodes = { TitleAnchored, BsArrowRight };
 
 const ProjectTemplate = ({ 
   data: { 
