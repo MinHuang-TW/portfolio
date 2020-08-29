@@ -1,22 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Image from 'gatsby-image';
-import { Link } from 'gatsby';
+import React from "react"
+import PropTypes from "prop-types"
+import Image from "gatsby-image"
+import { Link } from "gatsby"
 
 const Blog = ({
   id,
   slug,
   frontmatter: { title, description, image, date, categories },
 }) => (
-  <Link key={id} className='blog fadeIn' to={`/blog/${slug}`}>
+  <Link key={id} className="blog fadeIn" to={`/blog/${slug}`}>
     {image && (
-      <Image className='blog-img' fluid={image.childImageSharp.fluid} />
+      <Image className="blog-img" fluid={image.childImageSharp.fluid} />
     )}
-    <div className='blog-card'>
-      <div className='blog-head'>
-        <p className='blog-date'>{date}</p>
+    <div className="blog-card">
+      <div className="blog-head">
+        <p className="blog-date">{date}</p>
         {categories.map((category, index) => (
-          <p className='blog-category' key={index}>{category}</p>
+          <p className="blog-category" key={index}>
+            {category}
+          </p>
         ))}
       </div>
       <h4>{title}</h4>
@@ -37,4 +39,4 @@ Blog.propTypes = {
   }),
 }
 
-export default Blog;
+export default Blog

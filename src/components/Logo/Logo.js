@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./Logo.module.css";
+import React from "react"
+import styles from "./Logo.module.css"
 
-const Icon = ({ size, color = '#ffffff' }) => (
+const Icon = ({ size, color = "rgba(255, 255, 255, 0.87)" }) => (
   <svg
     x="0px"
     y="0px"
@@ -12,11 +12,11 @@ const Icon = ({ size, color = '#ffffff' }) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
   >
     <g>
-      <circle 
-        cx="450" 
-        cy="450" 
-        r="450" 
-        className={styles.st0} 
+      <circle
+        cx="450"
+        cy="450"
+        r="450"
+        className={styles.st0}
         style={{ fill: color }}
       />
     </g>
@@ -78,13 +78,7 @@ const Icon = ({ size, color = '#ffffff' }) => (
         d="M62.4,678.8l320.4-457.6h-73.2L32.2,617.4C40.7,638.7,50.8,659.2,62.4,678.8z"
       />
     </g>
-    <rect
-      x="634.9"
-      y="222.5"
-      className={styles.st6}
-      width="80"
-      height="455"
-    />
+    <rect x="634.9" y="222.5" className={styles.st6} width="80" height="455" />
     <polygon
       className={styles.st7}
       points="396.6,677 714.9,222.5 617.2,222.5 299,677 "
@@ -95,6 +89,6 @@ const Icon = ({ size, color = '#ffffff' }) => (
       d="M61,676.4l317.8-453.9h-97.7L22.7,591.6C32.6,621.4,45.5,649.8,61,676.4z"
     />
   </svg>
-);
+)
 
-export default Icon;
+export default Icon
