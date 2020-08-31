@@ -1,15 +1,15 @@
-import React from 'react';
-import { SEO, Layout, Hero, Projects } from '../components';
-import { graphql } from 'gatsby';
+import React from "react"
+import { SEO, Layout, Hero, Projects } from "../components"
+import { graphql } from "gatsby"
 
 export default ({ data }) => {
   const {
     allMdx: { nodes: projects },
-  } = data;
+  } = data
 
   return (
     <Layout>
-      <SEO title='Home' description='Homepage' />
+      <SEO title="Home" description="Homepage" />
       <Hero />
       <Projects projects={projects} showLink gutterTop />
     </Layout>
@@ -18,11 +18,11 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allMdx (
-      filter: { 
-        fileAbsolutePath: { regex: "/projects/" }, 
-        frontmatter: { featured: { eq: true }}
-      }, 
+    allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: { featured: { eq: true } }
+      }
       sort: { fields: frontmatter___sortDate, order: DESC }
     ) {
       nodes {
@@ -37,8 +37,8 @@ export const query = graphql`
           projectStack
           image {
             childImageSharp {
-              fluid (maxWidth: 900) {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 900) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }

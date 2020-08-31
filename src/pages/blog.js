@@ -1,30 +1,27 @@
-import React from 'react';
-import { SEO, Layout, Blogs } from '../components';
-import { graphql } from 'gatsby';
+import React from "react"
+import { SEO, Layout, Blogs } from "../components"
+import { graphql } from "gatsby"
 
-const Blog = ({ 
-  data: { 
-    allMdx: { 
-      nodes: blogs, 
-      totalCount 
-    },
-  }
+const Blog = ({
+  data: {
+    allMdx: { nodes: blogs, totalCount },
+  },
 }) => (
   <Layout>
-    <SEO title='Blog' description='my thoughts' />
-    <section className='blog-page'>
-      <Blogs blogs={blogs} totalCount={totalCount} title='blog' />
+    <SEO title="Blog" description="my thoughts" />
+    <section className="blog-page">
+      <Blogs blogs={blogs} totalCount={totalCount} title="blog" />
     </section>
   </Layout>
-);
+)
 
 export const query = graphql`
   {
-    allMdx (
-      filter: { fileAbsolutePath: { regex: "/posts/" }}, 
-      sort: { fields: frontmatter___date, order: DESC },
+    allMdx(
+      filter: { fileAbsolutePath: { regex: "/posts/" } }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
-      totalCount,
+      totalCount
       nodes {
         id
         slug
@@ -37,7 +34,7 @@ export const query = graphql`
           image {
             childImageSharp {
               fluid {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
@@ -47,4 +44,4 @@ export const query = graphql`
   }
 `
 
-export default Blog;
+export default Blog
