@@ -58,7 +58,7 @@ const ProjectTemplate = ({
             <p>{projectDate.split("- ")[1]}</p>
           </div>
           <div>
-            <h3>{title === "SpInsight" ? "Download" : "Live Demo"}</h3>
+            <h3>{title === "SpInsight" ? "Download" : "Demo"}</h3>
             <a href={url} target="_blank" rel="noopener noreferrer">
               {title === "SpInsight" ? "MASTER THESIS" : "LAUNCH SITE"}
             </a>

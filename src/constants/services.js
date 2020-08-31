@@ -17,7 +17,7 @@ export default [
   {
     id: 3,
     icon: <FiCode className='service-icon' />,
-    title: 'User Interface Development',
+    title: 'Web Development',
     text: `I'm baby meditation tofu chillwave, distillery messenger bag thundercats chicharrones kale chips gochujang. Banh mi direct trade marfa salvia.`,
   },
 ];

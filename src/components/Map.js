@@ -8,7 +8,7 @@ const Map = () => {
     width: "100%",
     height: "50vh",
     latitude: 25,
-    longitude: 30,
+    longitude: 15,
     zoom: 1.5,
   })
 
