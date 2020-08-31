@@ -1226,7 +1226,7 @@ Footer
   color: var(--clr-primary-5);
 }
 /* .footer ul, */
-.footer h5 {
+.footer small {
   margin: 0px;
   color: var(--clr-grey-7);
   font-size: 12px;
@@ -1603,7 +1603,7 @@ Project Template
 .project-overview a {
   text-decoration: none;
 }
-.project-overview a:hover {
+.project-template a:hover {
   text-decoration: underline;
 }
 .project-overview h3 {

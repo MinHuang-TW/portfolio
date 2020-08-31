@@ -44,7 +44,9 @@ const ProjectTemplate = ({
         <div className="project-overview">
           <div>
             <h3>Role</h3>
-            <p>{projectRole}</p>
+            {projectRole.map(role => (
+              <p key={role}>{role}</p>
+            ))}
           </div>
           <div>
             <h3>Stack</h3>
@@ -60,7 +62,7 @@ const ProjectTemplate = ({
           <div>
             <h3>{title === "SpInsight" ? "Download" : "Demo"}</h3>
             <a href={url} target="_blank" rel="noopener noreferrer">
-              {title === "SpInsight" ? "MASTER THESIS" : "LAUNCH SITE"}
+              {title === "SpInsight" ? "FULL MASTER THESIS" : "LAUNCH SITE"}
             </a>
           </div>
         </div>
