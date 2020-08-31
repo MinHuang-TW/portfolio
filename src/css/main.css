@@ -82,6 +82,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+hr {
+  opacity: 0.12;
+  margin-top: 5rem;
+}
 
 h1,
 h2,
@@ -1707,6 +1711,11 @@ Project Template
   color: var(--clr-primary-5);
   font-weight: bold;
 }
+.iframe-container h4 span {
+  text-transform: none;
+  font-weight: 300;
+  margin-left: 4px;
+}
 @keyframes pointing {
   from {
     transform: translateX(0px);
@@ -1747,13 +1756,6 @@ Project Template
   .calculator-container {
     grid-template-columns: 1fr 1fr;
   }
-  .iframe-container h4 {
-    display: block;
-    text-align: center;
-  }
-  .iframe-container iframe {
-    justify-self: center;
-  }
   .uneven {
     grid-template-columns: 1fr;
   }
@@ -1761,6 +1763,13 @@ Project Template
 @media (max-width: 834px) {
   .iframe-container h4 svg {
     transform: rotate(90deg);
+  }
+  .iframe-container iframe {
+    justify-self: center;
+  }
+  .iframe-container h4 {
+    display: block;
+    text-align: center;
   }
   @keyframes pointing {
     from {
