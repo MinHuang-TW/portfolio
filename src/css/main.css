@@ -339,14 +339,17 @@ Navbar
   display: flex;
   align-items: center;
 }
-.nav-header .nav-logo {
+.nav-logo .icon {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.nav-header .nav-logo:hover {
+/* .nav-logo:hover {
   transform: rotateY(180deg);
   transform-style: preserve-3d;
   opacity: 0.38;
+} */
+.nav-logo:hover .icon {
+  fill: var(--clr-primary-5) !important;
 }
 .toggle-btn {
   font-size: 2rem;

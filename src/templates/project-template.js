@@ -30,11 +30,11 @@ const ProjectTemplate = ({
     <SEO title={title} description={projectBrief} />
 
     <header className="project-head">
-      {categories.map(category => (
+      {/* {categories.map(category => (
         <p key={category} className="project-category">
           [{category}]
         </p>
-      ))}
+      ))} */}
       <Title title={title} />
       <Image className="project-main" fluid={image.childImageSharp.fluid} />
     </header>
@@ -55,7 +55,7 @@ const ProjectTemplate = ({
             ))}
           </div>
           <div>
-            <h3>Timeline</h3>
+            <h3>Time</h3>
             <p>{projectDate.split("- ")[0]} -</p>
             <p>{projectDate.split("- ")[1]}</p>
           </div>
