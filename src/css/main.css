@@ -803,7 +803,7 @@ Title
 }
 .anchored-title:hover .anchored-icon {
   opacity: 1;
-  fill: var(--clr-grey-1);
+  fill: var(--clr-primary-5);
 }
 .anchored-text:hover {
   text-decoration: underline;
@@ -1593,6 +1593,11 @@ Project Template
   list-style: square;
   color: var(--clr-grey-3);
 }
+.project-template ol li {
+  transform: translateX(28px);
+  color: var(--clr-grey-7);
+  line-height: 25px;
+}
 .project-overview {
   display: flex;
 }
@@ -1604,11 +1609,22 @@ Project Template
   margin-right: 2.5rem;
   color: var(--clr-grey-3);
 }
-.project-overview a {
+.project-template a,
+.project-template strong {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.project-template strong {
+  font-weight: 300;
+  color: var(--clr-grey-1);
+}
+.project-template a {
   text-decoration: none;
 }
-.project-template a:hover {
+.project-template a:hover,
+.project-template a:hover strong {
   text-decoration: underline;
+  color: var(--clr-primary-5);
 }
 .project-overview h3 {
   font-size: 24px;
@@ -1620,17 +1636,14 @@ Project Template
 .project-template p:last-of-type {
   margin-bottom: 20px;
 }
-.project-template p {
-  font-size: 17px;
+.project-template p,
+.project-template li {
+  font-size: 1rem;
 }
 .project-template blockquote {
   border-left: 5px solid var(--clr-grey-7);
   padding: 0px 24px;
   margin: 0.5rem 0 2rem;
-}
-.project-template strong {
-  font-weight: 300;
-  color: var(--clr-grey-1);
 }
 .project-template blockquote p {
   margin: 0px !important;
@@ -1638,13 +1651,16 @@ Project Template
 .project-btns {
   display: flex;
   justify-content: space-between;
+  margin-top: 5rem;
 }
 .project-btns a {
   margin: 0px;
-  margin-top: 32px;
 }
 .project-btns a:last-of-type {
   margin-left: 8px;
+}
+.project-btns a:hover {
+  text-decoration: none;
 }
 @media (max-width: 600px) {
   .project-head {
@@ -1659,7 +1675,6 @@ Project Template
     margin: 0px;
   }
 }
-
 .figure-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -1674,10 +1689,12 @@ Project Template
   box-shadow: none;
 }
 .figure-container figcaption {
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
+  font-family: var(--ff-primary);
+  letter-spacing: var(--spacing);
   text-align: center;
   margin-top: 0.5rem;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .medium-zoom-overlay {
@@ -1694,7 +1711,7 @@ Project Template
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   align-content: start;
-  margin: 5rem 0px 2rem;
+  margin-top: 5rem;
 }
 .iframe-container blockquote {
   margin-top: 0px;
@@ -1731,21 +1748,11 @@ Project Template
   margin-left: 8px;
   stroke-width: 0.5;
 }
-.iframe-container li {
-  transform: translateX(28px);
-  color: var(--clr-grey-7);
-  line-height: 25px;
-}
-
 .project-template iframe {
   border-radius: var(--radius);
   border: none;
   width: 375px;
   height: 667px;
-}
-.calculator-container {
-  display: grid;
-  grid-template-columns: 1fr 411px;
 }
 .calculator {
   height: 178vw;
@@ -1753,9 +1760,6 @@ Project Template
   max-height: 570px;
 }
 @media (max-width: 960px) {
-  .calculator-container {
-    grid-template-columns: 1fr 1fr;
-  }
   .uneven {
     grid-template-columns: 1fr;
   }
@@ -1781,10 +1785,5 @@ Project Template
   }
   .iframe-container ol {
     display: none;
-  }
-}
-@media (max-width: 600px) {
-  .calculator-container {
-    grid-template-columns: 1fr;
   }
 }

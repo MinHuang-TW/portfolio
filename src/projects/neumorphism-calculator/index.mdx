@@ -3,9 +3,9 @@ title: Neumorphism Calculator
 url: https://rekenmachine.netlify.app/
 github: https://github.com/MinHuang-TW/Calculator
 projectDate: Jun 28 - Jul 1, 2020
-projectRole: [Developer]
-projectStack: [CSS3, Js ES6, Service worker]
-projectBrief: A simple calculator is built by purely vanilla javascript and it utilizes immediate execution logic. Offline mode is also supported since this project is a progressive web application (PWA).
+projectRole: [UI/ UX Designer, Front-end Developer]
+projectStack: [CSS3, Vanilla JS, Service worker]
+projectBrief: The simple calculator is built by purely vanilla javascript and it utilizes immediate execution logic. Offline mode is also supported since this project is a progressive web application (PWA).
 projectShortBrief: Worked as a lead developer resource, as well as a UI/UX designer, on the new Alienware Command Center.
 categories: [Design, Development]
 image: rekenmachine-main.png
@@ -13,28 +13,46 @@ sortDate: 2020-07-18
 featured: false
 ---
 
-<TitleAnchored>Current Problem</TitleAnchored>
+<div class='iframe-container'>
+<div>
+<TitleAnchored gutterTop>Summery</TitleAnchored>
 
-The majority of existing digital calculators do not display the calculation process. As a user performing long calculations frequently, it brings a lot of troubles since I always forget which number I have or I have not typed in and I have no choice but to start over.
+The majority of existing digital calculators do not display the calculation process. When a user performs a long calculation, it brings a lot of troubles since it is easy to forget or mistype a digit. Thus, the user has no choice but to start over.
+
+The project built by vanilla javascript aims to solve this problem by displaying both the process of calculating and the end result. The calculation utilizes _immediate execution logic_ and a third-party library, _Decimal js_, is used to fix javascript numeric precision issues. Besides, this project is a _progressive web application_(PWA) so offline mode is supported.
+
+<h4>
+  Live Demo <BsArrowRight />
+</h4>
+
+</div>
+
+<iframe
+  class="calculator"
+  name="js calculator"
+  src="https://rekenmachine.netlify.app/"
+/>
+
+</div>
 
 <TitleAnchored>Design Goal</TitleAnchored>
 
-- Keep calculating steps until the calculation is done
-- Since there are a lot of numbers displayed, the operands and the end result of per calculation should be distinguished with clear hierarchy.
-- Smooth pressing interaction and animation
-- Should be properly displayed across all mobile devices (e.g. mobile phone, tablet)
+- Display each calculation step until the calculation is done
+- Clear visual hierarchy between calculating digits and the end result
+- Smooth pressing interaction with salient user feedback
+- _Responsive web design_(RWD) across mobile devices(e.g. mobile phone, tablet)
 
-<div class="calculator-container">
-  <div>
-    <TitleAnchored>User Interface Design</TitleAnchored>
-    <p>color pallette</p>
-  </div>
-  <div>
-    <TitleAnchored>Live Demo</TitleAnchored>
-    <iframe
-      class="calculator"
-      name="js calculator"
-      src="https://rekenmachine.netlify.app/"
-    />
-  </div>
+<TitleAnchored>User Interface Design</TitleAnchored>
+
+The user interface of the calculator was designed based on the core of _Neumorphism_, which became a popular visual design trend that blends techniques from skeuomorphism, realism, and flat design in late 2019. One of the advantages of neumorphic button is the salient user feedback while the button is active or inactive.
+
+<div class='figure-container'>
+
+![Design system of user interface](./calculator-design-system.png)
+
+</div>
+<div class='figure-container'>
+
+![Cross-platform design](./calculator-rwd.png)
+
 </div>
