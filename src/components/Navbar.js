@@ -10,7 +10,7 @@ const Navbar = ({ toggleSidebar }) => (
       <div className="nav-header">
         <div className="nav-logo">
           <Link to="/">
-            <Logo size="36" />
+            <Logo size="38" />
           </Link>
         </div>
 
