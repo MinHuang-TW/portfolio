@@ -4,7 +4,7 @@ url: https://covid19-taiwan.netlify.app/
 github: https://github.com/MinHuang-TW/corona-tracker
 projectDate: Jun 2 - Jun 25, 2020
 projectRole: [UI/ UX Designer, Frontend Developer]
-projectStack: [Html5/ CSS3, React, LocalStorage, Service worker]
+projectStack: [HTML5/CSS3, React, LocalStorage, Service worker]
 projectBrief: The project empowers users to keep track of both the overview and the comparison of total cases, daily accumulation and the growing trend of selected countries.
 projectShortBrief: Worked as a lead developer resource, as well as a UI/UX designer, on the new Alienware Command Center.
 categories: [Design, Development]
@@ -13,20 +13,94 @@ sortDate: 2020-07-18
 featured: true
 ---
 
-<TitleAnchored>Background</TitleAnchored>
-
-This project is a graduation project conducted with the cooperation of OfficeVitae. The shared goal is to bridge the gap between theoretical and practical knowledge by proposing design solutions in pursuit of sustainable employee vitality promotion at work.
-
 ---
 
 <TitleAnchored>Summery</TitleAnchored>
+<p>
+  <a
+    href="https://en.wikipedia.org/wiki/COVID-19_pandemic"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <strong style={{ marginRight: 10 }}>Coronavirus disease(COVID-19)</strong>
+  </a>
+  is an ongoing global pandemic resulting in more than 28 million cases and 900K
+  deaths. As of now, countless people’s lives have been changed because of the loss
+  of jobs or family and it becomes one of the most concerning topics. Many digital
+  tools are in turn created to enable people to keep track of the latest situation.
+</p>
 
-This project is a graduation project conducted with the cooperation of OfficeVitae. The shared goal is to bridge the gap between theoretical and practical knowledge by proposing design solutions in pursuit of sustainable employee vitality promotion at work.
+However, these tools often display too much information to users requiring specific data. Besides, the interface is also too complex for them. Therefore, this project aims to simplify data and the interface as much as possible so that those users are able to perform the daily query with ease.
+
+<div class='figure-container'>
+
+![Contextual rendering of COVID-19 Tracker](./covid19_render.jpg)
+
+</div>
+
+---
 
 <TitleAnchored>User Story</TitleAnchored>
 
-This project is a graduation project conducted with the cooperation of OfficeVitae. The shared goal is to bridge the gap between theoretical and practical knowledge by proposing design solutions in pursuit of sustainable employee vitality promotion at work.
+The COVID-19 Tracker consists of two sections:
+
+<ul class='paragraph'>
+
+- Overview of the Selected Country
+
+A user can not only get to know the amount of today's confirmed, recovered, deaths cases but also the current amount and ratio of recovered and deaths cases to confirmed cases of the selected country.
+
+- Comparison of Selected Countries
+
+A user can select up to five countries and compare their case-growing trend and further details. Moreover, the information of each country can be turned on or off and all countries can be sorted in ascending or descending order according to different user needs.
+
+</ul>
+<div class='figure-container'>
+
+![Ｗireframe of responsive design](./covid19_wireframe.png)
+
+</div>
 
 <TitleAnchored>Interface Design</TitleAnchored>
 
-This project is a graduation project conducted with the cooperation of OfficeVitae. The shared goal is to bridge the gap between theoretical and practical knowledge by proposing design solutions in pursuit of sustainable employee vitality promotion at work.
+The wireframe was further crafted by implementing the design system. The main design goal is to differentiate complex data with a clear visual hierarchy. For instance, the chromatic color theme classified data into confirmed, active, recovered and deaths cases.
+
+<div class='figure-container'>
+
+![Design system](./covid19_designSystem.png)
+
+</div>
+<div class='figure-container'>
+
+![High-fidelity user interface design created with Figma](./covid19_UI.jpg)
+
+</div>
+
+<TitleAnchored>Web Development</TitleAnchored>
+
+The COVID-19 Tracker is a _single-page application(SPA)_ and _progressive web application(PWA)_ developed in _HTML_, _CSS_, _React.js_ and _Service Worker_. The data used in the tracker is powered by <a href='https://disease.sh/docs/' target='_blank' rel='noopener noreferrer'>**NOVELCovid API**</a> sourced from _Worldometer_, _Johns Hopkins University_, etc. and updated every ten minutes.
+
+<ul class='paragraph'>
+
+- Data Visualization
+
+_Mapbox GL JS_ and _Chart.js_ were utilized to visualize the data in various ways such as map, histogram, pie chart, etc. The transition of charts and numbers were animated with _Chart.js_ and _CountUp.js_ respectively.
+
+<div class='figure-container'>
+
+![Data visualization(Mapbox GL)](./covid19_map.png)
+![Data visualization(Chart.js)](./covid19_chart.png)
+
+</div>
+
+- Selecting & Tracking Countries
+
+Apart from the drop-down menu, the confirmed-case map offered an alternative way of selecting a country for users. In the comparison section, the selected countries were saved in the _localStorage_ to reduce the repetitive selection of tracking countries next time.
+
+</ul>
+<div class='figure-container'>
+
+![Country selection: Map or Drop-down menu](./covid19_selection.png)
+![Tracking countries(Up to 5) are keeped in localStorage](./covid19_selectedCountries.png)
+
+</div>

@@ -15,7 +15,7 @@ const ProjectTemplate = ({
       frontmatter: {
         title,
         projectBrief,
-        categories,
+        // categories,
         image,
         github,
         url,

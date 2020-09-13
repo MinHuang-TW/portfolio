@@ -18,7 +18,7 @@ const ProjectsPage = ({
 
   return (
     <Layout>
-      <SEO title="Projects" description="all projects" />
+      <SEO title="Project" description="all projects" />
       <section className="projects-page">
         <Title title="All Projects" styleClass="project-title" />
         <Filter
