@@ -1600,7 +1600,7 @@ Project Template
 .paragraph li {
   margin: 2.5rem 0 0.75rem;
   text-transform: uppercase;
-  /* color: var(--clr-grey-1) !important; */
+  /* color: var(--clr-primary-5) !important; */
 }
 .project-template ol li {
   transform: translateX(28px);
@@ -1725,7 +1725,8 @@ Project Template
 .iframe-container blockquote {
   margin-top: 0px;
 }
-.iframe-container iframe {
+.iframe-container iframe,
+.iframe-container img {
   justify-self: end;
 }
 .iframe-container h4 {
@@ -1757,8 +1758,11 @@ Project Template
   margin-left: 8px;
   stroke-width: 0.5;
 }
-.project-template iframe {
+.project-template iframe,
+.project-template img {
   border-radius: var(--radius);
+}
+.project-template iframe {
   border: none;
   width: 375px;
   height: 667px;

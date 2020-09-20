@@ -3,15 +3,96 @@ title: Expense Tracker
 url: https://fierce-dawn-03917.herokuapp.com/
 github: https://github.com/MinHuang-TW/expense-tracker
 projectDate: Mar 20 - Jun 24, 2020
-projectRole: [UI/ UX Designer, Fullstack Developer]
-projectStack: [HTML5/CSS3, React, MongoDB, Express JS, Node JS]
-projectBrief: A full-stack development project aims to empower users to track and manage personal income and expense from a perspective of both details and big picture.
+projectRole: [UI/ UX Designer, Front-end Developer, Back-end Developer]
+projectStack: [HTML5, CSS3, React, MongoDB, Express, Node.js]
+projectBrief: This full-stack development project allows an user to track personal incomes and expenses either from a big-picture perspective or in rich details.
 categories: [Design, Development]
-image: expense-tracker-main.png
+image: expenseTracker_rwd.png
 sortDate: 2020-06-24
 featured: true
 ---
 
-<TitleAnchored>Summery</TitleAnchored>
+import addNew from "./expenseTracker_video_add.gif"
 
-This project is a graduation project conducted with the cooperation of OfficeVitae. The shared goal is to bridge the gap between theoretical and practical knowledge by proposing design solutions in pursuit of sustainable employee vitality promotion at work.
+---
+
+<div class='iframe-container'>
+<div>
+<TitleAnchored top='0'>Summery</TitleAnchored>
+
+The expense tracker aims to assist a user in managing personal finances by offering not only a basic expense check but also a brief analysis of incomes and expenses for a week, a month and a year. All operations are performed in private through a personal account.
+
+The project is a _MERN stack_ application, deployed on _Heroku_. The front-end was developed in _HTML5_, _CSS3_ and _React.js_ while the back-end was created in _Express_ and _Node.js_. The data was stored in _MongoDB_ Atlas and users can only access their own data but other’s.
+
+<h4>
+  Live Demo 
+  <span>(Press Login or Sign up an account)</span> 
+  <BsArrowRight />
+</h4>
+</div>
+
+<iframe src='https://fierce-dawn-03917.herokuapp.com/login' />
+</div>
+
+---
+
+<TitleAnchored>User Story</TitleAnchored>
+
+After login, the user can access the following key features:
+
+- Add/ Edit/ Delete a transaction: The user can create a new income or expense transaction which can be deleted or modified after the creation.
+
+- Check recent transactions: The user will see all transactions took place in the last three days and the sum of income, expense and balance in the personal dashboard.
+
+- Check history transactions: The user can also check the list of previous transactions along with the sum and ratio of income and expense in a day, a week, a month and a year.
+
+- Get an overview of incomes and expenses: All transactions of the user are accumulated to the daily, weekly and monthly total sum and visualized as a histogram. The user then gets a better understanding of the weekly, monthly and yearly fluctuation of incomes and expenses.
+
+<div class='figure-container'>
+
+![User stories illustrated with a flow chart](./expenseTracker_flowChart.png)
+
+</div>
+<div class='figure-container'>
+
+![Main screens](./expenseTracker_keyFrames.png)
+![Wireframe](./expenseTracker_userFlow.png)
+
+</div>
+
+<TitleAnchored>Interface Design</TitleAnchored>
+
+The visual style of this project was inspired by Andrew Tanchuk's concept, <a href="https://dribbble.com/shots/5271124-Personal-Budget-App?utm_source=Pinterest_Shot&utm_campaign=andrewtanchuk&utm_content=Personal%20Budget%20App&utm_medium=Social_Share#shot-description" target="_blank" rel="noopener noreferrer">**Personal Budget App**</a>. Then, a design system was formulated based on the same philosophy such as the color theme and the flat design. Next, the wireframe of screens was elevated to high-fidelity interface design by applying the design system.
+
+<div class='figure-container'>
+
+![Design system](./expenseTracker_designSystem.png)
+
+</div>
+<div class='figure-container'>
+
+![Visual design of screens](./expenseTracker_visualDesign.png)
+
+</div>
+
+<TitleAnchored top="0">Web Development</TitleAnchored>
+
+The project is a _MERN_ stack application, deployed on _Heroku_. Since personal financial records are sensitive information, it is necessary to keep personal data in private. Therefore, user authentication was required and verified with _JSON Web Token (JWT)_. By doing so, a user can login and log out with a personal account.
+
+<ul class='paragraph'>
+
+- Front-end
+
+The front-end was built with responsive modern technologies (_HTML5_, _CSS3_, _React.js_) and complimentary by a front-end library, _Material-UI_. The data analysis was achieved by visualizing transaction data with _D3.js_. Besides, _React-spring_ was utilized to add lively animations to the react application.
+
+- Back-end
+
+A _REST API_ for the project was created with _Express_, _Node.js_ while the data was stored in _MongoDB_ Atlas, a NoSQL and document-oriented database in the cloud. Then, a user can perform _CRUD_ operations through this API such as create, read, update, and delete data.
+
+</ul>
+<div class='figure-container'>
+  <figure style={{ textAlign: "center" }}>
+    <img src={addNew} width="30%" alt="add new transaction" />
+    <figcaption>Adding and edit a transaction</figcaption>
+  </figure>
+</div>

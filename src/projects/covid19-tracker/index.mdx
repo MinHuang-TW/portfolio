@@ -3,8 +3,8 @@ title: COVID-19 Tracker
 url: https://covid19-taiwan.netlify.app/
 github: https://github.com/MinHuang-TW/corona-tracker
 projectDate: Jun 2 - Jun 25, 2020
-projectRole: [UI/ UX Designer, Frontend Developer]
-projectStack: [HTML5/CSS3, React, LocalStorage, Service worker]
+projectRole: [UI/ UX Designer, Front-end Developer]
+projectStack: [HTML5, CSS3, React, LocalStorage, Service worker]
 projectBrief: The project empowers users to keep track of both the overview and the comparison of total cases, daily accumulation and the growing trend of selected countries.
 projectShortBrief: Worked as a lead developer resource, as well as a UI/UX designer, on the new Alienware Command Center.
 categories: [Design, Development]
@@ -44,17 +44,10 @@ However, these tools often display too much information to users requiring speci
 
 The COVID-19 Tracker consists of two sections:
 
-<ul class='paragraph'>
+- Overview of the Selected Country: A user can not only get to know the amount of today's confirmed, recovered, deaths cases but also the current amount and ratio of recovered and deaths cases to confirmed cases of the selected country.
 
-- Overview of the Selected Country
+- Comparison of Selected Countries: A user can select up to five countries and compare their case-growing trend and further details. Moreover, the information of each country can be turned on or off and all countries can be sorted in ascending or descending order according to different user needs.
 
-A user can not only get to know the amount of today's confirmed, recovered, deaths cases but also the current amount and ratio of recovered and deaths cases to confirmed cases of the selected country.
-
-- Comparison of Selected Countries
-
-A user can select up to five countries and compare their case-growing trend and further details. Moreover, the information of each country can be turned on or off and all countries can be sorted in ascending or descending order according to different user needs.
-
-</ul>
 <div class='figure-container'>
 
 ![Ｗireframe of responsive design](./covid19_wireframe.png)
@@ -78,13 +71,13 @@ The wireframe was further crafted by implementing the design system. The main de
 
 <TitleAnchored>Web Development</TitleAnchored>
 
-The COVID-19 Tracker is a _single-page application(SPA)_ and _progressive web application(PWA)_ developed in _HTML_, _CSS_, _React.js_ and _Service Worker_. The data used in the tracker is powered by <a href='https://disease.sh/docs/' target='_blank' rel='noopener noreferrer'>**NOVELCovid API**</a> sourced from _Worldometer_, _Johns Hopkins University_, etc. and updated every ten minutes.
+The COVID-19 Tracker is a _single-page application(SPA)_ and _progressive web application(PWA)_ developed in _HTML_, _CSS_, _React.js_ and _Service Worker_ and deployed on _Netlify_.
 
 <ul class='paragraph'>
 
 - Data Visualization
 
-_Mapbox GL JS_ and _Chart.js_ were utilized to visualize the data in various ways such as map, histogram, pie chart, etc. The transition of charts and numbers were animated with _Chart.js_ and _CountUp.js_ respectively.
+The data is powered by <a href='https://disease.sh/docs/' target='_blank' rel='noopener noreferrer'>**NOVELCovid API**</a> sourced from _Worldometer_, _Johns Hopkins University_, etc. and visualized with _Mapbox GL JS_ and _Chart.js_ in various ways such as map, histogram, pie chart, etc. In addition, _Chart.js_ and _CountUp.js_ were implemented to animate the transition of charts and numbers respectively.
 
 <div class='figure-container'>
 
@@ -95,7 +88,7 @@ _Mapbox GL JS_ and _Chart.js_ were utilized to visualize the data in various way
 
 - Selecting & Tracking Countries
 
-Apart from the drop-down menu, the confirmed-case map offered an alternative way of selecting a country for users. In the comparison section, the selected countries were saved in the _localStorage_ to reduce the repetitive selection of tracking countries next time.
+Apart from the drop-down menu, the confirmed-case map offers an alternative way to select a country for users. In the comparison section, the selected countries are saved in the _localStorage_ to reduce the repetitive selection of tracking countries next time.
 
 </ul>
 <div class='figure-container'>

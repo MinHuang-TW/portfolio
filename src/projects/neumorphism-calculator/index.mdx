@@ -3,8 +3,8 @@ title: Neumorphism Calculator
 url: https://rekenmachine.netlify.app/
 github: https://github.com/MinHuang-TW/Calculator
 projectDate: Jun 28 - Jul 1, 2020
-projectRole: [UI/ UX Designer, Frontend Developer]
-projectStack: [HTML5/CSS3, Vanilla JS, Service worker]
+projectRole: [UI/ UX Designer, Front-end Developer]
+projectStack: [HTML5, CSS3, Vanilla JS, Service worker]
 projectBrief: The simple calculator is built by purely vanilla javascript and it utilizes immediate execution logic. Offline mode is also supported since this project is a progressive web application(PWA).
 projectShortBrief: Worked as a lead developer resource, as well as a UI/UX designer, on the new Alienware Command Center.
 categories: [Design, Development]
@@ -19,9 +19,9 @@ featured: false
 <div>
 <TitleAnchored top={0}>Summery</TitleAnchored>
 
-The majority of existing digital calculators do not display the calculation process. When a user performs a long calculation, it brings a lot of troubles since it is easy to forget or mistype a digit. Thus, the user has no choice but to start over.
+The majority of existing digital calculators do not display the calculation process. When a user performs a long calculation, it brings a lot of troubles since it is easy to forget or mistype a digit. Thus, the user has no choice but to start over. The project built by _vanilla javascript_ aims to solve this problem by displaying both the process of calculating and the end result.
 
-The project built by vanilla javascript aims to solve this problem by displaying both the process of calculating and the end result. The calculation utilizes _immediate execution logic_ and a third-party library, _Decimal js_, is used to fix javascript numeric precision issues. Besides, this project is a _progressive web application_(PWA) so offline mode is supported.
+The project, which is deployed on _Netlify_, is a _progressive web application_(PWA) so offline mode is supported. Beside, this project utilizes immediate execution logic and fixes the js numeric precision issue by applying a third-party library, _Decimal light.js_.
 
 <h4>
   Live Demo <BsArrowRight />
@@ -50,11 +50,21 @@ The user interface of the calculator was designed based on the core of _Neumorph
 
 <div class='figure-container'>
 
-![Design system of user interface](./calculator-design-system.png)
+![Design system of user interface](./calculator_designSystem.png)
 
 </div>
 <div class='figure-container'>
 
-![Cross-platform design](./calculator-rwd.png)
+![Contextual rendering of cross-platform design](./calculator_render.png)
 
 </div>
+
+<TitleAnchored>Web Development</TitleAnchored>
+
+The project was developed in purely _vanilla javascript_ while the animation was created with _CSS_. Besides, _Service Worker_ was utilized to turn this project into a _progressive web application_(PWA) and make it work offline. At the end, the project was deployed on _Netlify_.
+
+In javascript, there are numeric precision issues, which would be problematic for a calculation project. Therefore, _Decimal light.js_ is used to not only fix the problem but also perform the operation instead of _eval()_, which is a dangerous function and exposes users to high security risks according to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#:~:text=eval()%20is%20a%20dangerous,permissions%20of%20your%20webpage%20%2F%20extension" target="_blank" rel="noopener noreferrer">**MDN**</a>.
+
+<TitleAnchored>Future Development</TitleAnchored>
+
+Currently, the calculator offers only the basic arithmetic. It is possible to upgrade the existing calculator to a scientific one by adding more advanced arithmetic like the factorial function, trigonometric functions and so on.
