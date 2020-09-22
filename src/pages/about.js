@@ -1,38 +1,38 @@
-import React from "react"
-import { SEO, Layout, Title, Services, Jobs, Map } from "../components"
-import Image from "gatsby-image"
-import { graphql } from "gatsby"
+import React from 'react';
+import { SEO, Layout, Title, Services, Jobs, Education, Map } from '../components';
+import Image from 'gatsby-image';
+import { graphql } from 'gatsby';
 
-const About = ({
-  data: {
-    about: { nodes },
-  },
-}) => {
-  const { title, info, image } = nodes[0]
+const About = ({ data: { about: { nodes }}}) => {
+  const { title, info, image } = nodes[0];
 
   return (
     <Layout>
-      <SEO title="About" description="about Min" />
-      <section className="about-page">
-        <div className="section-center about-center">
-          <Image fluid={image.childImageSharp.fluid} className="about-img" />
-          <article className="about-text">
+      <SEO title='About' description='about Min' />
+      <section className='about-page'>
+        <div className='section-center about-center'>
+          <Image fluid={image.childImageSharp.fluid} className='about-img' />
+          <article className='about-text'>
             <Title title={title} />
             <p>{info}</p>
-            {/* <div className='about-stack'>
-              {stack.map(({ id, language }) => (
-                <span key={id}>{language}</span>
-              ))}
-            </div> */}
           </article>
         </div>
       </section>
       <Services />
       <Jobs />
+      <Education />
+      <a
+        href={process.env.RESUME_LINK}
+        className='btn center-btn projects-btn about-btn'
+        rel='noopener noreferrer'
+        target='_blank'
+      >
+        download resume
+      </a>
       <Map />
     </Layout>
   )
-}
+};
 
 export const query = graphql`
   {
@@ -56,4 +56,4 @@ export const query = graphql`
   }
 `
 
-export default About
+export default About;

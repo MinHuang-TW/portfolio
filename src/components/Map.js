@@ -35,6 +35,10 @@ const Map = () => {
           />
         </Marker>
       ))}
+      <div className='section-center legend-container'>
+        <img width='24' src={marker} alt='legend indicator' />
+        <h4 className='legend-text'>My Footprint</h4>
+      </div>
     </ReactMap>
   )
 }

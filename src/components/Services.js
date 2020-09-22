@@ -1,12 +1,10 @@
 import React from 'react';
-import Title from './Title';
 import services from '../constants/services';
 
 const Services = () => (
   <section className='section-small'>
-    <Title title='skillset' />
     <div className='section-center services-center'>
-      {services.map((service) => {
+      {services.map(service => {
         const { id, icon, title, text } = service;
         return (
           <article key={id} className='service'>

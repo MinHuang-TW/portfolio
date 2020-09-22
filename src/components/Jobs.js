@@ -10,8 +10,8 @@ const Jobs = () => {
   const { country, date, position, descriptions } = jobs[selected];
   
   return (
-    <section className='section-small jobs'>
-      <Title title='experience' />
+    <section className='section-small'>
+      <Title title='work experiences' />
       <div className='jobs-center'>
         <div className='btn-container'>
           {jobs.map((job, index) => (
@@ -26,7 +26,6 @@ const Jobs = () => {
         </div>
         <article className='job-info'>
           <h3>{position}</h3>
-          {/* <h4>{company}</h4> */}
           <p className='job-date'>{date}</p>
           <p>{country}</p>
           {descriptions.map(({ id, list }) => (

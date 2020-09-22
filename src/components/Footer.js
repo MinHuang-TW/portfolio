@@ -1,25 +1,19 @@
-import React from "react"
-import SocialLinks from "../constants/socialLinks"
-import { Link } from "gatsby"
-import { FiMail } from "react-icons/fi"
-
-const data = [
-  { id: 1, text: "home", url: "/" },
-  { id: 2, text: "project", url: "/project/" },
-  { id: 3, text: "blog", url: "/blog/" },
-  { id: 4, text: "about", url: "/about/" },
-]
+import React from 'react';
+import SocialLinks from '../constants/socialLinks';
+import data from '../constants/navigations';
+import { Link } from 'gatsby';
+import { FiMail } from 'react-icons/fi';
 
 const Footer = () => (
-  <footer className="footer">
-    <div className="section-center">
-      <div className="footer-container">
-        <div className="footer-link-block">
-          <h3 className="footer-subtitle">Navigate to</h3>
+  <footer className='footer'>
+    <div className='section-center'>
+      <div className='footer-container'>
+        <div className='footer-link-block'>
+          <h3 className='footer-subtitle'>Navigate to</h3>
           <ul className={`page-links footer-links`}>
             {data.map(({ id, text, url }) => (
               <li key={id}>
-                <Link to={url} activeClassName="footer-link-selected">
+                <Link to={url} activeClassName='footer-link-selected'>
                   {text}
                 </Link>
               </li>
@@ -27,28 +21,28 @@ const Footer = () => (
           </ul>
         </div>
 
-        <div className="footer-media-block">
-          <h3 className="footer-subtitle">Find out More</h3>
+        <div className='footer-media-block'>
+          <h3 className='footer-subtitle'>Find out More</h3>
           <SocialLinks />
-          <div className="mail-block">
-            <FiMail className="service-icon" />
+          <div className='mail-block'>
+            <FiMail className='service-icon' />
             <h4>h.min719@gmail.com</h4>
           </div>
         </div>
 
-        <div className="footer-form-block">
-          <h3 className="footer-subtitle">Leave Me a Message</h3>
+        <div className='footer-form-block'>
+          <h3 className='footer-subtitle'>Leave Me a Message</h3>
           <form
-            action="https://formspree.io/mzbjjrrd"
-            method="POST"
-            target="_blank"
-            rel="noopener noreferrer"
+            action='https://formspree.io/mzbjjrrd'
+            method='POST'
+            target='_blank'
+            rel='noopener noreferrer'
           >
-            <div className="footer-form">
-              <textarea name="message" placeholder="message" rows="5" />
+            <div className='footer-form'>
+              <textarea name='message' placeholder='message' rows='5' />
               <div>
-                <input type="email" name="email" placeholder="your email" />
-                <button type="submit" className="btn footer-btn">
+                <input type='email' name='email' placeholder='your email' />
+                <button type='submit' className='btn footer-btn'>
                   submit
                 </button>
               </div>
@@ -62,6 +56,6 @@ const Footer = () => (
       </small>
     </div>
   </footer>
-)
+);
 
-export default Footer
+export default Footer;
