@@ -6,7 +6,7 @@ export default [
     id: 1,
     icon: <FiUsers className="service-icon" />,
     title: "User-centered Research",
-    text: `Research techniques (e.g. Contextmapping, co-creation, focus group, etc.) allow me to gain empathy for different users and unlock their unfulfilled desires.`,
+    text: `Research techniques (e.g. Contextmapping, co-creation, focus group, etc.) allow me to gain insights for different users and unlock their unfulfilled desires.`,
   },
   {
     id: 2,

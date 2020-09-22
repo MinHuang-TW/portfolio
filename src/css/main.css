@@ -804,10 +804,13 @@ Education
   font-size: 1.25rem;
   text-transform: none;
 }
+.education-layout p {
+  margin-bottom: 0;
+}
 .gap-top {
   margin-top: 2.5rem;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   .education-layout {
     display: block;
     text-align: center;
@@ -1386,7 +1389,7 @@ About Page
   line-height: 2;
 }
 .about-btn {
-  margin: 0 auto 5rem;
+  margin: 2.5rem auto 5rem;
 }
 .stack-container {
   width: 30rem;
@@ -1410,7 +1413,7 @@ About Page
   display: flex;
   align-items: center;
   position: relative;
-  top: 90%;
+  top: 88%;
 }
 .legend-text {
   margin: 0px;
@@ -1764,7 +1767,12 @@ Project Template
   margin-top: 0.5rem;
   font-size: 1rem;
 }
-
+.gif-container figure {
+  text-align: center;
+}
+.gif-container img {
+  width: 60%;
+}
 .medium-zoom-overlay {
   background-color: #000000 !important;
 }
@@ -1857,5 +1865,16 @@ Project Template
   }
   .iframe-container ol {
     display: none;
+  }
+}
+@media (max-width: 600px) {
+  .gif-container {
+    display: block;
+  }
+  .gif-container figure:first-of-type {
+    margin-bottom: 2.5rem;
+  }
+  .gif-container img {
+    width: 70%;
   }
 }

@@ -13,6 +13,7 @@ featured: true
 ---
 
 import addNew from "./expenseTracker_video_add.gif"
+import checkSummery from "./expenseTracker_video_transactions.gif"
 
 ---
 
@@ -90,9 +91,14 @@ The front-end was built with responsive modern technologies (_HTML5_, _CSS3_, _R
 A _REST API_ for the project was created with _Express_, _Node.js_ while the data was stored in _MongoDB_ Atlas, a NoSQL and document-oriented database in the cloud. Then, a user can perform _CRUD_ operations through this API such as create, read, update, and delete data.
 
 </ul>
-<div class='figure-container'>
-  <figure style={{ textAlign: "center" }}>
-    <img src={addNew} width="30%" alt="add new transaction" />
+
+<div class='figure-container gif-container'>
+  <figure>
+    <img src={addNew} alt="add new transaction" />
     <figcaption>Adding and edit a transaction</figcaption>
+  </figure>
+  <figure>
+    <img src={checkSummery} alt="check summery of transactions" />
+    <figcaption>Check record and summery of the day, week, etc.</figcaption>
   </figure>
 </div>
