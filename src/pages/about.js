@@ -29,7 +29,7 @@ const About = ({ data: { about: { nodes }}}) => {
       >
         download resume
       </a>
-      <Map />
+      {typeof window !== 'undefined' && <Map />}
     </Layout>
   )
 };
