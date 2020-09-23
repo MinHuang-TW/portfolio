@@ -16,7 +16,7 @@ const data = [
   {
     id: 2,
     icon: <FiLinkedin className='social-icon' />,
-    url: 'https://www.twitter.com',
+    url: 'https://www.linkedin.com/in/minHuang-twn/',
   },
   {
     id: 3,

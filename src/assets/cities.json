@@ -461,6 +461,20 @@
                 "name": "Sydney"
             },
             "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    4.3636978,
+                    51.9995349
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Delft",
+                "name": "Delft"
+            },
+            "type": "Feature"
         }
     ],
     "type": "FeatureCollection"

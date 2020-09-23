@@ -184,11 +184,34 @@ iframe[seamless] {
     line-height: 1;
   }
 }
+/*
+=============== 
+Mapbox
+===============
+*/
 .mapboxgl-ctrl-bottom-left {
   display: none;
 }
 .mapboxgl-ctrl-bottom-right {
   display: none;
+}
+.marker {
+  transform: translate(-50%, -50%);
+}
+.mapboxgl-popup-tip {
+  border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+}
+.mapboxgl-popup-content {
+  background: rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  padding: 0.3rem 0.8rem !important;
+}
+.popup-text {
+  font-size: 0.8rem;
+  color: var(--clr-grey-3);
+}
+.flag {
+  margin-left: 0.25rem;
 }
 /*  global classes */
 .btn {
