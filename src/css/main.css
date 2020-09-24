@@ -538,7 +538,7 @@ Sidebar Animation
     opacity: 1;
   }
 }
-.sidebar-icons li {
+/* .sidebar-icons li {
   opacity: 0;
   animation: slideUp 0.5s ease-in-out 0.3s forwards;
 }
@@ -566,8 +566,7 @@ Sidebar Animation
     transform: translateY(0);
     opacity: 1;
   }
-}
-
+} */
 /*
 =============== 
 Filter
@@ -1019,10 +1018,10 @@ Blog
   margin-bottom: 2rem;
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
-  -webkit-backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: var(--transition);
-  transition: var(--transition);
+  transition: var(--transition); */
 }
 .blog:hover {
   box-shadow: var(--dark-shadow);
@@ -1062,7 +1061,7 @@ Blog
   right: 7.5px;
   height: 41px;
   color: var(--clr-grey-7);
-  z-index: 9999;
+  z-index: 100;
 }
 .category-name {
   cursor: pointer;

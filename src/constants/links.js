@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import data from '../constants/navigations';
 import { Link } from 'gatsby';
 
 export default ({ styleClass }) => (
   <ul className={`page-links ${styleClass ? styleClass : ''}`}>
     {data.map(({ id, text, url }) => (
-      <li key={id}>
-        <Link to={url} activeClassName='nav-selected'>
-          {text}
-        </Link>
-      </li>
+      <Fragment key={id}>
+        {text !== 'home' && (
+          <li>
+            <Link to={url} activeClassName='nav-selected'>
+              {text}
+            </Link>
+          </li>
+        )}
+      </Fragment>
     ))}
   </ul>
-);
+)
