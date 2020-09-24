@@ -1,9 +1,11 @@
 import React from 'react';
-import { Layout, SEO, Title } from '../components';
+import { Layout, SEO, Title, TitleAnchored } from '../components';
 import { graphql, Link } from 'gatsby';
 import { DiscussionEmbed } from 'disqus-react';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+
+const shortcodes = { TitleAnchored };
 
 const BlogTemplate = ({
   data: {
@@ -11,7 +13,7 @@ const BlogTemplate = ({
       id,
       slug,
       body,
-      frontmatter: { title, date, description },
+      frontmatter: { title, categories, date, description },
     },
   },
 }) => {
@@ -29,13 +31,15 @@ const BlogTemplate = ({
       <SEO title={title} description={description} />
       <header className='project-head'>
         <Title title={title} />
-        <p className='blog-subtitle'>{date}</p>
+        <p className='blog-subtitle'>
+          Posted on {date.toUpperCase()} in {categories[0].toUpperCase()}
+        </p>
       </header>
 
       <section className='blog-template'>
         <div className='section-center content-container'>
           <article className='blog-content'>
-            <MDXProvider>
+            <MDXProvider components={shortcodes}>
               <MDXRenderer>{body}</MDXRenderer>
             </MDXProvider>
           </article>
@@ -61,6 +65,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        categories
         date(formatString: "MMMM D, YYYY")
         description
       }

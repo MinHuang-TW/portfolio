@@ -1,12 +1,12 @@
-import React from "react"
-import { Layout, SEO, Title, TitleAnchored } from "../components"
-import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { graphql, Link } from "gatsby"
-import { BsArrowRight } from "react-icons/bs"
-import Image from "gatsby-image"
+import React from 'react';
+import { Layout, SEO, Title, TitleAnchored } from '../components';
+import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { graphql, Link } from 'gatsby';
+import { BsArrowRight } from 'react-icons/bs';
+import Image from 'gatsby-image';
 
-const shortcodes = { TitleAnchored, BsArrowRight }
+const shortcodes = { TitleAnchored, BsArrowRight };
 
 const ProjectTemplate = ({
   data: {
@@ -15,7 +15,6 @@ const ProjectTemplate = ({
       frontmatter: {
         title,
         projectBrief,
-        // categories,
         image,
         github,
         url,
@@ -29,19 +28,14 @@ const ProjectTemplate = ({
   <Layout>
     <SEO title={title} description={projectBrief} />
 
-    <header className="project-head">
-      {/* {categories.map(category => (
-        <p key={category} className="project-category">
-          [{category}]
-        </p>
-      ))} */}
+    <header className='project-head'>
       <Title title={title} />
-      <Image className="project-main" fluid={image.childImageSharp.fluid} />
+      <Image className='project-main' fluid={image.childImageSharp.fluid} />
     </header>
 
-    <section className="project-template">
-      <div className="section-center content-container">
-        <div className="project-overview">
+    <section className='project-template'>
+      <div className='section-center content-container'>
+        <div className='project-overview'>
           <div>
             <h3>Role</h3>
             {projectRole.map(role => (
@@ -56,13 +50,13 @@ const ProjectTemplate = ({
           </div>
           <div>
             <h3>Time</h3>
-            <p>{projectDate.split("- ")[0]} -</p>
-            <p>{projectDate.split("- ")[1]}</p>
+            <p>{projectDate.split('- ')[0]} -</p>
+            <p>{projectDate.split('- ')[1]}</p>
           </div>
           <div>
-            <h3>{title === "SpInsight" ? "Download" : "Demo"}</h3>
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              {title === "SpInsight" ? "FULL MASTER THESIS" : "LAUNCH SITE"}
+            <h3>{title === 'SpInsight' ? 'Download' : 'Demo'}</h3>
+            <a href={url} target='_blank' rel='noopener noreferrer'>
+              {title === 'SpInsight' ? 'FULL MASTER THESIS' : 'LAUNCH SITE'}
             </a>
           </div>
         </div>
@@ -71,15 +65,15 @@ const ProjectTemplate = ({
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
 
-        <div className="project-btns">
-          <Link to="/project/" className="btn center-btn">
+        <div className='project-btns'>
+          <Link to='/project/' className='btn center-btn'>
             back to project
           </Link>
           <a
-            className="btn center-btn"
+            className='btn center-btn'
             href={github}
-            target="_blank"
-            rel="noopener noreferrer"
+            target='_blank'
+            rel='noopener noreferrer'
           >
             view code
           </a>
@@ -87,7 +81,7 @@ const ProjectTemplate = ({
       </div>
     </section>
   </Layout>
-)
+);
 
 export const query = graphql`
   query GetSingleProject($id: String) {
@@ -97,7 +91,6 @@ export const query = graphql`
       frontmatter {
         title
         projectBrief
-        categories
         projectDate
         projectStack
         projectRole
@@ -115,4 +108,4 @@ export const query = graphql`
   }
 `
 
-export default ProjectTemplate
+export default ProjectTemplate;

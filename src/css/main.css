@@ -860,7 +860,7 @@ Title
   margin: 5rem 0 1.5rem -1.5rem;
 }
 .anchored-icon {
-  opacity: 0;
+  opacity: 0.12;
   margin-right: 0.5rem;
   -webkit-transition: var(--transition);
   transition: var(--transition);
@@ -877,6 +877,9 @@ Title
 }
 .anchored-text:hover {
   text-decoration: underline;
+  color: var(--clr-primary-5);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 /*
 =============== 
@@ -1237,7 +1240,7 @@ Footer
 }
 .footer-links {
   text-align: left;
-  height: 60%;
+  height: 80%;
   max-height: 185px;
   text-transform: uppercase;
   color: var(--clr-grey-3);
@@ -1516,6 +1519,38 @@ Contact Page
   background: transparent;
 }
 /*
+===================================
+Blog Template & Project Template
+===================================
+*/
+.blog-template a,
+.blog-template strong,
+.project-template a,
+.project-template strong {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.blog-template strong,
+.project-template strong {
+  font-weight: 300;
+  color: var(--clr-grey-1);
+}
+.blog-template a,
+.project-template a {
+  text-decoration: none;
+}
+.blog-template a:hover,
+.blog-template a:hover strong,
+.project-template a:hover,
+.project-template a:hover strong {
+  text-decoration: underline;
+  color: var(--clr-primary-5);
+}
+.blog-template .btn:hover,
+.project-template .btn:hover {
+  text-decoration: none;
+}
+/*
 ===============
 Blog Template
 ===============
@@ -1523,7 +1558,6 @@ Blog Template
 .blog-template {
   padding: 2.5rem 0 5rem;
 }
-
 .blog-template h1,
 .blog-template h2 {
   text-align: center;
@@ -1544,7 +1578,6 @@ Blog Template
 .blog-template blockquote p {
   margin: 0px;
 }
-
 .blog-template pre {
   background: #000000;
   color: var(--clr-primary-8);
@@ -1559,7 +1592,7 @@ Blog Template
   box-shadow: none;
 }
 .blog-subtitle {
-  margin: 1.25rem auto 0px;
+  margin-top: 1.5rem;
 }
 #disqus_thread {
   color: var(--clr-primary-5) !important;
@@ -1702,23 +1735,6 @@ Project Template
   margin-right: 2.5rem;
   color: var(--clr-grey-3);
 }
-.project-template a,
-.project-template strong {
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
-}
-.project-template strong {
-  font-weight: 300;
-  color: var(--clr-grey-1);
-}
-.project-template a {
-  text-decoration: none;
-}
-.project-template a:hover,
-.project-template a:hover strong {
-  text-decoration: underline;
-  color: var(--clr-primary-5);
-}
 .project-overview h3 {
   font-size: 24px;
 }
@@ -1751,9 +1767,6 @@ Project Template
 }
 .project-btns a:last-of-type {
   margin-left: 8px;
-}
-.project-btns a:hover {
-  text-decoration: none;
 }
 @media (max-width: 600px) {
   .project-head {
