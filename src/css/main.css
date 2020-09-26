@@ -198,8 +198,21 @@ Mapbox
 .marker {
   transform: translate(-50%, -50%);
 }
-.mapboxgl-popup-tip {
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
   border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+  border-top-color: rgba(255, 255, 255, 0.3) !important;
+}
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: rgba(255, 255, 255, 0.3) !important;
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: rgba(255, 255, 255, 0.3) !important;
 }
 .mapboxgl-popup-content {
   background: rgba(255, 255, 255, 0.3) !important;
@@ -684,7 +697,6 @@ Services
 .service {
   background: var(--clr-grey-9);
   padding: 3rem 1.5rem;
-  margin-bottom: 2rem;
   border-radius: var(--radius);
   text-align: center;
   box-shadow: var(--light-shadow);

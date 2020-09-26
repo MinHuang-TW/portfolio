@@ -6,10 +6,10 @@ import { features as cities } from '../assets/cities.json';
 const Map = () => {
   const [viewport, setViewport] = useState({
     width: '100%',
-    height: '50vh',
-    latitude: 28,
+    height: '60vh',
+    latitude: 32,
     longitude: 20,
-    zoom: 1.5,
+    zoom: 1.6,
   });
 
   return (
@@ -19,7 +19,7 @@ const Map = () => {
       mapStyle='mapbox://styles/min-huang/ckckc7jxu0ign1jp3x1lgdoh5'
       onViewportChange={viewport => setViewport(viewport)}
       maxZoom={3.5}
-      minZoom={1.5}
+      minZoom={1.6}
     >
       {cities.map(
         ({ geometry: { coordinates }, properties: { name } }, index) => (
@@ -31,8 +31,8 @@ const Map = () => {
               <Popup
                 longitude={coordinates[0]}
                 latitude={coordinates[1]}
-                anchor='top'
                 closeButton={false}
+                anchor='bottom-right'
               >
                 <div className='popup-text'>Current</div>
                 <div>
