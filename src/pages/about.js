@@ -15,20 +15,20 @@ const About = ({ data: { about: { nodes }}}) => {
           <article className='about-text'>
             <Title title={title} />
             <p>{info}</p>
+            <a
+              href={process.env.RESUME_LINK}
+              className='btn center-btn about-btn'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              download resume
+            </a>
           </article>
         </div>
       </section>
       <Services />
       <Jobs />
       <Education />
-      <a
-        href={process.env.RESUME_LINK}
-        className='btn center-btn projects-btn about-btn'
-        rel='noopener noreferrer'
-        target='_blank'
-      >
-        download resume
-      </a>
       {typeof window !== 'undefined' && <Map />}
     </Layout>
   )
