@@ -1033,10 +1033,10 @@ Blog
   margin-bottom: 2rem;
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
-  /* -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: var(--transition);
-  transition: var(--transition); */
+  transition: var(--transition);
 }
 .blog:hover {
   box-shadow: var(--dark-shadow);
