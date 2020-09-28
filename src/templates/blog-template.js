@@ -29,14 +29,14 @@ const BlogTemplate = ({
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <header className='project-head'>
+      <header className='project-head fadeIn'>
         <Title title={title} />
         <p className='blog-subtitle'>
           Posted on {date.toUpperCase()} in {categories[0].toUpperCase()}
         </p>
       </header>
 
-      <section className='blog-template'>
+      <section className='blog-template fadeIn-bottom'>
         <div className='section-center content-container'>
           <article className='blog-content'>
             <MDXProvider components={shortcodes}>

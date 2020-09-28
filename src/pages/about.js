@@ -4,7 +4,7 @@ import Image from 'gatsby-image';
 import { graphql } from 'gatsby';
 
 const About = ({ data: { about: { nodes }}}) => {
-  const { title, info, image } = nodes[0];
+  const { info, image } = nodes[0];
 
   return (
     <Layout>
@@ -13,11 +13,11 @@ const About = ({ data: { about: { nodes }}}) => {
         <div className='section-center about-center'>
           <Image fluid={image.childImageSharp.fluid} className='about-img' />
           <article className='about-text'>
-            <Title title={title} />
-            <p>{info}</p>
+            <Title title='Hello !' styleClass='flyIn' />
+            <p className='flyIn'>{info}</p>
             <a
               href={process.env.RESUME_LINK}
-              className='btn center-btn about-btn'
+              className='btn center-btn about-btn flyIn'
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -27,8 +27,8 @@ const About = ({ data: { about: { nodes }}}) => {
         </div>
       </section>
       <Services />
-      <Jobs />
       <Education />
+      <Jobs />
       {typeof window !== 'undefined' && <Map />}
     </Layout>
   )
@@ -38,7 +38,6 @@ export const query = graphql`
   {
     about: allStrapiAbout {
       nodes {
-        title
         info
         stack {
           id

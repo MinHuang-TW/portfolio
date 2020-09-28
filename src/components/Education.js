@@ -17,7 +17,7 @@ const Education = () => {
 
   return (
     <section className='section-small'>
-      <Title title='education' />
+      <Title title='education & certification' />
       <div className='section-center education-layout'>
         <div>
           {degree.map(({ title, uni, city }, index) => (

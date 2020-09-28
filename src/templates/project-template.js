@@ -28,12 +28,12 @@ const ProjectTemplate = ({
   <Layout>
     <SEO title={title} description={projectBrief} />
 
-    <header className='project-head'>
+    <header className='project-head fadeIn'>
       <Title title={title} />
       <Image className='project-main' fluid={image.childImageSharp.fluid} />
     </header>
 
-    <section className='project-template'>
+    <section className='project-template fadeIn-bottom'>
       <div className='section-center content-container'>
         <div className='project-overview'>
           <div>
