@@ -9,15 +9,15 @@ const About = ({ data: { about: { nodes }}}) => {
   return (
     <Layout>
       <SEO title='About' description='about Min' />
-      <section className='about-page'>
+      <section className='section-small'>
         <div className='section-center about-center'>
           <Image fluid={image.childImageSharp.fluid} className='about-img' />
-          <article className='about-text'>
-            <Title title='Hello !' styleClass='flyIn' />
-            <p className='flyIn'>{info}</p>
+          <article className='about-text flyIn'>
+            <Title title='Hello !' />
+            <p>{info}</p>
             <a
               href={process.env.RESUME_LINK}
-              className='btn center-btn about-btn flyIn'
+              className='btn center-btn about-btn'
               rel='noopener noreferrer'
               target='_blank'
             >

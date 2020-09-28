@@ -150,12 +150,6 @@ iframe[seamless] {
   opacity: 0;
   animation: fly-in 0.6s ease-in-out both;
 }
-.flyIn:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.flyIn:nth-child(3) {
-  animation-delay: 0.4s;
-}
 
 .fadeIn-bottom {
   opacity: 0;
@@ -1436,18 +1430,6 @@ Blog Page
 About Page
 ===============
 */
-.about-page {
-  padding: 5rem 0 10rem;
-  min-height: calc(100vh - 5rem);
-  display: flex;
-  justify-content: center;
-}
-.section-small:nth-of-type(2) {
-  background: var(--clr-grey-9);
-}
-.section-small:nth-of-type(3) {
-  background: var(--clr-grey-8);
-}
 .about-img {
   margin-bottom: 2rem;
   width: 40%;
