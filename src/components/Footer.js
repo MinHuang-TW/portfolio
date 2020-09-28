@@ -39,9 +39,19 @@ const Footer = () => (
             rel='noopener noreferrer'
             className='footer-form'
           >
-            <textarea name='message' placeholder='message' rows='5' />
+            <textarea 
+              rows='5' 
+              name='message' 
+              placeholder='message' 
+              aria-labelledby='message' 
+            />
             <div>
-              <input type='email' name='email' placeholder='your email' />
+              <input 
+                type='email' 
+                name='email' 
+                placeholder='your email' 
+                aria-labelledby='email' 
+              />
               <button type='submit' className='btn footer-btn'>
                 submit
               </button>
