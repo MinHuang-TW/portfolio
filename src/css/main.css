@@ -412,7 +412,7 @@ Navbar
 #icon-animation {
   stroke-dasharray: 880;
   stroke-dashoffset: 880;
-  stroke: var(--clr-grey-1);
+  stroke: var(--clr-grey-3);
   animation: outline 0.8s ease-in forwards;
   opacity: 1;
   -webkit-transition: var(--transition);

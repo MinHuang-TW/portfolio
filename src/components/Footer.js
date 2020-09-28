@@ -31,7 +31,7 @@ const Footer = () => (
         </div>
 
         <div className='footer-form-block'>
-          <h3 className='footer-subtitle'>Leave Me a Message</h3>
+          <h3 id='myMsg' className='footer-subtitle'>Leave Me a Message</h3>
           <form
             action='https://formspree.io/mzbjjrrd'
             method='POST'
@@ -43,14 +43,14 @@ const Footer = () => (
               rows='5' 
               name='message' 
               placeholder='message' 
-              aria-labelledby='message' 
+              aria-labelledby='myMsg' 
             />
             <div>
               <input 
                 type='email' 
                 name='email' 
                 placeholder='your email' 
-                aria-labelledby='email' 
+                aria-labelledby='myMsg' 
               />
               <button type='submit' className='btn footer-btn'>
                 submit
