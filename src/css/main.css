@@ -1318,6 +1318,7 @@ Footer
 }
 .footer-form-block {
   max-width: 600px;
+  margin-bottom: 2.5rem;
 }
 .footer-form div {
   display: flex;
@@ -1345,8 +1346,10 @@ Footer
 /* .footer ul, */
 .footer small {
   margin: 0px;
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
   font-size: 12px;
+  font-family: var(--ff-primary);
+  letter-spacing: var(--spacing);
 }
 @media screen and (max-width: 600px) {
   .footer {

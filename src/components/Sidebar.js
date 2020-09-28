@@ -4,7 +4,11 @@ import { MdClear } from 'react-icons/md';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => (
   <aside className={`sidebar ${isOpen ? 'show-sidebar' : ''}`}>
-    <button className='close-btn' onClick={toggleSidebar}>
+    <button 
+      className='close-btn' 
+      onClick={toggleSidebar} 
+      aria-label='close button'
+    >
       <MdClear />
     </button>
     <div className='side-container'>

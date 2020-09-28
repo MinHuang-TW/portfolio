@@ -39,6 +39,7 @@ export default ({ styleClass }) => (
           className='social-link' 
           target='_blank' 
           rel='noopener noreferrer'
+          aria-label={url}
         >
           {icon}
         </a>

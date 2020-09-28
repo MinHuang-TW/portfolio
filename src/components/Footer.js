@@ -37,22 +37,21 @@ const Footer = () => (
             method='POST'
             target='_blank'
             rel='noopener noreferrer'
+            className='footer-form'
           >
-            <div className='footer-form'>
-              <textarea name='message' placeholder='message' rows='5' />
-              <div>
-                <input type='email' name='email' placeholder='your email' />
-                <button type='submit' className='btn footer-btn'>
-                  submit
-                </button>
-              </div>
+            <textarea name='message' placeholder='message' rows='5' />
+            <div>
+              <input type='email' name='email' placeholder='your email' />
+              <button type='submit' className='btn footer-btn'>
+                submit
+              </button>
             </div>
           </form>
         </div>
       </div>
 
       <small>
-        &copy; {new Date().getFullYear()} MIN HUANG. All rights reserved
+        &copy; {new Date().getFullYear()} Min Huang. All rights reserved
       </small>
     </div>
   </footer>
