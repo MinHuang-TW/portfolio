@@ -10,9 +10,21 @@ const Jobs = () => {
   const { country, date, position, descriptions } = jobs[selected];
   
   return (
-    <section className='section-small'>
-      <Title title='work experiences' />
-      <div className='jobs-center'>
+    <section id='experiences' className='section-small'>
+      <div
+        data-sal='fade'
+        data-sal-duration={600}
+        data-sal-easing='ease-in'
+      >
+        <Title title='work experiences' />
+      </div>
+
+      <div 
+        className='jobs-center'
+        data-sal='slide-up'
+        data-sal-duration={600}
+        data-sal-easing='ease-in'
+      >
         <div className='btn-container'>
           {jobs.map((job, index) => (
             <button 

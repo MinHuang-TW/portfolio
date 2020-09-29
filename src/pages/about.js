@@ -1,31 +1,61 @@
 import React from 'react';
 import { SEO, Layout, Title, Services, Jobs, Education, Map } from '../components';
-import Image from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 import { graphql } from 'gatsby';
 
-const About = ({ data: { about: { nodes }}}) => {
-  const { info, image } = nodes[0];
+const Button = ({ text }) => (
+  <div
+    data-sal='zoom-out'
+    data-sal-duration={600}
+    data-sal-delay={600}
+    data-sal-easing='ease-in'
+    style={{ display: 'inline-block' }}
+  >
+    <a
+      href={process.env.RESUME_LINK}
+      className='btn center-btn about-btn'
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      {text}
+    </a>
+  </div>
+);
 
+const About = ({ data: { about: { nodes }, photo }}) => {
+  const { info } = nodes[0];
   return (
     <Layout>
       <SEO title='About' description='about Min' />
-      <section className='section-small'>
+      <BackgroundImage 
+        Tag={`section`} 
+        className='section-small intro'
+        fluid={photo.childImageSharp.fluid}
+      >
         <div className='section-center about-center'>
-          <Image fluid={image.childImageSharp.fluid} className='about-img' />
-          <article className='about-text flyIn'>
-            <Title title='Hello !' />
-            <p>{info}</p>
-            <a
-              href={process.env.RESUME_LINK}
-              className='btn center-btn about-btn'
-              rel='noopener noreferrer'
-              target='_blank'
+          <article className='about-text'>
+            <div
+              data-sal='fade'
+              data-sal-duration={600}
+              data-sal-easing='ease-in'
             >
-              download resume
-            </a>
+              <Title title='Hello !' />
+            </div>
+            <div 
+              data-sal='fade'
+              data-sal-duration={600}
+              data-sal-delay={300}
+              data-sal-easing='ease-in'
+              style={{ marginBottom: '2.5rem' }}
+            >
+              <p>{info}</p>
+              <a className='about-link' href="#skillset">Skillsets</a> | <a className='about-link' href="#education">Education</a> | <a className='about-link' href="#experiences">Experiences</a>
+            </div>
+            <Button text='download resume' />
           </article>
         </div>
-      </section>
+      </BackgroundImage>
+
       <Services />
       <Education />
       <Jobs />
@@ -43,12 +73,12 @@ export const query = graphql`
           id
           language
         }
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
+      }
+    }
+    photo: file(relativePath: { eq: "bg_photo.png" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
