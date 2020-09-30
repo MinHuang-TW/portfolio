@@ -27,6 +27,7 @@ Variables
   --clr-grey-8: rgba(255, 255, 255, 0.12);
   --clr-grey-9: rgba(255, 255, 255, 0.05);
   --clr-grey-10: rgba(255, 255, 255, 0.02);
+  --clr-marker: rgba(0,255,249,1);
   --clr-white: rgba(255, 255, 255, 1);
   --clr-black: #000000;
   --clr-bg: #121212;
@@ -218,8 +219,32 @@ Mapbox
 .mapboxgl-ctrl-bottom-right {
   display: none;
 }
+.marker,
+.marker-current {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+}
 .marker {
-  transform: translate(-50%, -50%);
+  background: var(--clr-primary-5);
+  box-shadow: 0 0 10px var(--clr-primary-5),
+              0 0 20px var(--clr-primary-5),
+              0 0 40px var(--clr-primary-5),
+              0 0 80px var(--clr-primary-5),
+              0 0 0 4px rgba(44, 174, 186, 0.15);
+}
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 var(--clr-marker);
+  }
+  100% {
+    box-shadow: 0 0 16px 12px transparent;
+    border-width: 2px;
+  }
+}
+.marker-current {
+  background: var(--clr-marker);
+  animation: glowing 1.2s ease infinite;
 }
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,

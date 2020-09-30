@@ -1,7 +1,23 @@
 import React, { useState, Fragment } from 'react';
 import ReactMap, { Marker, Popup } from 'react-map-gl';
-import marker from '../assets/marker.svg';
 import { features as cities } from '../assets/cities.json';
+
+const PopupCurrent = ({ coordinate, city }) => (
+  <Popup
+    longitude={coordinate[0]}
+    latitude={coordinate[1]}
+    closeButton={false}
+    anchor='bottom-right'
+  >
+    <div className='popup-text'>Current</div>
+    <div>
+      {city}
+      <span className='flag' role='img' aria-label='NL'>
+        🇳🇱
+      </span>
+    </div>
+  </Popup>
+);
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -11,6 +27,8 @@ const Map = () => {
     longitude: 20,
     zoom: 1.6,
   });
+
+  const CURRENT = 'Delft';
 
   return (
     <ReactMap
@@ -25,29 +43,17 @@ const Map = () => {
         ({ geometry: { coordinates }, properties: { name } }, index) => (
           <Fragment key={index}>
             <Marker longitude={coordinates[0]} latitude={coordinates[1]}>
-              <img width='32' src={marker} alt='marker' className='marker' />
+              <div className={name === CURRENT ? 'marker-current' : 'marker' } />
             </Marker>
-            {name === 'Delft' && (
-              <Popup
-                longitude={coordinates[0]}
-                latitude={coordinates[1]}
-                closeButton={false}
-                anchor='bottom-right'
-              >
-                <div className='popup-text'>Current</div>
-                <div>
-                  {name}
-                  <span className='flag' role='img' aria-label='NL'>
-                    🇳🇱
-                  </span>
-                </div>
-              </Popup>
+
+            {name === CURRENT && (
+              <PopupCurrent coordinate={coordinates} city={CURRENT} />
             )}
           </Fragment>
         )
       )}
       <div className='section-center legend-container'>
-        <img width='24' src={marker} alt='legend indicator' />
+        <div className='marker' />
         <h4 className='legend-text'>My Footprint</h4>
       </div>
     </ReactMap>
