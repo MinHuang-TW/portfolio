@@ -59,9 +59,11 @@ Global Styles
 *:focus {
   outline: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: var(--ff-secondary);
-  /* background: var(--clr-white); */
   background: var(--clr-bg);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -238,7 +240,7 @@ Mapbox
     box-shadow: 0 0 var(--clr-marker);
   }
   100% {
-    box-shadow: 0 0 16px 12px transparent;
+    box-shadow: 0 0 20px 16px transparent;
     border-width: 2px;
   }
 }
