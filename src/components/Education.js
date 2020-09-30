@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Title from './Title';
 
 const degree = [
@@ -32,19 +32,19 @@ const Education = () => (
     >
       <div>
         {degree.map(({ title, uni, city }, index) => (
-          <Fragment key={index}>
+          <article key={index}>
             <h3 className={index !== 0 ? 'gap-top' : null}>{title}</h3>
             <p>{uni}</p>
             <p>{city}</p>
-          </Fragment>
+          </article>
         ))}
       </div>
 
-      <div>
+      <article>
         <h3>Responsive Web Design Certification,</h3>
         <h3>JS Algorithms & Data Structures Certification</h3>
         <p>freeCodeCamp</p>
-      </div>
+      </article>
     </div>
   </section>
 );

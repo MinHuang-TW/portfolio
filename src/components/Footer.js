@@ -9,7 +9,7 @@ const Footer = () => (
     <div className='section-center'>
       <div className='footer-container'>
         <div className='footer-link-block'>
-          <h3 className='footer-subtitle'>Navigate to</h3>
+          <h3 className='footer-subtitle'>Navigation</h3>
           <ul className={`page-links footer-links`}>
             {data.map(({ id, text, url }) => (
               <li key={id}>
@@ -22,7 +22,7 @@ const Footer = () => (
         </div>
 
         <div className='footer-media-block'>
-          <h3 className='footer-subtitle'>Find out More</h3>
+          <h3 className='footer-subtitle'>Contact Me</h3>
           <SocialLinks />
           <div className='mail-block'>
             <FiMail className='service-icon' />
@@ -31,7 +31,7 @@ const Footer = () => (
         </div>
 
         <div className='footer-form-block'>
-          <h3 id='myMsg' className='footer-subtitle'>Leave Me a Message</h3>
+          <h3 id='myMsg' className='footer-subtitle'>Send Me a Message</h3>
           <form
             action='https://formspree.io/mzbjjrrd'
             method='POST'

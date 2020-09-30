@@ -59,9 +59,6 @@ Global Styles
 *:focus {
   outline: none;
 }
-html {
-  scroll-behavior: smooth;
-}
 body {
   font-family: var(--ff-secondary);
   background: var(--clr-bg);
@@ -751,10 +748,10 @@ Services
   margin-bottom: 1rem;
 }
 .service-icon {
-  font-size: 1.75rem;
+  font-size: 2rem;
   stroke-width: 1.2;
   margin-bottom: 1.5rem;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-1);
 }
 .service .underline {
   width: 3rem;
@@ -788,13 +785,11 @@ Services
     margin-bottom: 0;
   }
 }
-
 /*
 =============== 
 Jobs
 ===============
 */
-
 .jobs-center {
   width: 80vw;
   margin: 0 auto;
@@ -831,8 +826,10 @@ Jobs
   box-shadow: 0 2px var(--clr-primary-5);
 }
 .job-date {
-  letter-spacing: var(--spacing);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.darken > p {
+  color: var(--clr-grey-7);
 }
 .job-desc {
   display: grid;
@@ -843,7 +840,6 @@ Jobs
 }
 .job-desc p {
   margin-bottom: 0;
-  color: var(--clr-grey-3);
 }
 .job-icon {
   color: var(--clr-primary-5);
@@ -866,7 +862,6 @@ Jobs
     box-shadow: -2px 0 var(--clr-primary-5);
   }
 }
-
 /*
 =============== 
 Education
@@ -878,12 +873,19 @@ Education
 .education-layout > div {
   width: 50%;
 }
+.education-layout article {
+  align-self: flex-start;
+  border-left: 2px solid var(--clr-primary-5);
+  padding-left: 20px;
+}
 .education-layout h3 {
   font-size: 1.25rem;
   text-transform: none;
 }
 .education-layout p {
   margin-bottom: 0;
+  line-height: 1.8rem;
+  color: var(--clr-grey-7);
 }
 .gap-top {
   margin-top: 2.5rem;
@@ -896,8 +898,12 @@ Education
   .education-layout > div {
     width: 100%;
   }
-  .education-layout > div:last-of-type {
+  .education-layout > article:last-of-type {
     margin-top: 5rem;
+  }
+  .education-layout article {
+    border-left: none;
+    padding-left: 0;
   }
 }
 @media screen and (max-width: 800px) {
@@ -1329,12 +1335,15 @@ Footer
 .mail-block h4,
 .mail-block svg {
   margin: 0px;
+  color: var(--clr-grey-3);
+}
+.mail-block svg {
+  font-size: 1.75rem;
 }
 .mail-block h4 {
-  color: var(--clr-grey-3);
   font-size: 14px;
   text-transform: uppercase;
-  margin-left: 8px;
+  margin-left: 0.75rem;
 }
 .footer-form-block {
   max-width: 600px;
@@ -1471,11 +1480,14 @@ About Page
   display: flex;
   justify-content: center;
 }
-.about-img {
-  margin-bottom: 2rem;
-  width: 40%;
-  left: 50%;
-  transform: translateX(-50%);
+.about-center {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  column-gap: 4rem;
+}
+.about-text {
+  grid-column: 1 / 7;
 }
 .about-text .section-title {
   margin-bottom: 2rem;
@@ -1492,6 +1504,7 @@ About Page
   text-transform: uppercase;
   color: var(--clr-grey-1);
   letter-spacing: var(--spacing);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 .about-link:hover {
@@ -1501,23 +1514,11 @@ About Page
 .about-btn {
   margin: 0;
 }
-.stack-container {
-  width: 30rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 0.5rem;
+.about-btn-wrapper {
+  display: inline-block;
 }
-.stack-container span {
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  letter-spacing: 1px;
-  color: var(--clr-grey-4);
-}
-.stack-icon {
-  color: var(--clr-primary-5);
-  margin-right: 0.25rem;
-  font-size: 1rem;
+#skillset {
+  background: var(--clr-primary-1);
 }
 .legend-container {
   display: flex;
@@ -1529,51 +1530,32 @@ About Page
   margin: 0px;
   margin-left: 0.75rem;
 }
-@media screen and (min-width: 992px) {
-  .about-center {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: center;
-    column-gap: 4rem;
-  }
-  .about-img {
-    grid-column: 1 / span 5;
-    margin-bottom: 0;
-    width: 48%;
-  }
-  .about-text {
-    grid-column: 6 / -1;
-  }
-}
-@media screen and (max-width: 991px) {
-  .about-text {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    float: right;
-  }
+@media screen and (max-width: 992px) {
   .intro,
   .intro::before,
   .intro::after {
-    background-position: 0% !important;
+    background-position: 80% !important;
   }
 }
 @media screen and (max-width: 600px) {
+  .about-btn-wrapper,
   .about-btn {
     width: 100%;
   }
   .about-page {
     padding: 2.5rem 0;
   }
+  .about-center {
+    grid-template-columns: 1fr;
+    align-items: flex-end;
+  }
   .about-text {
-    width: 100%;
+    grid-column: 1;
   }
   .intro,
   .intro::before,
   .intro::after {
-    background-position: 0% -30% !important;
+    background-position: right top !important;
     background-size: 100vh !important;
   }
 }

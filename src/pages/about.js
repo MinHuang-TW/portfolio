@@ -5,11 +5,11 @@ import { graphql } from 'gatsby';
 
 const Button = ({ text }) => (
   <div
+    className='about-btn-wrapper'
     data-sal='zoom-out'
     data-sal-duration={600}
     data-sal-delay={600}
     data-sal-easing='ease-in'
-    style={{ display: 'inline-block' }}
   >
     <a
       href={process.env.RESUME_LINK}

@@ -36,7 +36,7 @@ const Jobs = () => {
             </button>
           ))}
         </div>
-        <article key={date} className='flyIn'>
+        <article key={date} className='flyIn darken'>
           <h3>{position}</h3>
           <p className='job-date'>{date}</p>
           <p>{country}</p>
