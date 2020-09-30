@@ -3,7 +3,7 @@ import Title from './Title';
 import services from '../constants/services';
 
 const Services = () => (
-  <section id='skillset' className='section-small'>
+  <section id='skillset' className='section'>
     <div
       data-sal='fade'
       data-sal-duration={600}
@@ -22,7 +22,7 @@ const Services = () => (
           data-sal-easing='ease-in'
         >
           {icon}
-          <h4>{title}</h4>
+          <h3>{title}</h3>
           <div className='underline' />
           <p>{text}</p>
         </article>

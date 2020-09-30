@@ -10,7 +10,7 @@ const Jobs = () => {
   const { country, date, position, descriptions } = jobs[selected];
   
   return (
-    <section id='experiences' className='section-small'>
+    <section id='experiences' className='section'>
       <div
         data-sal='fade'
         data-sal-duration={600}

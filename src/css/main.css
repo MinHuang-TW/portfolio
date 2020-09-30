@@ -157,6 +157,7 @@ iframe[seamless] {
   animation-delay: 0.3s;
 }
 .fadeIn {
+  /* opacity: 0; */
   animation: fade-in 0.6s ease-in;
 }
 .fadeIn:nth-of-type(2) {
@@ -230,7 +231,7 @@ Mapbox
               0 0 20px var(--clr-primary-5),
               0 0 40px var(--clr-primary-5),
               0 0 80px var(--clr-primary-5),
-              0 0 0 4px rgba(44, 174, 186, 0.15);
+              0 0 0 4px rgba(44, 174, 186, 0.1);
 }
 @keyframes glowing {
   0% {
@@ -334,9 +335,6 @@ input::placeholder {
 .section {
   padding: 5rem 0;
 }
-.section-small {
-  padding: 2.5rem 0;
-}
 .section-center {
   width: 90vw;
   margin: 0 auto;
@@ -345,16 +343,6 @@ input::placeholder {
 .content-container {
   margin: 0 auto;
   max-width: 900px;
-}
-@media screen and (min-width: 992px) {
-  .section-center {
-    width: 95vw;
-  }
-}
-@media screen and (min-width: 600px) {
-  .section-small {
-    padding: 5rem 0;
-  }
 }
 .underline {
   width: 5rem;
@@ -393,7 +381,6 @@ input::placeholder {
 Navbar
 ===============
 */
-
 .navbar {
   position: absolute;
   top: 0;
@@ -740,12 +727,8 @@ Services
 ===============
 */
 .service {
-  background: var(--clr-grey-9);
-  border-radius: var(--radius);
   text-align: center;
-  box-shadow: var(--light-shadow);
-  padding: 3rem 1.5rem;
-  margin-bottom: 1rem;
+  padding: 2.5rem 1.5rem;
 }
 .service-icon {
   font-size: 2rem;
@@ -756,14 +739,12 @@ Services
 .service .underline {
   width: 3rem;
   height: 0.12rem;
+  margin-left: auto;
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-.service h4 {
-  font-size: 20px;
-}
 .service p {
-  font-size: 16px;
+  font-size: 1rem;
 }
 @media screen and (min-width: 676px) {
   .services-center {
@@ -774,7 +755,10 @@ Services
     column-gap: 2rem;
   }
   .service {
-    margin-bottom: 2rem;
+    text-align: left;
+  }
+  .service .underline {
+    margin-left: 0;
   }
 }
 @media screen and (min-width: 992px) {
@@ -783,6 +767,12 @@ Services
   }
   .service {
     margin-bottom: 0;
+    padding: 0rem 1.5rem;
+  }
+}
+@media screen and (max-width: 460px) {
+  .service:first-of-type {
+    margin-top: -1.5rem;
   }
 }
 /*
@@ -877,10 +867,6 @@ Education
   align-self: flex-start;
   border-left: 2px solid var(--clr-primary-5);
   padding-left: 20px;
-}
-.education-layout h3 {
-  font-size: 1.25rem;
-  text-transform: none;
 }
 .education-layout p {
   margin-bottom: 0;
@@ -1465,6 +1451,12 @@ Blog Page
 About Page
 ===============
 */
+.jobs-center h3,
+.service h3,
+.education-layout h3 {
+  font-size: 1.5rem;
+  text-transform: none;
+}
 .intro {
   width: 100%;
   height: 100vh;
@@ -1472,7 +1464,7 @@ About Page
   left: 0;
   top: -5rem;
   margin-bottom: -5rem;
-  background: var(--clr-grey-9);
+  background: #161616;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1485,6 +1477,7 @@ About Page
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   column-gap: 4rem;
+  min-height: calc(100vh - 5rem);
 }
 .about-text {
   grid-column: 1 / 7;
@@ -1501,13 +1494,22 @@ About Page
   line-height: 2;
 }
 .about-link {
+  margin-bottom: 2.5rem;
+}
+.about-link > button {
   text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: var(--ff-secondary);
   color: var(--clr-grey-1);
   letter-spacing: var(--spacing);
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  background: none;
+  border: none;
+  cursor: pointer;
 }
-.about-link:hover {
+.about-link > button:hover {
   text-decoration: underline;
   color: var(--clr-primary-5);
 }
@@ -1551,12 +1553,29 @@ About Page
   }
   .about-text {
     grid-column: 1;
+    align-self: flex-end;
+  }
+  .about-text:last-child {
+    margin-bottom: 1.5rem;
+  }
+  .about-link > button {
+    line-height: 2rem;
   }
   .intro,
   .intro::before,
   .intro::after {
     background-position: right top !important;
     background-size: 100vh !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  .about-text div:first-child,
+  .about-text p,
+  .about-link {
+    margin-bottom: 0.8rem;
+  }
+  .service {
+    padding: 2rem 0.6rem;
   }
 }
 /*

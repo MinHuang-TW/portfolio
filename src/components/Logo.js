@@ -2,7 +2,7 @@ import React from "react"
 
 const Logo = ({
   size,
-  color = "rgba(255, 255, 255, 0.38)",
+  color = "rgba(255, 255, 255, 0.2)",
   strokeWidth = 5,
 }) => {
   const PATH =

@@ -15,7 +15,7 @@ const degree = [
 ];
 
 const Education = () => (
-  <section id='education' className='section-small'>
+  <section id='education' className='section'>
     <div
       data-sal='fade'
       data-sal-duration={600}

@@ -26,6 +26,7 @@
     "gatsby-plugin-scroll-reveal": "0.0.7",
     "gatsby-plugin-sharp": "^2.6.37",
     "gatsby-plugin-sitemap": "^2.4.2",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-remark-images": "^3.3.19",
     "gatsby-remark-images-medium-zoom": "^1.7.0",
     "gatsby-remark-responsive-iframe": "^2.4.11",

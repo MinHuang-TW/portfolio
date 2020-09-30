@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { SEO, Layout, Title, Services, Jobs, Education, Map } from '../components';
 import BackgroundImage from 'gatsby-background-image';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import { graphql } from 'gatsby';
 
 const Button = ({ text }) => (
@@ -24,12 +25,17 @@ const Button = ({ text }) => (
 
 const About = ({ data: { about: { nodes }, photo }}) => {
   const { info } = nodes[0];
+
+  const shiftTo = useCallback((id) => () => {
+    scrollTo(id);
+  }, []);
+
   return (
     <Layout>
       <SEO title='About' description='about Min' />
       <BackgroundImage 
         Tag={`section`} 
-        className='section-small intro'
+        className='section intro'
         fluid={photo.childImageSharp.fluid}
       >
         <div className='section-center about-center'>
@@ -46,10 +52,11 @@ const About = ({ data: { about: { nodes }, photo }}) => {
               data-sal-duration={600}
               data-sal-delay={300}
               data-sal-easing='ease-in'
-              style={{ marginBottom: '2.5rem' }}
             >
               <p>{info}</p>
-              <a className='about-link' href="#skillset">Skillsets</a> | <a className='about-link' href="#education">Education</a> | <a className='about-link' href="#experiences">Experiences</a>
+              <div className='about-link'>
+                <button onClick={shiftTo('#skillset')}>Skillsets</button> | <button onClick={shiftTo('#education')}>Education</button> | <button onClick={shiftTo('#experiences')}>Experiences</button>
+              </div>
             </div>
             <Button text='download resume' />
           </article>
