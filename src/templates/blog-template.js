@@ -1,6 +1,7 @@
 import React from 'react';
-import { Layout, SEO, Title, TitleAnchored } from '../components';
+import { Layout, SEO, TitleAnchored } from '../components';
 import { graphql, Link } from 'gatsby';
+import Image from "gatsby-image"
 import { DiscussionEmbed } from 'disqus-react';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -13,7 +14,7 @@ const BlogTemplate = ({
       id,
       slug,
       body,
-      frontmatter: { title, categories, date, description },
+      frontmatter: { title, image, categories, date, description },
     },
   },
 }) => {
@@ -29,30 +30,28 @@ const BlogTemplate = ({
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <header className='project-head fadeIn-top'>
-        <Title title={title} />
-        <p className='blog-subtitle'>
-          Posted on {date.toUpperCase()} in {categories[0].toUpperCase()}
-        </p>
-      </header>
-
-      <section className='blog-template fadeIn-bottom'>
-        <div className='section-center content-container'>
+      <div className='blog-block section-center content-container flyIn-bottom'>
+        <Image className='blog-main' fluid={image.childImageSharp.fluid} />
+  
+        <section className='blog-template'>
+          <p>{date.toUpperCase()} in {categories[0].toUpperCase()}</p>
+          <h2>{title}</h2>
+  
           <article className='blog-content'>
             <MDXProvider components={shortcodes}>
               <MDXRenderer>{body}</MDXRenderer>
             </MDXProvider>
           </article>
-
+  
           <div style={{ margin: '5rem auto' }}>
             <Link to='/blog/' className='btn center-btn'>
               back to blog
             </Link>
           </div>
-
+  
           <DiscussionEmbed {...disqusConfig} />
-        </div>
-      </section>
+        </section>
+      </div>
     </Layout>
   )
 }
@@ -68,6 +67,13 @@ export const query = graphql`
         categories
         date(formatString: "MMMM D, YYYY")
         description
+        image {
+          childImageSharp {
+            fluid(maxWidth: 900, quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }

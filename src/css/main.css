@@ -151,6 +151,16 @@ iframe[seamless] {
     transform: translateX(0);
   }
 }
+@keyframes fly-in-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes zoom-out {
   0% {
     opacity: 0;
@@ -164,6 +174,10 @@ iframe[seamless] {
 .flyIn {
   opacity: 0;
   animation: fly-in 0.6s ease-in-out both;
+}
+.flyIn-bottom {
+  opacity: 0;
+  animation: fly-in-bottom 0.6s ease-in both;
 }
 .zoomOut {
   opacity: 0;
@@ -1696,15 +1710,28 @@ Blog Template & Project Template
 Blog Template
 ===============
 */
+.blog-block {
+  background: var(--clr-grey-9);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  margin: 8rem auto 3.75rem;
+}
 .blog-template {
-  padding: 2.5rem 0 5rem;
+  padding: 2rem 2rem 1.5rem;
 }
-.blog-template h1,
+.blog-main {
+  border-radius: var(--radius) var(--radius) 0 0;
+}
 .blog-template h2 {
-  text-align: center;
-  margin: 40px auto;
+  margin-bottom: 2rem;
+  font-size: 2.1rem;
 }
-
+.blog-template a {
+  margin-top: 2.5rem;
+}
+.blog-template > p:first-of-type {
+  color: var(--clr-grey-7);
+}
 .blog-template ul {
   transform: translateX(20px);
   list-style: square;
@@ -1731,9 +1758,6 @@ Blog Template
 .blog-template img {
   border-radius: var(--radius);
   box-shadow: none;
-}
-.blog-subtitle {
-  margin-top: 1.5rem;
 }
 #disqus_thread {
   color: var(--clr-primary-5) !important;
