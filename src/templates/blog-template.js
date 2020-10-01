@@ -34,7 +34,7 @@ const BlogTemplate = ({
         <Image className='blog-main' fluid={image.childImageSharp.fluid} />
   
         <section className='blog-template'>
-          <p>{date.toUpperCase()} in {categories[0].toUpperCase()}</p>
+          <p>{categories[0].toUpperCase()} - {date.toUpperCase()}</p>
           <h2>{title}</h2>
   
           <article className='blog-content'>

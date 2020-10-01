@@ -67,7 +67,7 @@ export const query = graphql`
     }
     photo: file(relativePath: { eq: "bg_photo.png" }) {
       childImageSharp {
-        fluid(quality: 100) {
+        fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

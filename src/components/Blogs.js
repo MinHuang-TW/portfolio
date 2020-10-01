@@ -45,20 +45,6 @@ export const Blogs = ({ blogs, totalCount }) => {
     <section className="section">
       <div className="section-center blogs-center">
         <div className="blogs-menu">
-          <div>
-            <h4>Search Posts</h4>
-            <div className="search-input">
-              <input
-                type="text"
-                name="query"
-                aria-label="Search"
-                placeholder="Search..."
-                onChange={handleInputChange}
-              />
-              <RiSearchLine size="1.25rem" />
-            </div>
-          </div>
-
           <div className="category">
             <h4>categories</h4>
             <div className="category-list">
@@ -86,19 +72,26 @@ export const Blogs = ({ blogs, totalCount }) => {
             <h4>Featured Posts</h4>
             <div className="recent-list">
               {recent.map(
-                ({ id, slug, frontmatter: { title, categories } }) => (
+                ({ id, slug, frontmatter: { title } }) => (
                   <Link key={id} to={`/blog/${slug}`}>
-                    <div className="recent-post">
-                      {categories.map((category, index) => (
-                        <span className="blog-category" key={index}>
-                          {category}
-                        </span>
-                      ))}
-                      <h5>{title}</h5>
-                    </div>
+                    <h5 className="recent-post">{title}</h5>
                   </Link>
                 )
               )}
+            </div>
+          </div>
+          
+          <div>
+            <h4>Search Posts</h4>
+            <div className="search-input">
+              <input
+                type="text"
+                name="query"
+                aria-label="Search"
+                placeholder="Search..."
+                onChange={handleInputChange}
+              />
+              <RiSearchLine size="1.25rem" />
             </div>
           </div>
         </div>
