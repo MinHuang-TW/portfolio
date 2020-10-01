@@ -7,7 +7,7 @@ const Project = ({
   slug,
   frontmatter: { title, projectBrief, categories, projectStack, image },
 }) => (
-  <Link className="project fadeIn" to={`/project/${slug}`}>
+  <Link className="project fadeIn-top" to={`/project/${slug}`}>
     {image && (
       <Image fluid={image.childImageSharp.fluid} className="project-img" />
     )}

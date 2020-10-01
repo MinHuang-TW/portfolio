@@ -29,7 +29,7 @@ const BlogTemplate = ({
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <header className='project-head fadeIn'>
+      <header className='project-head fadeIn-top'>
         <Title title={title} />
         <p className='blog-subtitle'>
           Posted on {date.toUpperCase()} in {categories[0].toUpperCase()}

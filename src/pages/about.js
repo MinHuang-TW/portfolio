@@ -5,13 +5,7 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import { graphql } from 'gatsby';
 
 const Button = ({ text }) => (
-  <div
-    className='about-btn-wrapper'
-    data-sal='zoom-out'
-    data-sal-duration={600}
-    data-sal-delay={600}
-    data-sal-easing='ease-in'
-  >
+  <div className='about-btn-wrapper zoomOut'>
     <a
       href={process.env.RESUME_LINK}
       className='btn center-btn about-btn'
@@ -40,19 +34,8 @@ const About = ({ data: { about: { nodes }, photo }}) => {
       >
         <div className='section-center about-center'>
           <article className='about-text'>
-            <div
-              data-sal='fade'
-              data-sal-duration={600}
-              data-sal-easing='ease-in'
-            >
-              <Title title='Hello !' />
-            </div>
-            <div 
-              data-sal='fade'
-              data-sal-duration={600}
-              data-sal-delay={300}
-              data-sal-easing='ease-in'
-            >
+            <Title title='Hello !' styleClass='fadeIn' />
+            <div className='fadeIn'>
               <p>{info}</p>
               <div className='about-link'>
                 <button onClick={shiftTo('#skillset')}>Skillsets</button> | <button onClick={shiftTo('#education')}>Education</button> | <button onClick={shiftTo('#experiences')}>Experiences</button>

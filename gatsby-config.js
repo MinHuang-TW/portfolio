@@ -90,7 +90,7 @@ module.exports = {
           },
           {
             family: `DM Mono`,
-            variants: [`300`, `500`],
+            variants: [`300`],
           },
         ],
       },

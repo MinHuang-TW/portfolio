@@ -28,7 +28,7 @@ const ProjectTemplate = ({
   <Layout>
     <SEO title={title} description={projectBrief} />
 
-    <header className='project-head fadeIn'>
+    <header className='project-head fadeIn-top'>
       <Title title={title} />
       <Image className='project-main' fluid={image.childImageSharp.fluid} />
     </header>

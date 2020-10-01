@@ -8,7 +8,7 @@ const Blog = ({
   slug,
   frontmatter: { title, description, image, date, categories },
 }) => (
-  <Link key={id} className="blog fadeIn" to={`/blog/${slug}`}>
+  <Link key={id} className="blog fadeIn-top" to={`/blog/${slug}`}>
     {image && (
       <Image className="blog-img" fluid={image.childImageSharp.fluid} />
     )}

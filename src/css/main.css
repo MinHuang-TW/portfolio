@@ -91,6 +91,7 @@ h5 {
   font-weight: 300;
   line-height: 1.25;
   margin-bottom: 0.75rem;
+  font-display: swap;
 }
 h1 {
   font-size: 3rem;
@@ -117,6 +118,10 @@ iframe[seamless] {
 
 /* Animation */
 @keyframes fade-in {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+@keyframes fade-in-top {
   0% {
     opacity: 0;
     transform: translateY(-16px);
@@ -146,33 +151,53 @@ iframe[seamless] {
     transform: translateX(0);
   }
 }
+@keyframes zoom-out {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
 .flyIn {
   opacity: 0;
   animation: fly-in 0.6s ease-in-out both;
 }
-
+.zoomOut {
+  opacity: 0;
+  animation: zoom-out 0.6s ease-in 0.6s both;
+}
+.fadeIn {
+  opacity: 0;
+  animation: fade-in 0.6s ease-in both;
+}
 .fadeIn-bottom {
   opacity: 0;
   animation: fade-in-bottom 0.6s ease-in both;
   animation-delay: 0.3s;
 }
-.fadeIn {
+.fadeIn-top {
   /* opacity: 0; */
-  animation: fade-in 0.6s ease-in;
+  animation: fade-in-top 0.6s ease-in;
 }
 .fadeIn:nth-of-type(2) {
-  animation-delay: 0.1s;
-}
-.fadeIn:nth-of-type(3) {
   animation-delay: 0.2s;
 }
-.fadeIn:nth-of-type(4) {
+.fadeIn-top:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+.fadeIn-top:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+.fadeIn-top:nth-of-type(4) {
   animation-delay: 0.3s;
 }
-.fadeIn:nth-of-type(5) {
+.fadeIn-top:nth-of-type(5) {
   animation-delay: 0.4s;
 }
-.fadeIn:nth-of-type(6) {
+.fadeIn-top:nth-of-type(6) {
   animation-delay: 0.5s;
 }
 
@@ -277,6 +302,7 @@ Mapbox
 /*  global classes */
 .btn {
   font-family: var(--ff-primary);
+  font-display: swap;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 0.875rem;
@@ -327,9 +353,11 @@ input:-webkit-autofill:active {
 textarea::placeholder,
 input::placeholder {
   font-family: var(--ff-primary);
+  font-display: swap;
   color: var(--clr-grey-7);
   letter-spacing: var(--spacing);
   text-transform: uppercase;
+  border-radius: 0;
 }
 /* section */
 .section {
@@ -439,6 +467,7 @@ Navbar
 }
 .page-links li a {
   font-family: var(--ff-primary);
+  font-display: swap;
   letter-spacing: var(--spacing);
   text-transform: uppercase;
   font-weight: 300;
@@ -631,6 +660,7 @@ Filter
   text-transform: uppercase;
   letter-spacing: var(--spacing);
   font-family: var(--ff-secondary);
+  font-display: swap;
   font-size: 16px;
   font-weight: 300;
   cursor: pointer;
@@ -670,14 +700,6 @@ Hero
   height: 100%;
   display: grid;
   align-items: center;
-}
-.hero .underline {
-  margin-bottom: 0.5rem;
-  margin-left: 0;
-}
-.hero-info h1 {
-  margin-bottom: 24px;
-  font-weight: 300;
 }
 .hero-info h3 {
   color: var(--clr-grey-3);
@@ -801,6 +823,7 @@ Jobs
   font-size: 1.25rem;
   color: var(--clr-grey-3);
   font-family: var(--ff-primary);
+  font-display: swap;
   letter-spacing: var(--spacing);
   line-height: 1;
   margin: 0 0.5rem 1rem 0.5rem;
@@ -1014,6 +1037,7 @@ Projects
   letter-spacing: 1.2px;
   font-size: 12px;
   font-family: var(--ff-secondary);
+  font-display: swap;
 }
 .about-stack span {
   margin-top: 0.5rem;
@@ -1122,6 +1146,7 @@ Blog
   cursor: pointer;
   text-transform: uppercase;
   font-family: var(--ff-secondary);
+  font-display: swap;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: var(--spacing);
@@ -1364,6 +1389,7 @@ Footer
   color: var(--clr-grey-3);
   font-size: 12px;
   font-family: var(--ff-primary);
+  font-display: swap;
   letter-spacing: var(--spacing);
 }
 @media screen and (max-width: 600px) {
@@ -1501,6 +1527,7 @@ About Page
   font-size: 1rem;
   font-weight: 300;
   font-family: var(--ff-secondary);
+  font-display: swap;
   color: var(--clr-grey-1);
   letter-spacing: var(--spacing);
   -webkit-transition: var(--transition);
@@ -1621,6 +1648,7 @@ Contact Page
 }
 .form-control::placeholder {
   font-family: var(--ff-primary);
+  font-display: swap;
   color: var(--clr-grey-7);
   text-transform: uppercase;
   letter-spacing: var(--spacing);
@@ -1739,6 +1767,7 @@ th {
   font-weight: 400;
   text-transform: uppercase;
   font-family: var(--ff-primary);
+  font-display: swap;
 }
 thead tr th,
 td {
@@ -1910,6 +1939,7 @@ Project Template
 .figure-container figcaption {
   color: var(--clr-grey-3);
   font-family: var(--ff-primary);
+  font-display: swap;
   letter-spacing: var(--spacing);
   text-align: center;
   margin-top: 0.5rem;
