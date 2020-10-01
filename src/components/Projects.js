@@ -17,7 +17,7 @@ const Projects = ({ projects, selected, showLink, gutterTop }) => (
         to='/project/' 
         className='btn center-btn projects-btn' 
       >
-        view all projects
+        more projects
       </Link>
     )}
   </section>

@@ -1,23 +1,23 @@
-import React from "react"
-import { FiCode, FiFigma, FiUsers } from "react-icons/fi"
+import React from 'react';
+import { FiCode, FiFigma, FiServer } from 'react-icons/fi';
 
 export default [
   {
     id: 1,
-    icon: <FiUsers className="service-icon" />,
-    title: "User-centered Research",
-    text: `Research techniques (e.g. Contextmapping, co-creation, focus group, etc.) allow me to gain insights for different users and unlock their unfulfilled desires.`,
+    icon: <FiFigma className='service-icon' />,
+    title: 'User Experience Design',
+    text: `Through UX design techniques (e.g. journey mapping, user flow, wireframe, prototyping, usability test), I craft user-friendly interfaces providing enjoyable experiences to user.`,
   },
   {
     id: 2,
-    icon: <FiFigma className="service-icon" />,
-    title: "User Experience Design",
-    text: `Through design techniques (e.g. journey mapping, wireframing, prototyping, usability testing), I craft enjoyable user experience and interaction design.`,
+    icon: <FiCode className='service-icon' />,
+    title: 'Front-end Development',
+    text: `HTML5, CSS3 (SASS,CSS modules, Styled components), JS ES6 (React) are languages I mainly use, and I have experiences with Redux and static site generators (Gatsby) as well.`,
   },
   {
     id: 3,
-    icon: <FiCode className="service-icon" />,
-    title: "Web Development",
-    text: `HTML5, CSS3 (SASS, CSS modules, Styled components), JS ES6 (React) are front-end languages I mainly use, but express, node.js, MongoDB and firebase aren't new to me.`,
-  },
+    icon: <FiServer className='service-icon' />,
+    title: 'Back-end Development',
+    text: `Sometimes I build a back-end to complement the front-end with a few tools: express, node.js, MongoDB (MERNstack), CMS (strapi), graphQL, JWT, Netlify, Heroku, firebase.`,
+  }
 ]
