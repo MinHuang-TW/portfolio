@@ -7,25 +7,19 @@ Variables
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(184, 91%, 17%);
-  --clr-primary-2: hsl(185, 84%, 25%);
-  --clr-primary-3: hsl(185, 81%, 29%);
-  --clr-primary-4: hsl(184, 77%, 34%);
   --clr-primary-5: hsl(185, 62%, 45%);
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(185, 57%, 50%);
-  --clr-primary-7: hsl(184, 65%, 59%);
   --clr-primary-8: hsl(184, 80%, 74%);
   --clr-primary-9: hsl(185, 94%, 87%);
   --clr-primary-10: hsl(186, 100%, 94%);
-  /* darkest grey - used for headings */
+  /* darkest grey */
   --clr-grey-1: rgba(255, 255, 255, 0.87);
-  --clr-grey-3: rgba(255, 255, 255, 0.6);
-  --clr-grey-4: hsl(209, 28%, 39%);
-  /* grey used for paragraphs */
-  --clr-grey-7: rgba(255, 255, 255, 0.38);
-  --clr-grey-8: rgba(255, 255, 255, 0.12);
-  --clr-grey-9: rgba(255, 255, 255, 0.05);
-  --clr-grey-10: rgba(255, 255, 255, 0.02);
+  --clr-grey-2: rgba(255, 255, 255, 0.6);
+  --clr-grey-3: rgba(255, 255, 255, 0.38);
+  --clr-grey-4: rgba(255, 255, 255, 0.12);
+  --clr-grey-5: rgba(255, 255, 255, 0.05);
+  --clr-grey-6: rgba(255, 255, 255, 0.02);
+
   --clr-marker: rgba(0,255,249,1);
   --clr-white: rgba(255, 255, 255, 1);
   --clr-black: #000000;
@@ -106,7 +100,7 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
 }
 iframe:focus {
   outline: none;
@@ -221,7 +215,7 @@ iframe[seamless] {
 }
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px var(--clr-grey-7);
+  box-shadow: inset 0 0 6px var(--clr-grey-3);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -307,7 +301,7 @@ Mapbox
 }
 .popup-text {
   font-size: 0.8rem;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
 }
 .flag {
   margin-left: 0.25rem;
@@ -343,7 +337,7 @@ input {
   width: 100%;
   display: block;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--clr-grey-7);
+  border: 1px solid var(--clr-grey-3);
   color: var(--clr-grey-1);
   background: transparent;
   text-transform: uppercase;
@@ -371,7 +365,7 @@ textarea::placeholder,
 input::placeholder {
   font-family: var(--ff-primary);
   font-display: swap;
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
   letter-spacing: var(--spacing);
   text-transform: uppercase;
 }
@@ -409,7 +403,7 @@ input::placeholder {
 .social-link > svg {
   stroke-width: 1.2;
   vertical-align: middle;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
@@ -461,7 +455,7 @@ Navbar
 #icon-animation {
   stroke-dasharray: 880;
   stroke-dashoffset: 880;
-  stroke: var(--clr-grey-3);
+  stroke: var(--clr-grey-2);
   animation: outline 0.8s ease-in forwards;
   opacity: 1;
   -webkit-transition: var(--transition);
@@ -585,7 +579,7 @@ Sidebar
   right: 4.75%;
   top: 2.75%;
   font-size: 2.5rem;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   background: transparent;
   border-color: transparent;
   cursor: pointer;
@@ -672,7 +666,7 @@ Filter
   padding: 0.6rem 2rem;
   border: none;
   background: transparent;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   text-transform: uppercase;
   letter-spacing: var(--spacing);
   font-family: var(--ff-secondary);
@@ -718,7 +712,7 @@ Hero
   align-items: center;
 }
 .hero-info h3 {
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   font-size: 21px;
   line-height: 40px;
   text-transform: none;
@@ -765,7 +759,6 @@ Services
 ===============
 */
 .service {
-  text-align: center;
   padding: 2.5rem 1.5rem;
 }
 .service-icon {
@@ -777,12 +770,17 @@ Services
 .service .underline {
   width: 3rem;
   height: 0.12rem;
-  margin-left: auto;
+  margin-left: 0;
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-.service p {
+.service ul {
   font-size: 1rem;
+  line-height: 1.8rem;
+  color: var(--clr-grey-2);
+  list-style: square;
+  transform: translateX(17px);
+  width: calc(100% - 17px);
 }
 @media screen and (min-width: 676px) {
   .services-center {
@@ -791,12 +789,6 @@ Services
     -webkit-column-gap: 2rem;
     -moz-column-gap: 2rem;
     column-gap: 2rem;
-  }
-  .service {
-    text-align: left;
-  }
-  .service .underline {
-    margin-left: 0;
   }
 }
 @media screen and (min-width: 992px) {
@@ -811,6 +803,9 @@ Services
 @media screen and (max-width: 460px) {
   .service:first-of-type {
     margin-top: -1.5rem;
+  }
+  .service {
+    padding: 2rem 0.5rem;
   }
 }
 /*
@@ -837,7 +832,7 @@ Jobs
   text-align: left;
   font-weight: 300;
   font-size: 1.25rem;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   font-family: var(--ff-primary);
   font-display: swap;
   letter-spacing: var(--spacing);
@@ -858,7 +853,7 @@ Jobs
   margin-bottom: 0.25rem;
 }
 .darken > p {
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
 }
 .job-desc {
   display: grid;
@@ -910,7 +905,7 @@ Education
 .education-layout p {
   margin-bottom: 0;
   line-height: 1.8rem;
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
 }
 .gap-top {
   margin-top: 2.5rem;
@@ -978,6 +973,7 @@ Projects
   margin-bottom: 4rem;
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
+  background: var(--clr-bg);
 }
 .project,
 .project-info {
@@ -991,7 +987,7 @@ Projects
   transform: scale(1.02);
 }
 .project:hover .project-info {
-  background: var(--clr-grey-8);
+  background: var(--clr-grey-4);
 }
 .project-img {
   border-top-left-radius: var(--radius);
@@ -1018,7 +1014,7 @@ Projects
   opacity: 0;
 }
 .project-info {
-  background: var(--clr-grey-9);
+  background: var(--clr-grey-5);
   padding: 16px 2rem 20px;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
@@ -1037,14 +1033,14 @@ Projects
 }
 .project-desc {
   /* word-spacing: 15px; */
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
 }
 .blog-category,
 .project-stack span,
 .about-stack span {
   display: inline-block;
-  border: 1px solid var(--clr-grey-3);
-  color: var(--clr-grey-3);
+  border: 1px solid var(--clr-grey-2);
+  color: var(--clr-grey-2);
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0.25rem 0.75rem;
@@ -1066,7 +1062,7 @@ Projects
     display: none;
   }
   .project-info {
-    background: var(--clr-grey-8);
+    background: var(--clr-grey-4);
   }
 }
 @media screen and (max-width: 600px) {
@@ -1120,7 +1116,7 @@ Blog
 .blog:hover {
   box-shadow: var(--dark-shadow);
   transform: scale(1.02);
-  background: var(--clr-grey-8) !important;
+  background: var(--clr-grey-4) !important;
 }
 .blog-img::after {
   content: "";
@@ -1155,7 +1151,7 @@ Blog
   position: absolute;
   right: 7.5px;
   height: 41px;
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
   z-index: 100;
 }
 .category-name {
@@ -1166,7 +1162,7 @@ Blog
   font-size: 16px;
   font-weight: 300;
   letter-spacing: var(--spacing);
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   background: transparent;
   border: none;
   padding: 0px 8px 0px 1rem;
@@ -1182,14 +1178,14 @@ Blog
   color: var(--clr-primary-5);
 }
 .category-count {
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
   font-size: 14px;
 }
 .recent-list h5 {
   padding: 0.5rem 0;
   margin: 0px;
   font-size: 16px;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   -webkit-transition: var(--transition-color);
   transition: var(--transition-color);
 }
@@ -1203,7 +1199,7 @@ Blog
 .blogs-menu > div {
   margin-bottom: 2.5rem;
   padding: 1.5rem;
-  background: var(--clr-grey-10);
+  background: var(--clr-grey-6);
   border-radius: var(--radius);
 }
 .blogs-menu h4 {
@@ -1238,7 +1234,7 @@ Blog
 }
 
 .blog-head > p {
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
   display: inline-block;
   font-size: 0.875rem;
 }
@@ -1274,7 +1270,7 @@ Blog
     display: none;
   }
   .blog-card {
-    background: var(--clr-grey-8);
+    background: var(--clr-grey-4);
   }
 }
 @media screen and (min-width: 576px) {
@@ -1313,7 +1309,7 @@ Footer
   justify-content: space-between;
 }
 .footer h4 {
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
   font-size: 12px;
 }
 .footer-form-block {
@@ -1322,7 +1318,7 @@ Footer
 .footer-links {
   text-align: left;
   text-transform: uppercase;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1349,7 +1345,7 @@ Footer
 .mail-block h4,
 .mail-block svg {
   margin: 0px;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
 }
 .mail-block svg {
   font-size: 1.75rem;
@@ -1381,7 +1377,7 @@ Footer
   margin-bottom: 16px;
 }
 .footer .social-link {
-  color: var(--clr-grey-9);
+  color: var(--clr-grey-5);
 }
 .footer .social-link:hover {
   color: var(--clr-primary-5);
@@ -1389,7 +1385,7 @@ Footer
 /* .footer ul, */
 .footer small {
   margin: 0px;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   font-size: 12px;
   font-family: var(--ff-primary);
   font-display: swap;
@@ -1473,7 +1469,7 @@ Blog Page
 ===============
 */
 .blog-page .blog {
-  background: var(--clr-grey-9);
+  background: var(--clr-grey-5);
 }
 /*
 ===============
@@ -1604,9 +1600,6 @@ About Page
   .about-link {
     margin-bottom: 0.8rem;
   }
-  .service {
-    padding: 2rem 0.6rem;
-  }
 }
 /*
 ===============
@@ -1619,7 +1612,7 @@ Contact Page
   padding: 5rem 0;
 }
 .contact-form {
-  background: var(--clr-grey-9);
+  background: var(--clr-grey-5);
   border-radius: var(--radius);
   text-align: center;
   box-shadow: var(--light-shadow);
@@ -1652,7 +1645,7 @@ Contact Page
 .form-control::placeholder {
   font-family: var(--ff-primary);
   font-display: swap;
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
   text-transform: uppercase;
   letter-spacing: var(--spacing);
 }
@@ -1667,6 +1660,13 @@ Contact Page
 Blog Template & Project Template
 ===================================
 */
+.blog-template ul li,
+.project-template ul li {
+  list-style: square;
+  transform: translateX(20px);
+  width: calc(100% - 20px);
+  color: var(--clr-grey-2);
+}
 .blog-template a,
 .blog-template strong,
 .project-template a,
@@ -1700,7 +1700,7 @@ Blog Template
 ===============
 */
 .blog-block {
-  background: var(--clr-grey-9);
+  background: var(--clr-grey-5);
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
   margin: 0 auto 3.75rem;
@@ -1719,17 +1719,12 @@ Blog Template
   margin-top: 2.5rem;
 }
 .blog-template > p:first-of-type {
-  color: var(--clr-grey-7);
-}
-.blog-template ul {
-  transform: translateX(20px);
-  list-style: square;
   color: var(--clr-grey-3);
 }
 
 .blog-template blockquote {
   margin: 2rem 0;
-  border-left: 5px solid var(--clr-grey-7);
+  border-left: 5px solid var(--clr-grey-3);
   padding: 10px 20px;
 }
 .blog-template blockquote p {
@@ -1757,13 +1752,13 @@ table {
   margin: 1.5rem auto;
   table-layout: fixed;
   border-spacing: 0px;
-  border: 1px solid var(--clr-grey-7);
+  border: 1px solid var(--clr-grey-3);
 }
 thead {
-  background: var(--clr-grey-8);
+  background: var(--clr-grey-4);
 }
 tbody tr:hover {
-  background: var(--clr-grey-9);
+  background: var(--clr-grey-5);
 }
 tbody {
   height: 300px;
@@ -1784,11 +1779,11 @@ th {
 }
 thead tr th,
 td {
-  border-bottom: solid 1px var(--clr-grey-7);
+  border-bottom: solid 1px var(--clr-grey-3);
 }
 td {
   font-weight: 300;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
 }
 tbody tr:last-of-type td {
   border-bottom: 0px;
@@ -1823,7 +1818,7 @@ Project Template
 ===============
 */
 .project-head {
-  background: var(--clr-grey-10);
+  background: var(--clr-grey-6);
   width: 100%;
   /* height: auto; */
   margin-top: -5rem;
@@ -1872,11 +1867,6 @@ Project Template
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
-.project-template ul li {
-  transform: translateX(20px);
-  list-style: square;
-  color: var(--clr-grey-3);
-}
 .paragraph li {
   margin: 2.5rem 0 0.75rem;
   text-transform: uppercase;
@@ -1884,7 +1874,7 @@ Project Template
 }
 .project-template ol li {
   transform: translateX(28px);
-  color: var(--clr-grey-7);
+  color: var(--clr-grey-3);
   line-height: 25px;
 }
 .project-overview {
@@ -1896,7 +1886,7 @@ Project Template
 }
 .project-overview div {
   margin-right: 2.5rem;
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
 }
 .project-overview h3 {
   font-size: 24px;
@@ -1913,7 +1903,7 @@ Project Template
   font-size: 1rem;
 }
 .project-template blockquote {
-  border-left: 5px solid var(--clr-grey-7);
+  border-left: 5px solid var(--clr-grey-3);
   padding: 0px 24px;
   margin: 0.5rem 0 2rem;
 }
@@ -1958,7 +1948,7 @@ Project Template
   box-shadow: none;
 }
 .figure-container figcaption {
-  color: var(--clr-grey-3);
+  color: var(--clr-grey-2);
   font-family: var(--ff-primary);
   font-display: swap;
   letter-spacing: var(--spacing);

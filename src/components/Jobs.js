@@ -11,20 +11,9 @@ const Jobs = () => {
   
   return (
     <section id='experiences' className='section'>
-      <div
-        data-sal='fade'
-        data-sal-duration={600}
-        data-sal-easing='ease-in'
-      >
-        <Title title='work experiences' />
-      </div>
+      <Title title='work experiences' />
 
-      <div 
-        className='jobs-center'
-        data-sal='slide-up'
-        data-sal-duration={600}
-        data-sal-easing='ease-in'
-      >
+      <div className='jobs-center'>
         <div className='btn-container'>
           {jobs.map((job, index) => (
             <button 

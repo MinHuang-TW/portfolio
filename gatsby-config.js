@@ -21,7 +21,6 @@ module.exports = {
     `gatsby-remark-images`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-smoothscroll`,
-    `gatsby-plugin-scroll-reveal`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
