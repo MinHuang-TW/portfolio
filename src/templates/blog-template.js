@@ -34,8 +34,8 @@ const BlogTemplate = ({
         <Image className='blog-main' fluid={image.childImageSharp.fluid} />
   
         <section className='blog-template'>
-          <p>{categories[0].toUpperCase()} - {date.toUpperCase()}</p>
           <h2>{title}</h2>
+          <p>{date.toUpperCase()} - {categories[0].toUpperCase()}</p>
   
           <article className='blog-content'>
             <MDXProvider components={shortcodes}>

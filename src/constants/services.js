@@ -31,7 +31,7 @@ export default [
     texts: [
       'Framework (express, node.js)', 
       'Database (MongoDB, firebase)', 
-      'CMS (strapi)', 
+      'Headless CMS (strapi)', 
       'Authorization (JWT)',
       'Deployment (Netlify, Heroku, firebase cloud)'
     ],

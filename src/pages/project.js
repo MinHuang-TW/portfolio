@@ -61,7 +61,7 @@ export const query = graphql`
           projectStack
           image {
             childImageSharp {
-              fluid(maxWidth: 900) {
+              fluid(maxWidth: 650, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
