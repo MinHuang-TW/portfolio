@@ -44,6 +44,14 @@ export const Blogs = ({ blogs, totalCount }) => {
   return (
     <section className="section">
       <div className="section-center blogs-center">
+        {state.filteredPosts.length > 0 ? (
+          state.filteredPosts.map(post => <Blog key={post.id} {...post} />)
+        ) : (
+          <div className="notFound">
+            <h1>No matching posts</h1>
+          </div>
+        )}
+
         <div className="blogs-menu">
           <div className="category">
             <h4>categories</h4>
@@ -96,13 +104,6 @@ export const Blogs = ({ blogs, totalCount }) => {
           </div>
         </div>
 
-        {state.filteredPosts.length > 0 ? (
-          state.filteredPosts.map(post => <Blog key={post.id} {...post} />)
-        ) : (
-          <div className="notFound">
-            <h1>No matching posts</h1>
-          </div>
-        )}
       </div>
     </section>
   )
