@@ -69,7 +69,7 @@ export const Blogs = ({ blogs, totalCount }) => {
                       >
                         {category}
                       </button>
-                      <span className="category-count">{`(${count})`}</span>
+                      <span className="category-count">{`[${count}]`}</span>
                     </div>
                   )
               )}
