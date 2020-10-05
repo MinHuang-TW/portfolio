@@ -458,7 +458,7 @@ Navbar
 #icon-animation {
   stroke-dasharray: 880;
   stroke-dashoffset: 880;
-  stroke: var(--clr-grey-2);
+  stroke: var(--clr-grey-1);
   animation: outline 0.8s ease-in forwards;
   opacity: 1;
   -webkit-transition: var(--transition);
@@ -975,8 +975,8 @@ Projects
 .project-stack span,
 .about-stack span {
   display: inline-block;
-  border: 1px solid var(--clr-grey-3);
-  color: var(--clr-grey-3);
+  border: 1px solid var(--clr-grey-2);
+  color: var(--clr-grey-2);
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0.25rem 0.75rem;
@@ -1764,7 +1764,7 @@ Project Template
   position: absolute !important;
   top: 0px;
   z-index: -1;
-  filter: grayscale(100%) brightness(0.15) opacity(50%);
+  filter: grayscale(100%) brightness(0.2) opacity(50%);
 }
 .project-category {
   display: inline-block;

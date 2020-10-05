@@ -21,7 +21,7 @@ export default [
       'CSS3 (CSS modules, Styled components, SASS)', 
       'Javascript (ES6, ES7, React)',
       'State Management (Redux)',
-      'SSG (Gatsby.js + graphQL)',
+      'SSG (Gatsby.js + GraphQL)',
     ],
   },
   {
@@ -29,11 +29,11 @@ export default [
     icon: <FiServer className='service-icon' />,
     title: 'Back-end Development',
     texts: [
-      'Framework (express, node.js)', 
-      'Database (MongoDB, firebase)', 
-      'Headless CMS (strapi)', 
+      'Framework (Express, Node.js)', 
+      'Database (MongoDB, Firebase)', 
+      'Headless CMS (Strapi)', 
       'Authorization (JWT)',
-      'Deployment (Netlify, Heroku, firebase cloud)'
+      'Deployment (Netlify, Heroku, Firebase cloud)'
     ],
   }
 ]
