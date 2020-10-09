@@ -31,7 +31,8 @@ const Education = () => (
 
       <article>
         <h3>Responsive Web Design Certification,</h3>
-        <h3>JS Algorithms & Data Structures Certification</h3>
+        <h3>JS Algorithms & Data Structures Certification,</h3>
+        <h3>Front End Libraries Certification</h3>
         <p>freeCodeCamp</p>
       </article>
     </div>
