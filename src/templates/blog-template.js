@@ -3,10 +3,11 @@ import { Layout, SEO, TitleAnchored } from '../components';
 import { graphql, Link } from 'gatsby';
 import Image from "gatsby-image"
 import { DiscussionEmbed } from 'disqus-react';
+import { BsArrowRight } from 'react-icons/bs';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-const shortcodes = { TitleAnchored };
+const shortcodes = { TitleAnchored, BsArrowRight };
 
 const BlogTemplate = ({
   data: {

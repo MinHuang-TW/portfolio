@@ -101,6 +101,12 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-2);
 }
+code {
+  font-family: var(--ff-secondary);
+}
+iframe {
+  border: none;
+}
 iframe:focus {
   outline: none;
 }
@@ -1943,7 +1949,6 @@ Project Template
   border-radius: var(--radius);
 }
 .project-template iframe {
-  border: none;
   width: 375px;
   height: 667px;
 }
