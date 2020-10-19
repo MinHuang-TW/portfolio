@@ -342,7 +342,7 @@ Mapbox
 }
 .center-btn {
   display: block;
-  width: 12rem;
+  min-width: 12rem;
   text-align: center;
   margin: 0 auto;
   margin-top: 3rem;
@@ -1772,6 +1772,22 @@ td {
 tbody tr:last-of-type td {
   border-bottom: 0px;
 }
+.blog-btns {
+  display: flex;
+  margin-bottom: 2.5rem;
+}
+.blog-btns p {
+  color: var(--clr-primary-5);
+  margin-bottom: 0;
+}
+.prev-btn {
+  text-align: left;
+  margin-left: 0;
+}
+.next-btn {
+  text-align: right;
+  margin-right: 0;
+}
 @media screen and (min-width: 800px) {
   .blog-block {
     margin: 8rem auto 3.75rem;
@@ -1782,6 +1798,18 @@ tbody tr:last-of-type td {
   table {
     width: 80%;
     word-break: normal;
+  }
+}
+@media screen and (max-width: 600px) {
+  .blog-btns {
+    flex-direction: column;
+  }
+  .blog-btns a {
+    width: 100%;
+    text-align: left;
+  }
+  .blog-btns a:nth-child(2) {
+    margin-top: 1rem;
   }
 }
 /*

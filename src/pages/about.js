@@ -41,7 +41,7 @@ const About = ({ data: { about: { nodes }, photo }}) => {
                 <button onClick={shiftTo('#skillset')}>Skillsets</button> | <button onClick={shiftTo('#education')}>Education</button> | <button onClick={shiftTo('#experiences')}>Experiences</button>
               </div>
             </div>
-            <Button text='download resume' />
+            <Button text='download Résumé' />
           </article>
         </div>
       </BackgroundImage>

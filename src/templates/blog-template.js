@@ -18,6 +18,7 @@ const BlogTemplate = ({
       frontmatter: { title, image, categories, date, description },
     },
   },
+  pageContext: { previous, next },
 }) => {
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
@@ -27,7 +28,7 @@ const BlogTemplate = ({
       title,
     },
   };
-  
+
   return (
     <Layout>
       <SEO title={title} description={description} />
@@ -43,19 +44,29 @@ const BlogTemplate = ({
               <MDXRenderer>{body}</MDXRenderer>
             </MDXProvider>
           </article>
-  
-          <div style={{ margin: '5rem auto' }}>
-            <Link to='/blog' className='btn center-btn'>
-              back to blog
-            </Link>
+
+          <div className='blog-btns'>
+            {previous ? (
+              <Link className='btn center-btn prev-btn' to={previous.fields.slug}>
+                <p>Previous</p>
+                {previous.frontmatter.title}
+              </Link>
+            ) : null}
+
+            {next ? (
+              <Link className='btn center-btn next-btn' to={next.fields.slug}>
+                <p>Next</p>
+                {next.frontmatter.title}
+              </Link>
+            ) : null}
           </div>
-  
+
           <DiscussionEmbed {...disqusConfig} />
         </section>
       </div>
     </Layout>
   )
-}
+};
 
 export const query = graphql`
   query GetSingleBlog($id: String) {

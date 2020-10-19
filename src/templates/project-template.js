@@ -56,7 +56,7 @@ const ProjectTemplate = ({
           <div>
             <h3>{title === 'SpInsight' ? 'Download' : 'Demo'}</h3>
             <a href={url} target='_blank' rel='noopener noreferrer'>
-              {title === 'SpInsight' ? 'FULL MASTER THESIS' : 'LAUNCH SITE'}
+              {title === 'SpInsight' ? 'MASTER THESIS' : 'LAUNCH SITE'}
             </a>
           </div>
         </div>

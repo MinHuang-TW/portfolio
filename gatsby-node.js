@@ -43,11 +43,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     {
-      projects: allFile(
+      projects: allFile (
         filter: {
           internal: { mediaType: { eq: "text/mdx" }}, 
-          sourceInstanceName: { eq: "projects" }},
-        ) {
+          sourceInstanceName: { eq: "projects" }
+        },
+      ) {
         nodes {
           childMdx {
             id
@@ -58,14 +59,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       },
       posts: allFile (
-        filter: { internal: { mediaType: { eq: "text/mdx" }},
-        sourceInstanceName: { eq: "posts" }},
+        filter: { 
+          internal: { mediaType: { eq: "text/mdx" }},
+          sourceInstanceName: { eq: "posts" }
+        },
+        sort: { 
+          fields: [childMdx___frontmatter___date], 
+          order: DESC 
+        },
       ) {
         nodes {
           childMdx {
             id
             fields {
               slug
+            }
+            frontmatter {
+              title
             }
           }
         }
@@ -109,12 +119,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  posts.forEach(({ childMdx: { id, fields: { slug }}}) => {
+  posts.forEach(({ childMdx: { id, fields: { slug }}}, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].childMdx;
+    const next = index === 0 ? null : posts[index - 1].childMdx;
+
     createPage({
       path: slug,
       component: path.resolve(`src/templates/blog-template.js`),
       context: {
-        id
+        id,
+        slug,
+        previous,
+        next,
       },
     })
   })
