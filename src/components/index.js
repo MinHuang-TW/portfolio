@@ -9,6 +9,7 @@ export { default as TitleAnchored } from './TitleAnchored';
 export { default as Hero } from './Hero';
 export { default as Projects } from './Projects';
 export { default as Project } from './Project';
+export { default as Pagination } from './Pagination';
 export { default as Blogs } from './Blogs';
 export { default as Blog } from './Blog';
 export { default as Jobs } from './Jobs';

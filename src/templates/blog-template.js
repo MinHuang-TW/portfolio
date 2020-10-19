@@ -45,7 +45,7 @@ const BlogTemplate = ({
           </article>
   
           <div style={{ margin: '5rem auto' }}>
-            <Link to='/blog/' className='btn center-btn'>
+            <Link to='/blog' className='btn center-btn'>
               back to blog
             </Link>
           </div>

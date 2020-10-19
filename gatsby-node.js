@@ -59,7 +59,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
       posts: allFile (
         filter: { internal: { mediaType: { eq: "text/mdx" }},
-        sourceInstanceName: {eq: "posts"}},
+        sourceInstanceName: { eq: "posts" }},
       ) {
         nodes {
           childMdx {
@@ -77,9 +77,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨 ERROR: Loading "createPages" query')
   }
 
-  const { posts, projects } = result.data;
+  const posts = result.data.posts.nodes;
+  const projects = result.data.projects.nodes;
+  
+  const postsPerPage = 6;
+  const numOfPages = Math.ceil(posts.length / postsPerPage);
 
-  projects.nodes.forEach(({ childMdx: { id, fields: { slug }}}) => {
+  Array.from({ length: numOfPages }).forEach((_, index) => {
+    const isFirstPage =  index === 0;
+    const currentPage = index + 1;
+
+    createPage({
+      path: isFirstPage ? '/blog' : `/blog/${currentPage}`,
+      component: path.resolve(`src/templates/blog-list-template.js`),
+      context: {
+        limit: postsPerPage,
+        skip: index * postsPerPage,
+        numOfPages,
+        currentPage,
+      },
+    })
+  });
+
+  projects.forEach(({ childMdx: { id, fields: { slug }}}) => {
     createPage({
       path: slug,
       component: path.resolve(`src/templates/project-template.js`),
@@ -89,7 +109,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  posts.nodes.forEach(({ childMdx: { id, fields: { slug }}}) => {
+  posts.forEach(({ childMdx: { id, fields: { slug }}}) => {
     createPage({
       path: slug,
       component: path.resolve(`src/templates/blog-template.js`),

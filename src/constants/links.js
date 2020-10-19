@@ -8,7 +8,7 @@ export default ({ styleClass }) => (
       <Fragment key={id}>
         {text !== 'home' && (
           <li>
-            <Link to={url} activeClassName='nav-selected'>
+            <Link to={url} activeClassName='nav-selected' partiallyActive={true}>
               {text}
             </Link>
           </li>

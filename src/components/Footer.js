@@ -13,7 +13,7 @@ const Footer = () => (
           <ul className={`page-links footer-links`}>
             {data.map(({ id, text, url }) => (
               <li key={id}>
-                <Link to={url} activeClassName='footer-link-selected'>
+                <Link to={url} activeClassName='footer-link-selected' partiallyActive={text !== 'home'}>
                   {text}
                 </Link>
               </li>

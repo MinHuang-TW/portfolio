@@ -66,7 +66,7 @@ const ProjectTemplate = ({
         </MDXProvider>
 
         <div className='project-btns'>
-          <Link to='/project/' className='btn center-btn'>
+          <Link to='/project' className='btn center-btn'>
             back to project
           </Link>
           <a
