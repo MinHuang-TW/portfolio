@@ -1711,7 +1711,7 @@ Blog Template
 .blog-template blockquote p {
   margin: 0px;
 }
-.blog-template pre {
+/* .blog-template pre {
   background: #000000;
   color: var(--clr-primary-8);
   overflow-x: scroll;
@@ -1719,7 +1719,7 @@ Blog Template
   border-radius: var(--radius);
   margin: 3rem auto;
   overflow: auto;
-}
+} */
 .blog-template img {
   border-radius: var(--radius);
   box-shadow: none;
@@ -1777,7 +1777,7 @@ tbody tr:last-of-type td {
   margin-bottom: 2.5rem;
 }
 .blog-btns p {
-  color: var(--clr-primary-5);
+  color: var(--clr-grey-2);
   margin-bottom: 0;
 }
 .prev-btn {

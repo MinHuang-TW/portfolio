@@ -10,7 +10,7 @@ export const Blogs = ({ blogs, totalCount }) => {
     codeCount: { totalCount: codeCount },
     designCount: { totalCount: designCount },
     lifeCount: { totalCount: lifeCount },
-  } = useStaticQuery(query)
+  } = useStaticQuery(query);
 
   const categories = [
     { category: 'all', count: totalCount },

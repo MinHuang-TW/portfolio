@@ -13,7 +13,7 @@ This project is part of the front-end libraries certification from *freeCodeCamp
 
 When an application contains multiple audio files, it is important to keep in mind that the audio has to be properly rewound every time before playing. Otherwise the audio will resume from its previous end point if the last play is not fully complete. The following script will reset the start point and rewind the audio:
 
-```
+```js
 const audio = document.getElementById('myAudio');
 audio.currentTime = 0;
 ```
@@ -22,7 +22,7 @@ audio.currentTime = 0;
 
 The project is responsive and supports cross platform. Therefore, the drum pads have to bind with touch, mouse and keyboard events. However, when a key is long pressed, the audio is in turn triggered and played repeatedly, which causes an extremely annoying experience for a user.The keyboard event API offers an intuitive and easy solution:
 
-```
+```js
 cont handleKeyDown = (event) => {
 	If (event.repeat) return;
 	playAudio();

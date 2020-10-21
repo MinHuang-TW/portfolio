@@ -12,6 +12,7 @@ export { default as Project } from './Project';
 export { default as Pagination } from './Pagination';
 export { default as Blogs } from './Blogs';
 export { default as Blog } from './Blog';
+export { default as Code } from './Code';
 export { default as Jobs } from './Jobs';
 export { default as Education } from './Education';
 export { default as Services } from './Services';
