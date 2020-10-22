@@ -21,6 +21,7 @@ module.exports = {
     `gatsby-remark-images`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-preact`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -74,7 +75,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `http://localhost:1337`,
-        queryLimit: 100, // Default to 100
+        queryLimit: 20,
         contentTypes: [`jobs`],
         singleTypes: [`about`],
       },
