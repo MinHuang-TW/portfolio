@@ -13,8 +13,8 @@ const Project = ({
       <Image 
         className='project-img' 
         fluid={image.childImageSharp.fluid} 
-        loading={!index && 'eager'}
-        fadeIn={!index && false}
+        loading={!index ? 'eager' : 'lazy'}
+        fadeIn={!index ? false : true}
       />
     )}
     <div className='project-info'>
