@@ -1736,7 +1736,7 @@ Project Template
   margin: 0px;
 }
 .project-head h2 {
-  font-size: 48px;
+  font-size: 3rem;
 }
 .project-main {
   width: 100%;
@@ -1826,19 +1826,6 @@ Project Template
 .project-btns a:last-of-type {
   margin-left: 8px;
 }
-@media (max-width: 600px) {
-  .project-head {
-    padding-top: 10rem;
-  }
-  .project-overview {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-  }
-  .project-overview div {
-    margin: 0px;
-  }
-}
 .figure-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -1878,7 +1865,7 @@ Project Template
 
 .iframe-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   align-content: start;
   margin-top: 5rem;
 }
@@ -1968,5 +1955,32 @@ Project Template
   }
   .gif-container img {
     width: 70%;
+  }
+  .project-head {
+    padding-top: 10rem;
+  }
+  .project-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  .project-overview div {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 460px) {
+  .project-btns {
+    flex-direction: column;
+  }
+  .project-btns a {
+    width: 100%;
+  }
+  .project-btns a:last-of-type {
+    margin-left: 0px;
+    margin-top: 1rem;
+  }
+  .project-head h2 {
+    font-size: 2.5rem;
   }
 }

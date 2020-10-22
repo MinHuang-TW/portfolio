@@ -43,7 +43,6 @@ module.exports = {
             resolve: `gatsby-remark-images-medium-zoom`,
             options: {},
           },
-          `gatsby-remark-responsive-iframe`,
         ],
         remarkPlugins: [
           unwrapImages
