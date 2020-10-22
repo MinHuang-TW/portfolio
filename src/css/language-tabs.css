@@ -2,13 +2,13 @@
   position: relative;
   -webkit-overflow-scrolling: touch;
   margin: 3rem auto;
+  padding: 1.5rem;
   overflow: auto;
   background: black;
   border-radius: var(--radius);
 }
 .gatsby-highlight pre[class*="language-"] {
   -webkit-overflow-scrolling: touch;
-  padding: 1.5rem;
   font-family: var(--ff-secondary);
   background: transparent !important;
 }
@@ -19,9 +19,11 @@
   font-size: 12px;
   letter-spacing: 0.025rem;
   padding: 0.1rem 0.5rem;
-  position: absolute;
-  top: 0;
-  right: 1.5rem;
+  position: fixed;
+  margin-top: -1.5rem;
+  right: 0;
+  -webkit-transform: translateX(calc(-100% - 1.5rem));
+  transform: translateX(calc(-100% - 1.5rem));
   text-align: right;
   text-transform: uppercase;
 }
