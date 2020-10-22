@@ -6,10 +6,16 @@ import { Link } from 'gatsby';
 const Project = ({
   slug,
   frontmatter: { title, projectBrief, categories, projectStack, image },
+  index,
 }) => (
   <Link className='project fadeIn-top' to={`/project/${slug}`}>
     {image && (
-      <Image fluid={image.childImageSharp.fluid} className='project-img' />
+      <Image 
+        className='project-img' 
+        fluid={image.childImageSharp.fluid} 
+        loading={!index && 'eager'}
+        fadeIn={!index && false}
+      />
     )}
     <div className='project-info'>
       <div>

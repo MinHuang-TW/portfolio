@@ -8,13 +8,17 @@ const Projects = ({ projects, selected, showLink, gutterTop }) => (
     style={{ paddingTop: gutterTop ? '' : '2.5rem' }}
   >
     <div className='section-center'>
-      {projects.map(project => (
-        <Project key={project.id + selected} {...project} />
+      {projects.map((project, index) => (
+        <Project 
+          key={project.id + selected} 
+          index={index} 
+          {...project} 
+        />
       ))}
     </div>
     {showLink && (
       <Link 
-        to='/project/' 
+        to='/project' 
         className='btn center-btn projects-btn' 
       >
         more projects
