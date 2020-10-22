@@ -3,27 +3,27 @@
   -webkit-overflow-scrolling: touch;
   margin: 3rem auto;
   overflow: auto;
-  background: black !important;
+  background: black;
+  border-radius: var(--radius);
 }
 .gatsby-highlight pre[class*="language-"] {
   -webkit-overflow-scrolling: touch;
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius);
+  padding: 1.5rem;
   font-family: var(--ff-secondary);
-  background: black !important;
+  background: transparent !important;
 }
 .gatsby-highlight pre[class*="language-"]::before {
   background: black;
-  border-radius: 0 0 0.25rem 0.25rem;
   color: white;
+  border-radius: 0 0 0.25rem 0.25rem;
   font-size: 12px;
   letter-spacing: 0.025rem;
   padding: 0.1rem 0.5rem;
   position: absolute;
-  right: 1rem;
+  top: 0;
+  right: 1.5rem;
   text-align: right;
   text-transform: uppercase;
-  top: 0;
 }
 .gatsby-highlight pre[class~="language-javascript"]::before {
   content: "js";

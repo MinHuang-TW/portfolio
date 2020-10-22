@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import ReactMap, { Marker, Popup } from 'react-map-gl';
 import { features as cities } from '../assets/cities.json';
+import '../css/mapbox.css';
 
 const PopupCurrent = ({ coordinate, city }) => (
   <Popup
