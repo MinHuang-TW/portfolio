@@ -22,13 +22,39 @@ I decided to develop my personal portfolio with *Gatsby.js* and *Strapi* because
 
 *Gatsby* is designed with the aim of performance. The static contents including markdown format are fetched and then translated into HTML, CSS and Javascript files fairly fast. Therefore, a user will not have bad refreshing and waiting experiences while browsing the website. In addition, there are diverse powerful plugins enhancing this advantage. 
 
-For instance, the image plugins generate and source optimized-size images according to different breakpoints so that the long loadings of images can be avoided. These are the plugins I appreciate the most since I do not have to manually create an image in various sizes catering for screen sizes. On the other hand, Gatsby utilizes GraphQL query so that what and how much data is fetched are fully controlled by myself instead of limited by the predefined data structure or API. 
+For instance, the image plugins generate and source optimized-size images according to different breakpoints so that the long loadings of images can be avoided. These are the plugins I appreciate the most since I do not have to manually create an image in various sizes catering for screen sizes. On the other hand, Gatsby utilizes GraphQL query so that what and how much data is fetched are fully controlled by myself instead of limited by the predefined data structure or API. Bellow is one of GraphQL query I used in the project:
 
-<div class='figure-container'>
-
-![The screen shot of a GraphQL query in the project](./gatsby_query.png)
-
-</div>
+```js
+export const query = graphql`
+  {
+    allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: { featured: { eq: true } }
+      }
+      sort: { fields: frontmatter___sortDate, order: DESC } 
+    ) {
+      nodes {
+        id
+        slug
+        frontmatter {
+          title
+          projectBrief
+          projectStack
+          url
+          image {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+```
 
 <TitleAnchored>Build Time</TitleAnchored>
 

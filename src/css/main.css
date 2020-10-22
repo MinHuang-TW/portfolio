@@ -7,10 +7,6 @@ Variables
   /* dark shades of primary color*/
   --clr-primary-1: hsl(184, 91%, 17%);
   --clr-primary-5: hsl(185, 62%, 45%);
-  /* lighter shades of primary color */
-  --clr-primary-8: hsl(184, 80%, 74%);
-  --clr-primary-9: hsl(185, 94%, 87%);
-  --clr-primary-10: hsl(186, 100%, 94%);
   /* darkest grey */
   --clr-grey-1: rgba(255, 255, 255, 0.87);
   --clr-grey-2: rgba(255, 255, 255, 0.6);
@@ -237,7 +233,6 @@ iframe[seamless] {
 .fadeIn-top:nth-of-type(6) {
   animation-delay: 0.5s;
 }
-
 /* Scroll Bar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -514,7 +509,6 @@ Sidebar
   margin-bottom: 0px;
 }
 .sidebar-links li a:hover {
-  /* background: var(--clr-primary-9); */
   color: var(--clr-primary-5);
 }
 .close-btn {
