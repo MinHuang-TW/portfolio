@@ -1353,7 +1353,7 @@ About Page
   font-size: 1.5rem;
   text-transform: none;
 }
-.intro {
+.about-hero {
   width: 100%;
   height: 100vh;
   margin: -5rem auto;
@@ -1407,7 +1407,7 @@ About Page
 .about-btn-wrapper {
   display: inline-block;
 }
-#skillset {
+#skillsets {
   background: var(--clr-primary-1);
 }
 .legend-container {
@@ -1421,12 +1421,12 @@ About Page
   margin-left: 0.75rem;
 }
 @media screen and (max-width: 1280px) {
-  .intro img {
+  .about-hero img {
     object-position: 80% !important;
   }
 }
 @media screen and (max-width: 600px) {
-  .intro img {
+  .about-hero img {
     height: 50vh !important;
   }
   .about-btn-wrapper,

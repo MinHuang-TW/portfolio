@@ -3,7 +3,7 @@ import Title from './Title';
 import services from '../constants/services';
 
 const Services = () => (
-  <section id='skillset' className='section'>
+  <section id='skillsets' className='section'>
     <Title title='Skillsets' />
     <div className='section-center services-center'>
       {services.map(({ id, icon, title, texts }) => (
