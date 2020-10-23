@@ -76,7 +76,7 @@ module.exports = {
         apiURL: `http://localhost:1337`,
         queryLimit: 20,
         contentTypes: [`jobs`],
-        singleTypes: [`about`],
+        // singleTypes: [`about`],
       },
     },
     {

@@ -1,8 +1,12 @@
 import React, { useCallback } from 'react';
 import { SEO, Layout, Title, Services, Jobs, Education, Map } from '../components';
-import BackgroundImage from 'gatsby-background-image';
+import Image from 'gatsby-image';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { graphql } from 'gatsby';
+
+const info = `
+  I am Min Huang from Taiwan. Not only do I have years of experiences of product and user experience design, but I also realize the design concept as a self-taught developer pursuing modern web technologies. Programming inspires me to keep creating interesting projects with considerate user experiences
+`;
 
 const Button = ({ text }) => (
   <div className='about-btn-wrapper zoomOut'>
@@ -17,9 +21,7 @@ const Button = ({ text }) => (
   </div>
 );
 
-const About = ({ data: { about: { nodes }, photo }}) => {
-  const { info } = nodes[0];
-
+const About = ({ data: { heroImg }}) => {
   const shiftTo = useCallback((id) => () => {
     scrollTo(id);
   }, []);
@@ -27,11 +29,8 @@ const About = ({ data: { about: { nodes }, photo }}) => {
   return (
     <Layout>
       <SEO title='About' description='about Min' />
-      <BackgroundImage 
-        Tag={`section`} 
-        className='section intro'
-        fluid={photo.childImageSharp.fluid}
-      >
+      <section>
+        <Image className='intro' fluid={heroImg.sharp.fluid} />
         <div className='section-center about-center'>
           <article className='about-text'>
             <Title title='Hello !' styleClass='fadeIn' />
@@ -44,7 +43,7 @@ const About = ({ data: { about: { nodes }, photo }}) => {
             <Button text='download Résumé' />
           </article>
         </div>
-      </BackgroundImage>
+      </section>
 
       <Services />
       <Education />
@@ -56,18 +55,9 @@ const About = ({ data: { about: { nodes }, photo }}) => {
 
 export const query = graphql`
   {
-    about: allStrapiAbout {
-      nodes {
-        info
-        stack {
-          id
-          language
-        }
-      }
-    }
-    photo: file(relativePath: { eq: "bg_photo.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
+    heroImg: file(relativePath: { eq: "about_img.png" }) {
+      sharp: childImageSharp {
+        fluid(maxWidth: 1920, quality: 72) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

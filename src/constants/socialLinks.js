@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  FiGithub,
-  FiLinkedin,
-  FiInstagram,
-  // FiMail,
-  FiTwitter,
-} from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiInstagram, FiTwitter } from 'react-icons/fi';
 
 const data = [
   {

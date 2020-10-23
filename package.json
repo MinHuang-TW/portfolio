@@ -5,10 +5,10 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
@@ -16,9 +16,8 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.11",
     "@mdx-js/react": "^1.6.11",
-    "mdx-utils": "^0.2.0",
+    "disqus-react": "^1.0.9",
     "gatsby": "^2.21.0",
-    "gatsby-background-image": "^1.1.2",
     "gatsby-image": "^2.4.0",
     "gatsby-plugin-mdx": "^1.2.27",
     "gatsby-plugin-preact": "^4.0.16",
@@ -33,15 +32,15 @@
     "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-json": "^2.4.11",
     "gatsby-transformer-sharp": "^2.5.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "mdx-utils": "^0.2.0",
     "preact": "^10.5.5",
     "preact-render-to-string": "^5.1.11",
     "prism-react-renderer": "^1.1.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
     "react-map-gl": "^5.2.7",
-    "disqus-react": "^1.0.9",
     "remark-unwrap-images": "^2.0.0"
   },
   "devDependencies": {
