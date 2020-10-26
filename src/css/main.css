@@ -855,8 +855,7 @@ Projects
   border-top-right-radius: var(--radius);
 }
 .project-info {
-  background: var(--clr-grey-5);
-  padding: 16px 2rem 20px;
+  padding: 1.875rem 2rem;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   display: flex;
@@ -864,35 +863,38 @@ Projects
   justify-content: space-between;
   background: var(--clr-grey-4);
 }
-.project-number {
-  display: inline-block;
-  font-size: 1.25rem;
+.project-category {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.25rem;
+}
+.project-category p {
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
   color: var(--clr-primary-5);
-  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  margin: 0;
 }
 .project-info h3 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.875rem;
 }
 .project-desc {
   color: var(--clr-grey-2);
+  margin-bottom: 1.75rem;
 }
-.blog-category,
-.project-stack span,
-.about-stack span {
-  display: inline-block;
-  border: 1px solid var(--clr-grey-2);
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+}
+.project-stack span {
   color: var(--clr-grey-2);
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 100px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-family: var(--ff-secondary);
-}
-.about-stack span {
-  margin-top: 0.5rem;
 }
 .projects-btn {
   width: 16rem;
@@ -900,6 +902,9 @@ Projects
 @media screen and (max-width: 600px) {
   .projects-btn {
     width: 90vw;
+  }
+  .project-info {
+    padding: 1.5rem;
   }
 }
 @media screen and (min-width: 900px) {
@@ -1719,23 +1724,6 @@ Project Template
   top: 0px;
   z-index: -1;
   filter: grayscale(100%) brightness(0.2) opacity(50%);
-}
-.project-category {
-  display: inline-block;
-  margin: 0px;
-  margin: 16px auto;
-  padding: 0px 4px;
-  text-transform: uppercase;
-  letter-spacing: var(--spacing);
-  color: var(--clr-primary-5);
-  font-size: 14px;
-}
-.project-category:first-of-type {
-  padding-left: 0px;
-  border-left: none;
-}
-.project-category:last-of-type {
-  padding-right: 0px;
 }
 .project-template {
   padding: 2.5rem 0 5rem;

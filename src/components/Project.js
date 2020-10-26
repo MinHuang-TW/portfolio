@@ -19,17 +19,20 @@ const Project = ({
     )}
     <div className='project-info'>
       <div>
-        {categories.map(category => (
-          <p key={category} className='project-category'>
-            [{category}]
-          </p>
-        ))}
+        <div className='project-category'>
+          {categories.map((category, index) => (
+            <p key={category}>
+              {category}
+              {index + 1 !== categories.length && ','}
+            </p>
+          ))}
+        </div>
         <h3>{title}</h3>
         <p className='project-desc'>{projectBrief}</p>
       </div>
       <div className='project-stack'>
         {projectStack.map(stack => (
-          <span key={stack}>{stack}</span>
+          <span key={stack}>#{stack}</span>
         ))}
       </div>
     </div>
