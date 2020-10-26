@@ -27,6 +27,8 @@
   transform: translateX(calc(-100% - 1.5rem));
   text-align: right;
   text-transform: uppercase;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .gatsby-highlight pre[class~="language-javascript"]::before {
   content: "js";
