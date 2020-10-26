@@ -14,7 +14,7 @@ const Blog = ({
     )}
     <div className='blog-card'>
       <div className='blog-head'>
-        <p>{date.toUpperCase()} - </p>
+        <p>{date.toUpperCase()} |</p>
         {categories.map((category, index) => (
           <p key={index}> {category.toUpperCase()}</p>
         ))}
