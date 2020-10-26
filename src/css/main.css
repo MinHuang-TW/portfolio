@@ -855,7 +855,7 @@ Projects
   border-top-right-radius: var(--radius);
 }
 .project-info {
-  padding: 1.875rem 2rem;
+  padding: 1.875rem 2.5rem;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   display: flex;
