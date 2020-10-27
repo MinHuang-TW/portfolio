@@ -50,3 +50,12 @@
   background: #ff9800;
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  .gatsby-highlight {
+    padding-top: 2.5rem;
+  }
+  .gatsby-highlight pre[class*="language-"]::before {
+    margin-top: -2.5rem;
+  }
+}

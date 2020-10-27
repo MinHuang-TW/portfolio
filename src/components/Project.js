@@ -21,9 +21,12 @@ const Project = ({
       <div>
         <div className='project-category'>
           {categories.map((category, index) => (
-            <p key={category}>
-              {category} {index + 1 !== categories.length && '|'}
-            </p>
+            <>
+              <p key={category}>{category} </p>
+              <p style={{ margin: 'auto 0.6rem' }}>
+                {index + 1 !== categories.length && '|'}
+              </p>
+            </>
           ))}
         </div>
         <h3>{title}</h3>

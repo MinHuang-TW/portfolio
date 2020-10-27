@@ -37,7 +37,7 @@ const BlogTemplate = ({
   
         <section className='blog-template'>
           <h2>{title}</h2>
-          <p>{date.toUpperCase()} - {categories[0].toUpperCase()}</p>
+          <p>{date.toUpperCase()} | {categories[0].toUpperCase()}</p>
   
           <article className='blog-content'>
             <MDXProvider components={shortcodes}>
