@@ -5,10 +5,11 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import { graphql } from 'gatsby';
 
 const info = `
-  I am Min Huang from Taiwan. Not only do I have years of experiences of product and user experience design, but I also realize the design concept as a self-taught developer pursuing modern web technologies. Programming inspires me to keep creating interesting projects with considerate user experiences.
-`;
+  I am Min Huang from Taiwan, a self-motivated front-end developer pursuing modern web technologies and having a professional UX design background.
+  `;
+  // Programming inspires me to keep creating interesting projects with considerate user experiences.
 
-const links = ['skillsets', 'education', 'experiences'];
+const links = ['skillsets', 'experiences', 'education'];
 
 const Button = ({ text }) => (
   <div className='about-btn-wrapper zoomOut'>
@@ -60,8 +61,8 @@ const About = ({ data: { heroImg }}) => {
       </section>
 
       <Services />
-      <Education />
       <Jobs />
+      <Education />
       {typeof window !== 'undefined' && <Map />}
     </Layout>
   )
