@@ -80,18 +80,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Source Sans Pro`,
-            variants: [`300`, `400`],
-          },
-          {
-            family: `DM Mono`,
-            variants: [`300`],
-          },
+          `source sans pro\:300, 400`,
+          `DM mono\:300`,
         ],
+        display: 'swap',
       },
     },
   ],

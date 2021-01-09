@@ -2,7 +2,7 @@ import React from 'react';
 import SocialLinks from '../constants/socialLinks';
 import data from '../constants/navigations';
 import { Link } from 'gatsby';
-import { FiMail } from 'react-icons/fi';
+// import { FiMail } from 'react-icons/fi';
 
 const Footer = () => (
   <footer className='footer'>
@@ -22,16 +22,16 @@ const Footer = () => (
         </div>
 
         <div className='footer-media-block'>
-          <h3 className='footer-subtitle'>Contact Me</h3>
+          <h3 className='footer-subtitle'>Contact</h3>
           <SocialLinks />
-          <div className='mail-block'>
+          {/* <div className='mail-block'>
             <FiMail className='service-icon' />
             <h4>h.min719@gmail.com</h4>
-          </div>
+          </div> */}
         </div>
 
         <div className='footer-form-block'>
-          <h3 id='myMsg' className='footer-subtitle'>Send Me a Message</h3>
+          <h3 id='myMsg' className='footer-subtitle'>Message</h3>
           <form
             action='https://formspree.io/mzbjjrrd'
             method='POST'
@@ -42,7 +42,7 @@ const Footer = () => (
             <textarea 
               rows='5' 
               name='message' 
-              placeholder='message' 
+              placeholder='leave me a message' 
               aria-labelledby='myMsg' 
             />
             <div>

@@ -9,7 +9,7 @@ export default [
     texts: [
       'Research (Contextmapping, focus group, persona)',
       'Design (Wireframing, user flow, visual & interaction design, digital prototyping)',
-      'Usability & field testing'
+      'Usability & Field testing'
     ],
   },
   {
@@ -18,10 +18,10 @@ export default [
     title: 'Front-end Development',
     texts: [
       'HTML5',
-      'CSS3 (CSS modules, Styled components, SASS)', 
+      'CSS3 (SASS, CSS modules, Styled components)', 
       'Javascript (ES6, ES7, React)',
-      'State Management (Redux)',
-      'SSG (Gatsby.js + GraphQL)',
+      'State management(Redux, Saga)',
+      'SSG (Gatsby + GraphQL)',
     ],
   },
   {
@@ -29,7 +29,7 @@ export default [
     icon: <FiServer className='service-icon' />,
     title: 'Back-end Development',
     texts: [
-      'Framework (Express, Node.js)', 
+      'Node.js (Express)', 
       'Database (MongoDB, Firebase)', 
       'Headless CMS (Strapi)', 
       'Authorization (JWT)',

@@ -1,11 +1,12 @@
 import React from 'react';
-import { FiGithub, FiLinkedin, FiInstagram, FiTwitter } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+// import { FiGithub, FiLinkedin, FiInstagram, FiTwitter } from 'react-icons/fi';
 
 const data = [
   {
     id: 1,
-    icon: <FiGithub className='social-icon' />,
-    url: 'https://github.com/MinHuang-TW',
+    icon: <FiMail className='social-icon' />,
+    url: 'mailto:h.min719@gmail.com',
   },
   {
     id: 2,
@@ -14,14 +15,19 @@ const data = [
   },
   {
     id: 3,
-    icon: <FiInstagram className='social-icon' />,
-    url: 'https://www.instagram.com/tuetme/',
+    icon: <FiGithub className='social-icon' />,
+    url: 'https://github.com/MinHuang-TW',
   },
-  {
-    id: 4,
-    icon: <FiTwitter className='social-icon' />,
-    url: 'https://twitter.com/MinHuang_TW',
-  },
+  // {
+  //   id: 3,
+  //   icon: <FiInstagram className='social-icon' />,
+  //   url: 'https://www.instagram.com/tuetme/',
+  // },
+  // {
+  //   id: 4,
+  //   icon: <FiTwitter className='social-icon' />,
+  //   url: 'https://twitter.com/MinHuang_TW',
+  // },
 ];
 
 export default ({ styleClass }) => (
